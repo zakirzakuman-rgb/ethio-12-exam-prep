@@ -1,22 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakir's Matric Prep Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div id="login-page" style="text-align: center; margin-top: 100px;">
-        <div style="background: white; padding: 40px; display: inline-block; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <h2>Zakir's Matric Hub</h2>
-            <p>Please Log In to Continue</p>
-            <input type="text" id="username" placeholder="Username" style="display: block; margin: 10px auto; padding: 10px; width: 200px;"> 
-            <input type="password" id="password" placeholder="Password" style="display: block; margin: 10px auto; padding: 10px; width: 200px;">
-            <button onclick="checkLogin()" style="padding: 10px 20px; background: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer;">Enter</button>
+
+    <div id="login-page">
+        <div class="login-container">
+            <h2>Zakir's Study Hub</h2>
+            <p>Please log in to start your practice</p>
+            <input type="text" id="username" placeholder="Enter Your Name">
+            <input type="password" id="password" placeholder="Enter Password (zakir123)">
+            <button onclick="checkLogin()">Enter Quiz Center</button>
         </div>
     </div>
 
     <div id="main-quiz-page" style="display: none;">
         <header>
-            <h1>Matric Exam Center</h1>
+            <h1>Grade 12 Matric Practice</h1>
             <p id="welcome-text"></p>
         </header>
+
         <div class="container">
             <div class="resource-grid">
+                <div class="card" onclick="startQuiz('English')">
+                    <h3>English</h3>
+                    <p>Grammar & Vocabulary</p>
                 </div>
+                <div class="card" onclick="startQuiz('History')">
+                    <h3>History</h3>
+                    <p>World & Ethiopian History</p>
+                </div>
+                <div class="card" onclick="startQuiz('Geography')">
+                    <h3>Geography</h3>
+                    <p>Physical & Human Geography</p>
+                </div>
+                <div class="card" onclick="startQuiz('Economics')">
+                    <h3>Economics</h3>
+                    <p>Micro & Macro Economics</p>
+                </div>
+                <div class="card" onclick="startQuiz('Aptitude')">
+                    <h3>Aptitude</h3>
+                    <p>Logic & Reasoning</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
+</html>
