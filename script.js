@@ -86,20 +86,28 @@ function startQuiz(subject) {
         ];
     }
 
-    runQuiz(questions);
-}
-
-function runQuiz(questions) {
+   function runQuiz(questions) {
     let score = 0;
     let total = questions.length;
 
     for (let i = 0; i < total; i++) {
-        let userAns = prompt("Question " + (i + 1) + " of " + total + "\n\n" + questions[i].q);
-        if (userAns && userAns.toUpperCase() === questions[i].a) {
+        // ጥያቄውን መጠየቅ
+        let userAns = prompt("Question " + (i + 1) + " of " + total + "\n\n" + questions[i].q + "\n\n(Click Cancel to Stop)");
+
+        // ተጠቃሚው 'Cancel' ከነካ userAns "null" ይሆናል
+        if (userAns === null) {
+            alert("Quiz Cancelled.");
+            return; // እዚህ ጋር ፋንክሽኑ ይቆማል፣ ወደ ቀጣዩ ጥያቄ አይሄድም
+        }
+
+        // መልሱ ትክክል መሆኑን መፈተሽ
+        if (userAns.trim().toUpperCase() === questions[i].a) {
             score++;
         }
     }
 
     let percentage = (score / total) * 100;
+    alert(currentUser + ", your Result:\nScore: " + score + "/" + total + "\nPercentage: " + percentage + "%");
+}
     alert(currentUser + ", your Results:\nScore: " + score + "/" + total + "\nPercentage: " + percentage + "%");
 }
