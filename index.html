@@ -19,27 +19,26 @@
         <a href="#">Geography</a>
         <a href="#">Economics</a>
     </nav>
-
-    <div class="container">
-        <section class="main-content">
-            <h2>Welcome to the Study Portal</h2>
-            <p>Access summaries, past exam questions, and study tips to excel in your national exams.</p>
-            
-            <div class="resource-grid">
-                <div class="card">
-                    <h3>History Notes</h3>
-                    <p>Unit-by-unit summaries for Social Science students.</p>
-                    <button onclick="showAlert('History')">Access Notes</button>
-                </div>
-
-                <div class="card">
-                    <h3>Exam Practice</h3>
-                    <p>Test your knowledge with previous years' matric papers.</p>
-                    <button onclick="showAlert('Exams')">Start Quiz</button>
-                </div>
-            </div>
-        </section>
+<div class="resource-grid">
+    <div class="card">
+        <h3>History Quiz</h3>
+        <p>Unit 1 & 2 Exam Practice</p>
+        <button onclick="startSubjectQuiz('History')">Start Quiz</button>
     </div>
+
+    <div class="card">
+        <h3>Geography Quiz</h3>
+        <p>Map reading and Physical Geography</p>
+        <button onclick="startSubjectQuiz('Geography')">Start Quiz</button>
+    </div>
+
+    <div class="card">
+        <h3>Economics Quiz</h3>
+        <p>Fundamental concepts of Economics</p>
+        <button onclick="startSubjectQuiz('Economics')">Start Quiz</button>
+    </div>
+</div>
+  
 
     <footer>
         <p>&copy; 2026 Zakir Tech. All rights reserved.</p>
