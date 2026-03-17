@@ -1,21 +1,25 @@
 let currentUser = "";
 
-// ሎጊን መቆጣጠሪያ
+// 1. የሎጊን መቆጣጠሪያ
 function checkLogin() {
-    let name = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+    let nameInput = document.getElementById("username");
+    let passInput = document.getElementById("password");
+    
+    let name = nameInput.value;
+    let pass = passInput.value;
 
+    // ፓስዎርዱ 'zakir123' መሆኑን ቼክ ያደርጋል
     if (name.trim() !== "" && pass === "zakir123") {
         currentUser = name;
         document.getElementById("login-page").style.display = "none";
         document.getElementById("main-quiz-page").style.display = "block";
-        document.getElementById("welcome-text").innerText = "Welcome, " + currentUser + "! Good luck on your practice.";
+        document.getElementById("welcome-text").innerText = "Welcome, " + currentUser + "! Good luck.";
     } else {
-        alert("Invalid Login! Try Username: (Your Name) and Password: zakir123");
+        alert("Wrong Username or Password! (Try: zakir123)");
     }
 }
 
-// የጥያቄዎች ዝርዝር
+// 2. የጥያቄዎች ዝርዝር (አምስቱም ትምህርቶች)
 function startQuiz(subject) {
     let questions = [];
 
@@ -86,28 +90,30 @@ function startQuiz(subject) {
         ];
     }
 
-   function runQuiz(questions) {
+    runQuiz(questions);
+}
+
+// 3. የጥያቄ ማሽኑ (ከመቆጣጠሪያ ጋር)
+function runQuiz(questions) {
     let score = 0;
     let total = questions.length;
 
     for (let i = 0; i < total; i++) {
-        // ጥያቄውን መጠየቅ
+        // 'Cancel' ከተነካ userAns "null" ይሆናል
         let userAns = prompt("Question " + (i + 1) + " of " + total + "\n\n" + questions[i].q + "\n\n(Click Cancel to Stop)");
 
-        // ተጠቃሚው 'Cancel' ከነካ userAns "null" ይሆናል
-        if (userAns === null {
-            alert("Quiz Cancelled.");
-            return; // እዚህ ጋር ፋንክሽኑ ይቆማል፣ ወደ ቀጣዩ ጥያቄ አይሄድም
+        // ማቆሚያው ኮድ
+        if (userAns === null) {
+            alert("Quiz Stopped.");
+            return; // እዚህ ጋር ይቆማል
         }
 
-        // መልሱ ትክክል መሆኑን መፈተሽ
+        // መልስ ማረጋገጫ
         if (userAns.trim().toUpperCase() === questions[i].a) {
             score++;
         }
     }
 
     let percentage = (score / total) * 100;
-    alert(currentUser + ", your Result:\nScore: " + score + "/" + total + "\nPercentage: " + percentage + "%");
-}
-    alert(currentUser + ", your Results:\nScore: " + score + "/" + total + "\nPercentage: " + percentage + "%");
+    alert(currentUser + ", you finished!\nScore: " + score + "/" + total + "\nPercentage: " + percentage + "%");
 }
