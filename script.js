@@ -95,7 +95,7 @@ function startQuiz(subject) {
         let userAns = prompt("Question " + (i + 1) + " of " + total + "\n\n" + questions[i].q + "\n\n(Click Cancel to Stop)");
 
         // ተጠቃሚው 'Cancel' ከነካ userAns "null" ይሆናል
-        if (userAns === cancel) {
+        if (userAns === null {
             alert("Quiz Cancelled.");
             return; // እዚህ ጋር ፋንክሽኑ ይቆማል፣ ወደ ቀጣዩ ጥያቄ አይሄድም
         }
