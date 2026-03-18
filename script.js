@@ -163,3 +163,35 @@ function runQuiz(questions) {
     let percentage = (score / total) * 100;
     alert(currentUser + ", your Score: " + score + "/" + total + " (" + percentage + "%)");
 }
+// ውጤትን ለማስቀመጥ የሚረዳ ፈንክሽን
+function saveScore(userName, userScore) {
+    // ቀድሞ የተቀመጡ ውጤቶችን ማምጣት (ከሌለ ባዶ ድርድር መፍጠር)
+    let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    
+    // አዲሱን ውጤት መጨመር
+    leaderboard.push({ name: userName, score: userScore });
+    
+    // ውጤቱን ከከፍተኛ ወደ ዝቅተኛ መደርደር (Sorting)
+    leaderboard.sort((a, b) => b.score - a.score);
+    
+    // ዋናዎቹን 5 ብቻ ማስቀረት (Top 5)
+    leaderboard = leaderboard.slice(0, 5);
+    
+    // ተመልሶ በስልኩ ሜሞሪ እንዲቀመጥ ማድረግ
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    
+    displayLeaderboard();
+}
+
+// ውጤቱን በዌብሳይቱ ላይ የሚያሳይ ፈንክሽን
+function displayLeaderboard() {
+    let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    let listHTML = "<h3>🏆 Top 5 Leaders</h3><ol>";
+    
+    leaderboard.forEach(entry => {
+        listHTML += `<li>${entry.name}: ${entry.score} ነጥብ</li>`;
+    });
+    
+    listHTML += "</ol>";
+    document.getElementById('leaderboard-container').innerHTML = listHTML;
+}
