@@ -28,8 +28,9 @@ const allQuestions = [
 
     // Aptitude
     { cat: "Aptitude", q: "Complete the series: 5, 10, 20, 40, ...?", options: ["50", "60", "80", "100"], a: "80" },
-    { cat: "Aptitude", q: "WATER is to ICE as STEAM is to: ?", options: ["Fire", "Gas", "Water", "Cloud"], a: "Water" }
-    //english
+    { cat: "Aptitude", q: "WATER is to ICE as STEAM is to: ?", options: ["Fire", "Gas", "Water", "Cloud"], a: "Water" },
+
+    // English
     { cat: "English", q: "I _______ my homework before my father arrived last night.", options: ["finish", "have finished", "had finished", "finishing"], a: "had finished" },
     { cat: "English", q: "If I _______ enough money, I would buy a new laptop.", options: ["have", "had", "will have", "has"], a: "had" },
     { cat: "English", q: "The house _______ by my father twenty years ago.", options: ["built", "was built", "is built", "was building"], a: "was built" },
@@ -49,8 +50,9 @@ const allQuestions = [
     { cat: "English", q: "Neither the teacher nor the students _______ present today.", options: ["is", "are", "was", "am"], a: "are" },
     { cat: "English", q: "The exam was _______ difficult that many students failed.", options: ["such", "so", "very", "too"], a: "so" },
     { cat: "English", q: "Would you mind _______ the window?", options: ["open", "to open", "opening", "opened"], a: "opening" },
-    { cat: "English", q: "He asked me where I _______.", options: ["live", "lived", "living", "will live"], a: "lived" }
-    //math
+    { cat: "English", q: "He asked me where I _______.", options: ["live", "lived", "living", "will live"], a: "lived" },
+
+    // Mathematics
     { cat: "Mathematics", q: "What is the 10th term of the sequence: 2, 5, 8, 11...?", options: ["29", "30", "32", "27"], a: "29" },
     { cat: "Mathematics", q: "If the mean of 4, 8, and x is 10, find x.", options: ["18", "12", "14", "10"], a: "18" },
     { cat: "Mathematics", q: "What is the slope of the line y = 3x + 5?", options: ["5", "3", "-3", "1/3"], a: "3" },
@@ -71,8 +73,8 @@ const allQuestions = [
     { cat: "Mathematics", q: "The number of subsets of a set with 3 elements is:", options: ["3", "6", "8", "9"], a: "8" },
     { cat: "Mathematics", q: "Which quadrant has both x and y negative?", options: ["I", "II", "III", "IV"], a: "III" },
     { cat: "Mathematics", q: "What is 2 to the power of 5?", options: ["10", "25", "32", "64"], a: "32" },
-        //economics
-      
+
+    // Economics
     { cat: "Economics", q: "The basic economic problem facing all societies is:", options: ["Inflation", "Scarcity", "Unemployment", "Poverty"], a: "Scarcity" },
     { cat: "Economics", q: "Which market has only one seller?", options: ["Oligopoly", "Perfect Competition", "Monopoly", "Monopolistic"], a: "Monopoly" },
     { cat: "Economics", q: "The Law of Demand states that as price increases, demand:", options: ["Increases", "Decreases", "Stays same", "Fluctuates"], a: "Decreases" },
@@ -98,7 +100,7 @@ const allQuestions = [
 let currentQuestions = [];
 let currentIdx = 0;
 let score = 0;
-let timeLeft = 30;
+let timeLeft = 15;
 let timer;
 
 function startQuiz(category) {
@@ -134,21 +136,31 @@ function loadQuestion() {
     timer = setInterval(() => {
         timeLeft--;
         document.getElementById("timer").innerText = "Time Left: " + timeLeft + "s";
-        if (timeLeft <= 0) { clearInterval(timer); checkAnswer(null); }
+        if (timeLeft <= 0) { 
+            clearInterval(timer); 
+            checkAnswer(null); 
+        }
     }, 1000);
 }
 
 function checkAnswer(ans) {
     clearInterval(timer);
-    if (ans === currentQuestions[currentIdx].a) { score++; alert("Correct! 🎉"); }
-    else { alert("Wrong! Correct was: " + currentQuestions[currentIdx].a); }
+    if (ans === currentQuestions[currentIdx].a) { 
+        score++; 
+        alert("Correct! 🎉"); 
+    }
+    else { 
+        alert("Wrong! Correct was: " + currentQuestions[currentIdx].a); 
+    }
     currentIdx++;
     loadQuestion();
 }
 
 function showResult() {
     let msg = `Finished! Score: ${score}/${currentQuestions.length}`;
-    document.getElementById("quiz-box").innerHTML = `<h2>${msg}</h2>
-    <button onclick="location.reload()">Back to Home</button>
-    <button onclick="window.open('https://t.me/share/url?text=${msg}')">Share Score</button>`;
+    document.getElementById("quiz-box").innerHTML = `
+        <h2>${msg}</h2>
+        <button onclick="location.reload()">Back to Home</button>
+        <button onclick="window.open('https://t.me/share/url?text=${encodeURIComponent(msg)}')">Share Score</button>
+    `;
 }
