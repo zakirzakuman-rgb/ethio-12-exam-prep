@@ -1,76 +1,92 @@
-/* General Style */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    text-align: center;
+// 1. Array of 15 English Questions for your Matric practice
+const questions = [
+    // Geography
+    { q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
+    { q: "Which lake is the source of the Blue Nile river?", options: ["Ziway", "Abaya", "Tana", "Chamo"], a: "Tana" },
+    { q: "In which climatic zone is coffee mostly produced in Ethiopia?", options: ["Bereha", "Kolla", "Woina Dega", "Dega"], a: "Woina Dega" },
+    { q: "On a map, what do closely spaced contour lines indicate?", options: ["Flat plain", "Steep slope/cliff", "Deep lake", "Sandy desert"], a: "Steep slope/cliff" },
+    { q: "Which region of Ethiopia has the highest population density?", options: ["Afar", "Central/South", "Gambella", "Benishangul"], a: "Central/South" },
+    // History
+    { q: "Which leader led Ethiopia to victory at the Battle of Adwa in 1896?", options: ["Tewodros II", "Yohannes IV", "Menelik II", "Haile Selassie"], a: "Menelik II" },
+    { q: "The Yekatit 12 massacre was a retaliation for an attempt on whose life?", options: ["Mussolini", "Graziani", "Badoglio", "Victor"], a: "Graziani" },
+    { q: "What was the main purpose of the Berlin Conference (1884)?", options: ["Peace treaty", "Scramble for Africa", "Trade agreement", "Religion"], a: "Scramble for Africa" },
+    { q: "In which year was the 'Land to the Tiller' proclamation issued?", options: ["1960", "1974", "1975", "1991"], a: "1975" },
+    { q: "In which year was the Organization of African Unity (OAU) founded?", options: ["1945", "1960", "1963", "1970"], a: "1963" },
+    // Aptitude & Economics
+    { q: "Complete the series: 5, 10, 20, 40, ... ?", options: ["50", "60", "80", "100"], a: "80" },
+    { q: "Complete the series: 1, 4, 9, 16, 25, ... ?", options: ["30", "36", "49", "64"], a: "36" },
+    { q: "WATER is to ICE as STEAM is to: ?", options: ["Fire", "Gas", "Water", "Cloud"], a: "Water" },
+    { q: "Macroeconomics primarily deals with:", options: ["Individual firms", "The whole economy", "Coffee prices only", "Small shops"], a: "The whole economy" },
+    { q: "According to the Law of Demand, when price increases, demand:", options: ["Increases", "Decreases", "Stays same", "Disappears"], a: "Decreases" }
+];
+
+let currentIdx = 0;
+let score = 0;
+let timeLeft = 15;
+let timer;
+
+// Function to start the 15-second timer
+function startTimer() {
+    timeLeft = 15;
+    document.getElementById("timer").innerText = "Time Left: " + timeLeft + "s";
+    timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").innerText = "Time Left: " + timeLeft + "s";
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            checkAnswer(null); // Time out counts as wrong
+        }
+    }, 1000);
 }
 
-/* Login Page Style */
-#login-page {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
+// Function to load the question to the UI
+function loadQuestion() {
+    if (currentIdx >= questions.length) {
+        showFinalResult();
+        return;
+    }
+    clearInterval(timer);
+    startTimer();
+    
+    let q = questions[currentIdx];
+    document.getElementById("question").innerText = q.q;
+    let btns = document.getElementById("btns");
+    btns.innerHTML = "";
+    
+    q.options.forEach(opt => {
+        let b = document.createElement("button");
+        b.innerText = opt;
+        b.onclick = () => checkAnswer(opt);
+        btns.appendChild(b);
+    });
 }
 
-.login-container {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    width: 300px;
+// Function to check if answer is correct
+function checkAnswer(ans) {
+    clearInterval(timer);
+    let correct = questions[currentIdx].a;
+    if (ans === correct) {
+        score++;
+        alert("Correct! 🎉");
+    } else {
+        alert("Wrong! The correct answer was: " + correct);
+    }
+    currentIdx++;
+    loadQuestion();
 }
 
-.login-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+// Display final results and share button
+function showFinalResult() {
+    let msg = `Quiz Finished! Your Score: ${score}/${questions.length}`;
+    document.getElementById("quiz-box").innerHTML = `
+        <h2>${msg}</h2>
+        <button onclick="location.reload()">Try Again</button>
+        <button onclick="shareResult('${msg}')">Share on Telegram</button>
+    `;
 }
 
-.login-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+function shareResult(text) {
+    window.open(`https://t.me/share/url?url=MyMatricQuiz&text=${encodeURIComponent(text)}`);
 }
 
-/* Quiz Page Style */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 30px;
-}
-
-.container {
-    padding: 40px;
-}
-
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    background-color: #3498db;
-    color: white;
-}
+window.onload = loadQuestion;
