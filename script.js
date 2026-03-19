@@ -118,7 +118,7 @@ function loadQuestion() {
         return;
     }
     clearInterval(timer);
-    timeLeft = 15;
+    timeLeft = 30;
     document.getElementById("timer").innerText = "Time Left: " + timeLeft + "s";
     
     let q = currentQuestions[currentIdx];
