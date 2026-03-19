@@ -60,19 +60,13 @@
             </div>
         </div>
 
-        <div id="quiz-box" style="display: none;">
-            <div id="timer">Time Left: 15s</div>
-            <h2 id="question-text">Question goes here</h2>
-            <div id="btns-container"></div>
-            function cancelQuiz() {
-    if (confirm("are you shure")) {
-        clearInterval(timer); 
-        document.getElementById("quiz-box").style.display = "none"; // የጥያቄ ሳጥኑን ይደብቃል
-        document.getElementById("subject-selection").style.display = "flex"; // ዋናውን ገጽ ያሳያል
-    }
-}
-        </div>
-    </div>
+       <div id="quiz-box" style="display: none;">
+    <div id="timer">Time Left: 15s</div>
+    <h2 id="question-text">Question goes here</h2>
+    <div id="btns-container"></div>
+    
+    <button onclick="cancelQuiz()" style="background-color: red; color: white; margin-top: 10px; cursor: pointer;">Cancel Quiz</button>
+</div>
 
     <script src="script.js"></script>
 </body>
