@@ -217,7 +217,7 @@ function showResult() {
     document.getElementById("quiz-box").innerHTML = `
         <h2>${msg}</h2>
         <button onclick="location.reload()">Back to Home</button>
-        <button onclick="window.open('https://t.me/share/url?text=${encodeURIComponent(msg)}')">Share Score</button>
+        <button onclick="window.open('https://t.me/share/@combat0988?text=${encodeURIComponent(msg)}')">Share Score</button>
     `;
 }
 
