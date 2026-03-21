@@ -11,14 +11,16 @@
     <meta name="google-site-verification" content="MwjMR9FcEPS2BiS-YdYJab5YHVa0MKoBzRsRplKT9M0" />
 </head>
 <body>
-<div id="login-container">
-    <h2>Welcome to the matriculation exam.!</h2>
-    <input type="text" id="username" placeholder="ስምዎን እዚህ ያስገቡ...">
-    <button onclick="startQuiz()">ጀምር (Start)</button>
-</div>
-
-<div id="quiz-container" style="display: none;">
+<div id="login-overlay">
+    <div class="login-content">
+        <h1 class="login-logo">Zakir's Study Hub</h1>
+        <p>well come !</p>
+        <div class="input-group">
+            <input type="text" id="userNameInput" placeholder="ስምህን እዚህ አስገባ...">
+            <button onclick="startApp()" class="start-btn">(Start)</button>
+        </div>
     </div>
+</div>
 
     <div id="main-container">
         <h1>Zakir's Study Hub</h1>
