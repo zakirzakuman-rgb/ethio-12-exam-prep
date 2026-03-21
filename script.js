@@ -1,4 +1,3 @@
-
 const allQuestions = [
     // Geography
     { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
@@ -335,3 +334,4 @@ function cancelQuiz() {
         document.getElementById("quiz-box").style.display = "none"; 
         document.getElementById("subject-selection").style.display = "flex"; 
     }
+}
