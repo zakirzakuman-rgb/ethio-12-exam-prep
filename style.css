@@ -79,3 +79,6 @@ button {
 button:hover {
     background-color: #2ecc71;
 }
+h1 {
+    color:pink;
+}
