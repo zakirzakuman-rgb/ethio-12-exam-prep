@@ -335,3 +335,16 @@ function cancelQuiz() {
         document.getElementById("subject-selection").style.display = "flex"; 
     }
 }
+function startQuiz() {
+    let name = document.getElementById('username').value;
+    
+    if (name === "") {
+        alert("enter your namee!");
+    } else {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        
+        // ከፈለግክ የተማሪውን ስም በዌብሳይቱ ላይ "እንኳን ደህና መጣህ ዘኪር" ብለህ ማሳየት ትችላለህ
+        console.log("ተማሪው: " + name);
+    }
+}
