@@ -350,3 +350,48 @@ function startLesson() {
     // ወደ ሚቀጥለው ገጽ ለመውሰድ (ለምሳሌ natural.html ወይም social.html)
     window.location.href = stream + ".html";
 }
+function startApp() {
+    let name = document.getElementById('userNameInput').value;
+    let stream = document.getElementById('streamChoice').value;
+
+    // ስምና ዘርፍ መሞላቱን ማረጋገጫ
+    if (name.trim() === '' || stream === '') {
+        alert('Please enter your name and choose a stream!');
+        return;
+    }
+
+    // መረጃውን ሴቭ አድርጎ ኦቨርሌዩን መደበቅ
+    localStorage.setItem('currentUser', name);
+    document.getElementById('login-overlay').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    
+    // ርዕሱን በተማሪው ስም መቀየር
+    document.getElementById('main-title').innerText = name + "'s Study Hub";
+
+    // ተማሪው የመረጠውን ዘርፍ ማሳየት
+    switchStream(stream);
+}
+
+function switchStream(stream) {
+    let socialDiv = document.getElementById('social-subjects');
+    let naturalDiv = document.getElementById('natural-subjects');
+    let socialTab = document.getElementById('social-tab');
+    let naturalTab = document.getElementById('natural-tab');
+
+    if (stream === 'natural') {
+        socialDiv.style.display = 'none';
+        naturalDiv.style.display = 'flex';
+        naturalTab.classList.add('active');
+        socialTab.classList.remove('active');
+    } else {
+        socialDiv.style.display = 'flex';
+        naturalDiv.style.display = 'none';
+        socialTab.classList.add('active');
+        naturalTab.classList.remove('active');
+    }
+}
+
+// ኩዊዝ ሲጀመር የሚሰራ (ለጊዜው አጭር መልዕክት ብቻ)
+function startQuiz(subjectName) {
+    alert(subjectName + " quiz is starting... Get ready!");
+}
