@@ -4,7 +4,17 @@ const allQuestions = [
     { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
     { cat: "Geography", q: "Which lake is the source of the Blue Nile?", options: ["Ziway", "Abaya", "Tana", "Chamo"], a: "Tana" },
     { cat: "Geography", q: "V-shaped contour lines pointing uphill indicate a:", options: ["Valley", "Ridge", "Cliff", "Plain"], a: "Valley" },
-    // ... (Add all 50 Geography questions here)
+    
+  // --- APTITUDE (30 Questions) ---
+    { cat: "Aptitude", q: "Complete the series: 5, 10, 20, 40, ...?", options: ["50", "60", "80", "100"], a: "80" },
+    { cat: "Aptitude", q: "What is 15% of 200?", options: ["20", "25", "30", "35"], a: "30" },
+
+    // --- ECONOMICS, HISTORY, ENGLISH, MATH ---
+    { cat: "Economics", q: "The basic economic problem is:", options: ["Inflation", "Scarcity", "Unemployment", "Poverty"], a: "Scarcity" },
+    { cat: "History", q: "Who led Ethiopia at the Battle of Adwa?", options: ["Tewodros", "Yohannes", "Menelik II", "Haile Selassie"], a: "Menelik II" },
+    { cat: "English", q: "I ___ my work before he came.", options: ["finish", "have finished", "had finished", "finished"], a: "had finished" },
+    { cat: "Mathematics", q: "What is the 10th term of the sequence: 2, 5, 8, 11...?", options: ["29", "30", "32", "27"], a: "29" },
+    
 
     // --- NATURAL SCIENCE (New Additions) ---
     { cat: "Biology", q: "Which organelle is known as the powerhouse of the cell?", options: ["Nucleus", "Ribosome", "Mitochondria", "Lysosome"], a: "Mitochondria" },
@@ -14,17 +24,9 @@ const allQuestions = [
     { cat: "Physics", q: "Force is equal to mass times:", options: ["Velocity", "Acceleration", "Time", "Distance"], a: "Acceleration" },
     
     { cat: "Chemistry", q: "What is the atomic symbol for Iron?", options: ["Ir", "Fe", "In", "I"], a: "Fe" },
-    { cat: "Chemistry", q: "The chemical formula for Table Salt is:", options: ["H2O", "CO2", "NaCl", "HCl"], a: "NaCl" },
+    { cat: "Chemistry", q: "The chemical formula for Table Salt is:", options: ["H2O", "CO2", "NaCl", "HCl"], a: "NaCl" }
 
-    // --- APTITUDE (30 Questions) ---
-    { cat: "Aptitude", q: "Complete the series: 5, 10, 20, 40, ...?", options: ["50", "60", "80", "100"], a: "80" },
-    { cat: "Aptitude", q: "What is 15% of 200?", options: ["20", "25", "30", "35"], a: "30" },
-
-    // --- ECONOMICS, HISTORY, ENGLISH, MATH ---
-    { cat: "Economics", q: "The basic economic problem is:", options: ["Inflation", "Scarcity", "Unemployment", "Poverty"], a: "Scarcity" },
-    { cat: "History", q: "Who led Ethiopia at the Battle of Adwa?", options: ["Tewodros", "Yohannes", "Menelik II", "Haile Selassie"], a: "Menelik II" },
-    { cat: "English", q: "I ___ my work before he came.", options: ["finish", "have finished", "had finished", "finished"], a: "had finished" },
-    { cat: "Mathematics", q: "What is the 10th term of the sequence: 2, 5, 8, 11...?", options: ["29", "30", "32", "27"], a: "29" }
+  
 ];
 
 let quizQuestions = [];
