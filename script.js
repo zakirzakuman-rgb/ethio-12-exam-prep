@@ -335,3 +335,11 @@ function cancelQuiz() {
         document.getElementById("subject-selection").style.display = "flex"; 
     }
 }
+function showStream(streamName) {
+  // ሁለቱንም መጀመሪያ ደብቃቸው
+  document.getElementById('social-content').style.display = 'none';
+  document.getElementById('natural-content').style.display = 'none';
+  
+  // የተመረጠውን ብቻ አሳይ
+  document.getElementById(streamName + '-content').style.display = 'block';
+}
