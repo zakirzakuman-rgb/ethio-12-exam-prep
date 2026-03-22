@@ -35,106 +35,86 @@ let score = 0;
 let timer;
 let timeLeft = 30;
 
-// APP START
+// VOICE ASSISTANT (መልሱን እንዲናገር)
+function speak(text) {
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    window.speechSynthesis.speak(msg);
+}
+
+// HOME & SHARE FUNCTIONS
+function goHome() {
+    location.reload();
+}
+
+function shareSite() {
+    const url = window.location.href;
+    if (navigator.share) {
+        navigator.share({ title: 'Zakir Prep Hub', url: url });
+    } else {
+        alert("Copy this link to share: " + url);
+    }
+}
+
+// START APP
 function startApp() {
     let name = document.getElementById('userNameInput').value;
     let stream = document.getElementById('streamChoice').value;
-    
-    if (name.trim() === '' || stream === '') {
-        alert('Please enter your name and select a stream!');
-        return;
-    }
+    if (!name || !stream) return alert("Please fill all fields!");
     
     document.getElementById('login-overlay').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
-    
-    // Correct Name Header
     document.getElementById('main-title').innerText = name + "'s Hub";
-    
     switchStream(stream);
 }
 
-// STREAM SWITCHER (Handles Cards Visibility)
 function switchStream(stream) {
-    const socialDiv = document.getElementById('social-subjects');
-    const naturalDiv = document.getElementById('natural-subjects');
-    
-    if (stream === 'social') {
-        socialDiv.style.display = 'flex';
-        naturalDiv.style.display = 'none';
-    } else {
-        socialDiv.style.display = 'none';
-        naturalDiv.style.display = 'flex';
-    }
+    document.getElementById('social-subjects').style.display = (stream === 'social' ? 'flex' : 'none');
+    document.getElementById('natural-subjects').style.display = (stream === 'natural' ? 'flex' : 'none');
 }
 
-// QUIZ LOGIC
 function startQuiz(subject) {
     quizQuestions = allQuestions.filter(q => q.cat === subject);
-    
-    if (quizQuestions.length === 0) {
-        alert("No questions found for " + subject);
-        return;
-    }
-    
     currentQuestionIndex = 0;
     score = 0;
-
-    // Hide everything else
-    document.getElementById('social-subjects').style.display = 'none';
-    document.getElementById('natural-subjects').style.display = 'none';
+    document.querySelector('.subject-container:not([style*="display: none"])').style.display = 'none';
     document.querySelector('.tabs').style.display = 'none';
-
-    let quizBox = document.getElementById('quiz-box');
-    if (!quizBox) {
-        quizBox = document.createElement('div');
-        quizBox.id = 'quiz-box';
-        quizBox.style.cssText = "background:white; padding:30px; border-radius:15px; margin:20px auto; text-align:center; max-width:600px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);";
-        document.getElementById('main-content').appendChild(quizBox);
-    }
-    quizBox.style.display = 'block';
-    
     showQuestion();
 }
 
 function showQuestion() {
     clearInterval(timer);
     timeLeft = 30;
-    
     let q = quizQuestions[currentQuestionIndex];
-    let quizBox = document.getElementById('quiz-box');
+    
+    let quizBox = document.getElementById('quiz-box') || document.createElement('div');
+    quizBox.id = 'quiz-box';
+    document.getElementById('main-content').appendChild(quizBox);
+    quizBox.style.display = 'block';
     
     quizBox.innerHTML = `
-        <div id="timer-display" style="font-size: 24px; color: #ff4444; font-weight: bold; margin-bottom: 15px;">Time Left: 30s</div>
-        <h2 style="color: #007bff; text-transform: uppercase; letter-spacing: 1px;">${q.cat}</h2>
-        <p style="font-size: 1.4rem; margin: 25px 0; line-height: 1.4;">${currentQuestionIndex + 1}. ${q.q}</p>
+        <div id="timer-display" style="font-size:24px; color:red; font-weight:bold;">Time: 30s</div>
+        <h2>${q.cat}</h2>
+        <p style="font-size:1.3rem;">${currentQuestionIndex + 1}. ${q.q}</p>
         <div id="options-container"></div>
-        <p style="margin-top:25px; color:#777; font-style: italic;">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</p>
     `;
 
-    let optionsDiv = document.getElementById('options-container');
     q.options.forEach(opt => {
         let btn = document.createElement('button');
         btn.innerText = opt;
-        btn.style.cssText = "display:block; width:100%; padding:15px; margin:12px 0; cursor:pointer; border-radius:12px; border:1px solid #ddd; background:#fff; font-size:1.1rem; transition: all 0.2s ease;";
-        
-        btn.onmouseover = () => { btn.style.background = "#eef4ff"; btn.style.borderColor = "#007bff"; };
-        btn.onmouseout = () => { btn.style.background = "#fff"; btn.style.borderColor = "#ddd"; };
-        
+        btn.className = "quiz-answer-btn";
         btn.onclick = () => checkAnswer(opt, q.a);
-        optionsDiv.appendChild(btn);
+        document.getElementById('options-container').appendChild(btn);
     });
-
     startTimer();
 }
 
 function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer-display').innerText = `Time Left: ${timeLeft}s`;
+        document.getElementById('timer-display').innerText = `Time: ${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(timer);
-            alert("Time's up! ⏰ Let's see the next one.");
             checkAnswer(null, quizQuestions[currentQuestionIndex].a);
         }
     }, 1000);
@@ -142,39 +122,45 @@ function startTimer() {
 
 function checkAnswer(selected, correct) {
     clearInterval(timer);
+    const buttons = document.querySelectorAll('.quiz-answer-btn');
+    
+    buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.innerText === correct) {
+            btn.style.background = "#28a745"; // Green for Correct
+            btn.style.color = "white";
+        }
+        if (btn.innerText === selected && selected !== correct) {
+            btn.style.background = "#dc3545"; // Red for Wrong
+            btn.style.color = "white";
+        }
+    });
+
     if (selected === correct) {
         score++;
-    } 
-
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizQuestions.length) {
-        showQuestion();
+        speak("Correct!");
     } else {
-        showFinalResult();
+        speak("Incorrect. The correct answer is " + correct);
     }
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizQuestions.length) {
+            showQuestion();
+        } else {
+            showFinalResult();
+        }
+    }, 2500); // 2.5 seconds to hear the voice
 }
 
 function showFinalResult() {
     let quizBox = document.getElementById('quiz-box');
     let percent = (score / quizQuestions.length) * 100;
-    let message = "";
-    let color = "";
-
-    if (percent >= 85) {
-        message = "Excellent job, nice! 🏆 You're on your way to becoming a great Software Engineer!";
-        color = "#28a745";
-    } else if (percent >= 50) {
-        message = "Good effort! A bit more practice and you'll be perfect. 💪";
-        color = "#fd7e14";
-    } else {
-        message = "Keep your head up! Review the topics and try again. 📚";
-        color = "#dc3545";
-    }
-
+    let msg = percent >= 85 ? "Excellent, Zakir! Future Engineer! 🏆" : "Good job! Keep studying! 💪";
+    
     quizBox.innerHTML = `
-        <h2 style="color: ${color}; letter-spacing: 2px;">QUIZ COMPLETED</h2>
-        <div style="font-size: 70px; font-weight: bold; margin: 30px 0; color: #333;">${score} / ${quizQuestions.length}</div>
-        <p style="font-size: 1.5rem; padding: 0 30px; line-height: 1.6; color: #444;">${message}</p>
-        <button onclick="location.reload()" style="margin-top:40px; padding:18px 50px; background:#007bff; color:white; border:none; border-radius:15px; cursor:pointer; font-size:1.2rem; font-weight:bold; box-shadow: 0 4px 15px rgba(0,123,255,0.3);">BACK TO HUB</button>
+        <h1>Score: ${score} / ${quizQuestions.length}</h1>
+        <p>${msg}</p>
+        <button onclick="goHome()" style="padding:15px; cursor:pointer;">Restart</button>
     `;
 }
