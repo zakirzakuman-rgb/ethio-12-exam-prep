@@ -82,18 +82,18 @@ button:hover {
 h1 {
     color:pink;
 }
-/* መላውን ገጽ የሚሸፍን ሎጊን */
+
 #login-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0066cc; /* ያንተ ሰማያዊ ቀለም */
+    background-color: #0066CC; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* ከሁሉም በላይ እንዲሆን */
+    z-index: 9999; 
     transition: 0.5s;
 }
 
