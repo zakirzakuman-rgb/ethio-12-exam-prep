@@ -1,6 +1,6 @@
-// 1. ALL QUESTIONS DATA (SOCIAL & NATURAL)
+// 1. ALL QUESTIONS DATA (SOCIAL + NATURAL + APTITUDE)
 const allQuestions = [
-    // --- GEOGRAPHY (50+ Questions) ---
+    // --- GEOGRAPHY (50 Questions) ---
     { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
     { cat: "Geography", q: "Which lake is the source of the Blue Nile?", options: ["Ziway", "Abaya", "Tana", "Chamo"], a: "Tana" },
     { cat: "Geography", q: "On a topographic map, V-shaped contour lines pointing uphill indicate a:", options: ["Valley", "Ridge", "Cliff", "Plain"], a: "Valley" },
@@ -22,142 +22,164 @@ const allQuestions = [
     { cat: "Geography", q: "The 'Great Rift Valley' was formed by which process?", options: ["Volcanic eruption", "Faulting", "Folding", "Erosion"], a: "Faulting" },
     { cat: "Geography", q: "Which of the following is a renewable energy source in Ethiopia?", options: ["Coal", "Natural Gas", "Hydroelectric power", "Oil"], a: "Hydroelectric power" },
     { cat: "Geography", q: "On a map, close contour lines indicate:", options: ["Flat plain", "Steep slope", "Deep lake", "Desert"], a: "Steep slope" },
-    { cat: "Geography", q: "Which type of rainfall is most common in the Ethiopian highlands?", options: ["Cyclonic", "Relief/Orograhic", "Convectional", "Frontal"], a: "Relief/Orograhic" },
+    { cat: "Geography", q: "Which type of rainfall is most common in the Ethiopian highlands?", options: ["Cyclonic", "Relief", "Convectional", "Frontal"], a: "Relief" },
     { cat: "Geography", q: "The instrument used to measure the direction of wind is:", options: ["Anemometer", "Barometer", "Wind Vane", "Hygrometer"], a: "Wind Vane" },
-    { cat: "Geography", q: "Which soil type is known for being red and highly acidic, common in Western Ethiopia?", options: ["Nitosols", "Vertisols", "Fluvisols", "Cambisols"], a: "Nitosols" },
+    { cat: "Geography", q: "Which soil type is red and acidic, common in Western Ethiopia?", options: ["Nitosols", "Vertisols", "Fluvisols", "Cambisols"], a: "Nitosols" },
     { cat: "Geography", q: "The major cause of global warming is the increase of:", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], a: "Carbon dioxide" },
-    { cat: "Geography", q: "Which sub-sector of agriculture contributes the most to Ethiopia's GDP?", options: ["Livestock", "Crop production", "Forestry", "Fishery"], a: "Crop production" },
-    { cat: "Geography", q: "The point where the sun is directly overhead at the Equator is called:", options: ["Solstice", "Equinox", "Aphelion", "Perihelion"], a: "Equinox" },
-    { cat: "Geography", q: "Which natural vegetation is dominant in the Ethiopian Lowlands?", options: ["Tropical Rainforest", "Savanna Grassland", "Desert Scrub", "Coniferous Forest"], a: "Savanna Grassland" },
-    { cat: "Geography", q: "The 'Dega' climate zone is generally suitable for growing:", options: ["Coffee", "Barley and Wheat", "Sugarcane", "Cotton"], a: "Barley and Wheat" },
-    { cat: "Geography", q: "What is the standard time zone of Ethiopia compared to GMT?", options: ["GMT+1", "GMT+2", "GMT+3", "GMT+4"], a: "GMT+3" },
-    { cat: "Geography", q: "The process of moving soil and rocks by wind or water is:", options: ["Weathering", "Erosion", "Sedimentation", "Solidification"], a: "Erosion" },
-    { cat: "Geography", q: "Which of the following is a major characteristic of the Cenozoic era in Ethiopia?", options: ["Formation of basement rocks", "Formation of the Rift Valley", "Denudation and peneplanation", "Marine transgression"], a: "Formation of the Rift Valley" },
-    { cat: "Geography", q: "The 'Kolla' climate zone is generally found at an altitude of:", options: ["Below 500m", "500m to 1500m", "1500m to 2300m", "Above 3300m"], a: "500m to 1500m" },
-    { cat: "Geography", q: "Which river basin is the largest in terms of annual water discharge in Ethiopia?", options: ["Abbay", "Baro-Akobo", "Omo-Gibe", "Wabe Shebelle"], a: "Abbay" },
-    { cat: "Geography", q: "The ratio of the number of people to the total arable land is called:", options: ["Crude density", "Agricultural density", "Physiological density", "Economic density"], a: "Physiological density" },
-    { cat: "Geography", q: "On a map, a line that connects points of equal temperature is known as:", options: ["Isobar", "Isotherm", "Isohyet", "Isoneph"], a: "Isotherm" },
-    { cat: "Geography", q: "Which geological process is responsible for the formation of the Ethiopian Highlands?", options: ["Faulting", "Folding", "Uplifting", "Sedimentation"], a: "Uplifting" },
-    { cat: "Geography", q: "The most significant source of moisture for the summer (Kiremt) rain in Ethiopia is:", options: ["Indian Ocean", "Atlantic Ocean", "Red Sea", "Mediterranean Sea"], a: "Atlantic Ocean" },
-    { cat: "Geography", q: "Which of the following is a typical example of a 'Highland Lake' in Ethiopia?", options: ["Lake Shala", "Lake Tana", "Lake Abijatta", "Lake Langano"], a: "Lake Tana" },
-    { cat: "Geography", q: "The main objective of 'Terracing' in the Ethiopian highlands is to:", options: ["Increase soil acidity", "Prevent soil erosion", "Increase wind speed", "Encourage deforestation"], a: "Prevent soil erosion" },
-    { cat: "Geography", q: "A map with a scale of 1:25,000 is categorized as a:", options: ["Small scale map", "Medium scale map", "Large scale map", "Wall map"], a: "Large scale map" },
-    { cat: "Geography", q: "Which Ethiopian river basin is shared with Somalia and flows into the Indian Ocean?", options: ["Awash", "Wabe Shebelle", "Tekeze", "Baro"], a: "Wabe Shebelle" },
-    { cat: "Geography", q: "The process of 'Solar Radiation' reaching the Earth's surface is called:", options: ["Insulation", "Insolation", "Conduction", "Convection"], a: "Insolation" },
-    { cat: "Geography", q: "Which region in Ethiopia is most affected by frequent droughts?", options: ["Western Highlands", "The Lowlands", "Central Highlands", "Southern Highlands"], a: "The Lowlands" },
-    { cat: "Geography", q: "The 'Age of Mammals' refers to which geological era?", options: ["Pre-Cambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Cenozoic" },
-    { cat: "Geography", q: "The point where the crust of the Earth breaks during an earthquake is the:", options: ["Epicenter", "Focus", "Fault line", "Core"], a: "Focus" },
-    { cat: "Geography", q: "Which type of settlement is most common in the rural highlands of Ethiopia?", options: ["Nucleated", "Dispersed", "Linear", "Urban"], a: "Dispersed" },
-    { cat: "Geography", q: "The method of representing the 3D Earth on a 2D flat paper is:", options: ["Map Projection", "Map Scale", "Generalization", "Orientation"], a: "Map Projection" },
-    { cat: "Geography", q: "Which of the following is a perennial river (flows all year round) in Ethiopia?", options: ["Abbay", "Mile", "Borkena", "Angereb"], a: "Abbay" },
-    { cat: "Geography", q: "The 'Greenhouse Effect' is primarily caused by which gas?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"], a: "Carbon Dioxide" },
-    { cat: "Geography", q: "What is the primary export destination for Ethiopian coffee?", options: ["China", "Germany", "Japan", "USA"], a: "Germany" },
+    { cat: "Geography", q: "Which sub-sector contributes most to Ethiopia's GDP?", options: ["Livestock", "Crop production", "Forestry", "Fishery"], a: "Crop production" },
+    { cat: "Geography", q: "The point where the sun is overhead at the Equator is:", options: ["Solstice", "Equinox", "Aphelion", "Perihelion"], a: "Equinox" },
+    { cat: "Geography", q: "Which natural vegetation is dominant in the Ethiopian Lowlands?", options: ["Tropical Rainforest", "Savanna", "Desert Scrub", "Coniferous"], a: "Savanna" },
+    { cat: "Geography", q: "The 'Dega' climate zone is suitable for growing:", options: ["Coffee", "Barley", "Sugarcane", "Cotton"], a: "Barley" },
+    { cat: "Geography", q: "What is the standard time zone of Ethiopia?", options: ["GMT+1", "GMT+2", "GMT+3", "GMT+4"], a: "GMT+3" },
+    { cat: "Geography", q: "Moving soil and rocks by wind or water is:", options: ["Weathering", "Erosion", "Sedimentation", "Solidification"], a: "Erosion" },
+    { cat: "Geography", q: "A major characteristic of the Cenozoic era in Ethiopia is:", options: ["Basement rocks", "Rift Valley formation", "Marine transgression", "Folding"], a: "Rift Valley formation" },
+    { cat: "Geography", q: "The 'Kolla' climate zone is generally found at:", options: ["Below 500m", "500m-1500m", "1500m-2300m", "Above 3300m"], a: "500m-1500m" },
+    { cat: "Geography", q: "Which river basin has the largest annual water discharge?", options: ["Abbay", "Baro-Akobo", "Omo-Gibe", "Wabe Shebelle"], a: "Abbay" },
+    { cat: "Geography", q: "Number of people per total arable land is:", options: ["Crude density", "Agricultural", "Physiological", "Economic"], a: "Physiological" },
+    { cat: "Geography", q: "A line connecting points of equal temperature is:", options: ["Isobar", "Isotherm", "Isohyet", "Isoneph"], a: "Isotherm" },
+    { cat: "Geography", q: "Geological process that formed the Highlands is:", options: ["Faulting", "Folding", "Uplifting", "Sedimentation"], a: "Uplifting" },
+    { cat: "Geography", q: "The moisture source for Kiremt rain is:", options: ["Indian Ocean", "Atlantic Ocean", "Red Sea", "Mediterranean"], a: "Atlantic Ocean" },
+    { cat: "Geography", q: "Which is a 'Highland Lake' in Ethiopia?", options: ["Shala", "Tana", "Abijatta", "Langano"], a: "Tana" },
+    { cat: "Geography", q: "The main objective of 'Terracing' is to:", options: ["Increase acidity", "Prevent erosion", "Increase wind", "Clear forests"], a: "Prevent erosion" },
+    { cat: "Geography", q: "A map scale of 1:25,000 is:", options: ["Small", "Medium", "Large", "Wall map"], a: "Large" },
+    { cat: "Geography", q: "River shared with Somalia flowing to Indian Ocean:", options: ["Awash", "Wabe Shebelle", "Tekeze", "Baro"], a: "Wabe Shebelle" },
+    { cat: "Geography", q: "Solar Radiation reaching Earth's surface is:", options: ["Insulation", "Insolation", "Conduction", "Convection"], a: "Insolation" },
+    { cat: "Geography", q: "Which region is most affected by frequent droughts?", options: ["Western High", "Lowlands", "Central High", "Southern High"], a: "Lowlands" },
+    { cat: "Geography", q: "The 'Age of Mammals' refers to:", options: ["Pre-Cambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Cenozoic" },
+    { cat: "Geography", q: "Point where the Earth's crust breaks in an earthquake:", options: ["Epicenter", "Focus", "Fault line", "Core"], a: "Focus" },
+    { cat: "Geography", q: "Most common rural settlement in Highlands:", options: ["Nucleated", "Dispersed", "Linear", "Urban"], a: "Dispersed" },
+    { cat: "Geography", q: "Representing 3D Earth on 2D paper is:", options: ["Projection", "Scale", "Generalization", "Orientation"], a: "Projection" },
+    { cat: "Geography", q: "Which is a perennial river in Ethiopia?", options: ["Abbay", "Mile", "Borkena", "Angereb"], a: "Abbay" },
+    { cat: "Geography", q: "Primary export destination for Ethiopian coffee:", options: ["China", "Germany", "Japan", "USA"], a: "Germany" },
 
     // --- HISTORY ---
     { cat: "History", q: "Who led Ethiopia at the Battle of Adwa?", options: ["Tewodros II", "Yohannes IV", "Menelik II", "Haile Selassie"], a: "Menelik II" },
     { cat: "History", q: "In which year was 'Land to the Tiller' proclaimed?", options: ["1960", "1974", "1975", "1991"], a: "1975" },
-    { cat: "History", q: "The process of modern Ethiopian unification began during the reign of:", options: ["Menelik II", "Tewodros II", "Yohannes IV", "Haile Selassie I"], a: "Tewodros II" },
-    { cat: "History", q: "Which battle in 1896 ensured Ethiopia's independence from Italian colonialism?", options: ["Dogali", "Adwa", "Metemma", "Gura"], a: "Adwa" },
-    { cat: "History", q: "The 'Scramble for Africa' was formalized at the Berlin Conference in:", options: ["1884", "1890", "1900", "1870"], a: "1884" },
 
     // --- APTITUDE ---
     { cat: "Aptitude", q: "Complete the series: 5, 10, 20, 40, ...?", options: ["50", "60", "80", "100"], a: "80" },
-    { cat: "Aptitude", q: "WATER is to ICE as STEAM is to: ?", options: ["Fire", "Gas", "Water", "Cloud"], a: "Water" },
     { cat: "Aptitude", q: "What is 15% of 200?", options: ["20", "25", "30", "35"], a: "30" },
 
     // --- ENGLISH ---
-    { cat: "English", q: "I _______ my homework before my father arrived last night.", options: ["finish", "have finished", "had finished", "finishing"], a: "had finished" },
-    { cat: "English", q: "If I _______ enough money, I would buy a new laptop.", options: ["have", "had", "will have", "has"], a: "had" },
+    { cat: "English", q: "I _______ my homework before my father arrived.", options: ["finish", "have finished", "had finished", "finishing"], a: "had finished" },
 
-    // --- MATHEMATICS ---
-    { cat: "Mathematics", q: "What is the 10th term of the sequence: 2, 5, 8, 11...?", options: ["29", "30", "32", "27"], a: "29" },
-    { cat: "Mathematics", q: "What is the value of 5! (5 factorial)?", options: ["20", "60", "120", "100"], a: "120" },
-
-    // --- ECONOMICS ---
-    { cat: "Economics", q: "The basic economic problem facing all societies is:", options: ["Inflation", "Scarcity", "Unemployment", "Poverty"], a: "Scarcity" },
-    { cat: "Economics", q: "Which market has only one seller?", options: ["Oligopoly", "Perfect Competition", "Monopoly", "Monopolistic"], a: "Monopoly" },
-
-    // --- NATURAL SCIENCE (New Additions) ---
+    // --- NATURAL SCIENCE ---
     { cat: "Biology", q: "The powerhouse of the cell is:", options: ["Nucleus", "Ribosome", "Mitochondria", "Lysosome"], a: "Mitochondria" },
-    { cat: "Biology", q: "Which blood type is the universal donor?", options: ["A", "B", "AB", "O"], a: "O" },
     { cat: "Physics", q: "What is the unit of electric current?", options: ["Volt", "Ohm", "Ampere", "Watt"], a: "Ampere" },
-    { cat: "Physics", q: "Force is equal to mass times:", options: ["Velocity", "Acceleration", "Time", "Distance"], a: "Acceleration" },
-    { cat: "Chemistry", q: "What is the atomic symbol for Iron?", options: ["Ir", "Fe", "In", "I"], a: "Fe" },
-    { cat: "Chemistry", q: "The chemical formula for Table Salt is:", options: ["H2O", "CO2", "NaCl", "HCl"], a: "NaCl" }
+    { cat: "Chemistry", q: "Atomic symbol for Iron is:", options: ["Ir", "Fe", "In", "I"], a: "Fe" }
 ];
 
-// 2. QUIZ LOGIC
+// 2. LOGIC VARIABLES
 let quizQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
+// 3. START APP
 function startApp() {
     let name = document.getElementById('userNameInput').value;
     let stream = document.getElementById('streamChoice').value;
+    
     if (name.trim() === '' || stream === '') {
         alert('Please enter name and stream!');
         return;
     }
-    localStorage.setItem('currentUser', name);
+    
     document.getElementById('login-overlay').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
     document.getElementById('main-title').innerText = name + "'s Hub";
+    
     switchStream(stream);
 }
 
+// 4. STREAM TABS
 function switchStream(stream) {
     document.getElementById('social-subjects').style.display = (stream === 'social' ? 'flex' : 'none');
     document.getElementById('natural-subjects').style.display = (stream === 'natural' ? 'flex' : 'none');
+    
+    // UI Feedback for Tabs
+    document.getElementById('social-tab').style.background = (stream === 'social' ? '#0056b3' : '#007bff');
+    document.getElementById('natural-tab').style.background = (stream === 'natural' ? '#0056b3' : '#007bff');
 }
 
+// 5. QUIZ CORE
 function startQuiz(subject) {
     quizQuestions = allQuestions.filter(q => q.cat === subject);
+    
     if (quizQuestions.length === 0) {
-        alert("No questions found for " + subject);
+        alert("No questions for " + subject + " yet!");
         return;
     }
+    
     currentQuestionIndex = 0;
     score = 0;
-    document.getElementById('subject-selection-container').style.display = 'none'; // Hide all cards
-    document.getElementById('quiz-box').style.display = 'block';
+
+    // Hide cards and tabs
+    document.getElementById('social-subjects').style.display = 'none';
+    document.getElementById('natural-subjects').style.display = 'none';
+    document.querySelector('.tabs').style.display = 'none';
+
+    // Create Quiz Box if it doesn't exist
+    let quizBox = document.getElementById('quiz-box');
+    if (!quizBox) {
+        quizBox = document.createElement('div');
+        quizBox.id = 'quiz-box';
+        quizBox.style.cssText = "background:white; padding:20px; border-radius:15px; margin-top:20px; text-align:center;";
+        document.getElementById('main-content').appendChild(quizBox);
+    }
+    quizBox.style.display = 'block';
+    
     showQuestion();
 }
 
 function showQuestion() {
     let q = quizQuestions[currentQuestionIndex];
-    document.getElementById('question-text').innerText = q.q;
-    let btnContainer = document.getElementById('btns-container');
-    btnContainer.innerHTML = '';
+    let quizBox = document.getElementById('quiz-box');
+    
+    quizBox.innerHTML = `
+        <h2 style="color:#007bff;">${q.cat} Quiz</h2>
+        <p style="font-size:1.1rem; font-weight:bold;">${currentQuestionIndex + 1}. ${q.q}</p>
+        <div id="options-container"></div>
+        <p style="margin-top:20px;">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</p>
+    `;
+
+    let optionsDiv = document.getElementById('options-container');
     q.options.forEach(opt => {
         let btn = document.createElement('button');
         btn.innerText = opt;
-        btn.className = "quiz-answer-btn"; // Add your CSS class
+        btn.style.cssText = "display:block; width:100%; padding:12px; margin:8px 0; cursor:pointer; border-radius:8px; border:1px solid #ddd; background:#f9f9f9;";
+        btn.onmouseover = () => btn.style.background = "#eef";
+        btn.onmouseout = () => btn.style.background = "#f9f9f9";
         btn.onclick = () => checkAnswer(opt, q.a);
-        btn.style.display = "block";
-        btn.style.width = "100%";
-        btn.style.margin = "10px 0";
-        btn.style.padding = "10px";
-        btnContainer.appendChild(btn);
+        optionsDiv.appendChild(btn);
     });
 }
 
 function checkAnswer(selected, correct) {
     if (selected === correct) {
         score++;
-        alert("Correct!");
+        alert("Correct! ✅");
     } else {
-        alert("Wrong! Correct answer is: " + correct);
+        alert("Wrong! ❌ The correct answer is: " + correct);
     }
+    
     currentQuestionIndex++;
     if (currentQuestionIndex < quizQuestions.length) {
         showQuestion();
     } else {
-        alert("Finished! Your score: " + score + "/" + quizQuestions.length);
-        cancelQuiz();
+        alert(`Finished! 🎓 Your score: ${score} / ${quizQuestions.length}`);
+        endQuiz();
     }
 }
 
-function cancelQuiz() {
+function endQuiz() {
     document.getElementById('quiz-box').style.display = 'none';
-    document.getElementById('subject-selection-container').style.display = 'flex';
+    document.querySelector('.tabs').style.display = 'flex';
+    
+    // Return to the original stream view
+    let currentStream = document.getElementById('social-subjects').style.display === 'none' ? 'natural' : 'social';
+    // Small logic fix to ensure it shows the right one
+    if (document.getElementById('social-subjects').style.display === 'none' && document.getElementById('natural-subjects').style.display === 'none') {
+        // Default to the choice in the dropdown
+        switchStream(document.getElementById('streamChoice').value);
+    }
 }
