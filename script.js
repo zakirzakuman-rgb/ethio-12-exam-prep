@@ -185,3 +185,13 @@ function showFinalResult() {
         </button>
     `;
 }
+q.options.forEach(opt => {
+    let btn = document.createElement('button');
+    btn.innerText = opt;
+    
+    // ይህ መስመር ከላይ ካለው CSS ጋር ያገናኘዋል (በጣም ወሳኝ ነው!)
+    btn.className = "quiz-answer-btn"; 
+    
+    btn.onclick = () => checkAnswer(opt, q.a);
+    optionsDiv.appendChild(btn);
+});
