@@ -121,3 +121,35 @@ input, select {
     text-align: center;
     transition: 0.3s ease;
 }
+/* የ Dark Mode ስታይል */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+body.dark-theme .subject-card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+body.dark-theme .progress-container {
+    background-color: #444 ! disorientation;
+}
+
+
+.dark-mode-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+body.dark-theme .dark-mode-btn {
+    background: #eee;
+    color: #333;
+}
