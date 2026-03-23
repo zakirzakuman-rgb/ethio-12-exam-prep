@@ -81,16 +81,26 @@ input, select {
     margin-bottom: 15px;
 }
 
-quiz-answer-btn {
+/* የኩዊዝ ምርጫ አዝራሮችን ትልቅ ማድረጊያ */
+.quiz-answer-btn {
     display: block;
-    width: 100%;            
-    padding: 20px;          
-    margin: 15px 0;         
-    font-size: 1.2rem;       
-    font-weight: bold;     
-    border-radius: 15px;     
+    width: 100%;             /* ሙሉ ስፋት እንዲኖረው */
+    max-width: 400px;        /* በጣም እንዳይሰፋ መቆጣጠሪያ */
+    margin: 15px auto;       /* በመሃል እንዲሆንና ክፍተት እንዲኖረው */
+    padding: 18px;           /* አዝራሩን ትልቅ የሚያደርገው ይሄ ነው */
+    font-size: 1.2rem;       /* የጽሁፉ መጠን */
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
     border: 2px solid #007bff;
-    background-color: white;
+    border-radius: 12px;     /* ጠርዙ እንዲታጠፍ */
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+/* ማውሱ ሲያርፍበት (Hover) */
+.quiz-answer-btn:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.03);  /* ትንሽ አድጎ እንዲታይ */
 }
