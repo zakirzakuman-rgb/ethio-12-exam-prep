@@ -81,16 +81,6 @@ input, select {
     margin-bottom: 15px;
 }
 
-.quiz-btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 quiz-answer-btn {
     display: block;
     width: 100%;            
