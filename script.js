@@ -616,3 +616,18 @@ q.options.forEach(opt => {
     btn.onclick = () => checkAnswer(opt, q.a);
     optionsDiv.appendChild(btn);
 });
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const modeIcon = document.getElementById('mode-icon');
+
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    
+    // በተኑ ላይ ያለውን ጽሁፍ እና አይኮን ለመቀየር
+    if (document.body.classList.contains('dark-theme')) {
+        modeIcon.textContent = '☀️';
+        darkModeToggle.childNodes[1].nodeValue = ' Light Mode';
+    } else {
+        modeIcon.textContent = '🌙';
+        darkModeToggle.childNodes[1].nodeValue = ' Dark Mode';
+    }
+});
