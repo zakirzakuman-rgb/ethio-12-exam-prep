@@ -437,7 +437,8 @@ const allQuestions = [
 { cat: "Chemistry", q: "Functional group of Carboxylic acids is:", options: ["-CHO", "-CO-", "-COOH", "-OH"], a: "-COOH" }
 ];
 
-function shuffleQuestions(array) {
+// 1. ጥያቄዎቹን የሚዘበራርቅ ፈንክሽን (Fisher-Yates Shuffle)
+function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -445,11 +446,7 @@ function shuffleQuestions(array) {
     return array;
 }
 
-
-let currentQuestions = shuffleQuestions([...allQuestions]);
-  
-
-
+// 2. ተለዋዋጭ (Variables)
 let quizQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -458,38 +455,36 @@ let timeLeft = 30;
 
 // VOICE ASSISTANT (መልሱን እንዲናገር)
 function speak(text) {
+    window.speechSynthesis.cancel(); // ያለፈውን ድምጽ ለማቆም
     const msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
 }
 
+// HOME BUTTON (ወደ መጀመሪያው ገጽ ለመመለስ)
 function goHome() {
-    // 1. የጥያቄ መስሪያ ቦታውን (Quiz Area) ደብቅ
-    const quizArea = document.getElementById('quiz-area-wrapper');
-    if (quizArea) {
-        quizArea.style.display = 'none';
-    }
-
-    // 2. ሰብጀክቶቹን (Home Page/Main Content) መልሰህ አሳይ
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.style.display = 'block';
-    }
-
-    // 3. እየሄደ ያለ ታይመር (Timer) ካለ እንዲቆም አድርግ
-    if (typeof timerInterval !== 'undefined') {
-        clearInterval(timerInterval);
-    }
+    clearInterval(timer); // ታይመሩ እንዲቆም
     
-    // 4. ገጹን ወደ ላይኛው ክፍል (Top) እንዲመለስ አድርግ
+    // የጥያቄ መስሪያ ቦታውን (Quiz Box) ደብቅ
+    const quizBox = document.getElementById('quiz-box');
+    if (quizBox) quizBox.style.display = 'none';
+
+    // ዋናውን ገጽ አሳይ
+    document.getElementById('main-content').style.display = 'block';
+    document.querySelector('.tabs').style.display = 'block';
+    
+    // ሰብጀክቶቹ በትክክል እንዲታዩ
+    let stream = document.getElementById('streamChoice').value || 'social';
+    switchStream(stream);
+    
     window.scrollTo(0, 0);
 }
 
-// START APP
+// START APP (ከ Login በኋላ)
 function startApp() {
     let name = document.getElementById('userNameInput').value;
     let stream = document.getElementById('streamChoice').value;
-    if (!name || !stream) return alert("Please fill all fields!");
+    if (!name || !stream) return alert("እባክህ ስምህንና ዘርፍህን ምረጥ!");
     
     document.getElementById('login-overlay').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
@@ -502,24 +497,22 @@ function switchStream(stream) {
     document.getElementById('natural-subjects').style.display = (stream === 'natural' ? 'flex' : 'none');
 }
 
+// QUIZ የመጀመርያ ፈንክሽን
 function startQuiz(subject) {
-    quizQuestions = allQuestions.filter(q => q.cat === subject);
+    // 1. የዚያን ሰብጀክት ጥያቄዎች ለይ
+    let filtered = allQuestions.filter(q => q.cat === subject);
+    
+    // 2. ጥያቄዎቹን ዘበራርቅ
+    quizQuestions = shuffleArray([...filtered]);
+    
     currentQuestionIndex = 0;
     score = 0;
-    document.querySelector('.subject-container:not([style*="display: none"])').style.display = 'none';
+
+    // 3. የድሮ ገጾችን ደብቅ
+    document.getElementById('social-subjects').style.display = 'none';
+    document.getElementById('natural-subjects').style.display = 'none';
     document.querySelector('.tabs').style.display = 'none';
-    showQuestion();
-}
-function startQuiz(category) {
-    // 1. መጀመሪያ ከዝርዝሩ ውስጥ የዚያን ሰብጀክት ጥያቄዎች ብቻ ለይተህ አውጣ
-    let filteredQuestions = allQuestions.filter(q => q.cat === category);
 
-    // 2. ጥያቄዎቹን በዘፈቀደ እንዲዘበራረቁ አድርግ (ይህ ነው ዋናው ሚስጥር!)
-    filteredQuestions.sort(() => Math.random() - 0.5);
-
-    // 3. አሁን የተዘበራረቁትን ጥያቄዎች ለተማሪው ማሳየት ትችላለህ
-    currentQuestions = filteredQuestions; 
-    currentQuestionIndex = 0;
     showQuestion();
 }
 
@@ -528,39 +521,40 @@ function showQuestion() {
     timeLeft = 30;
     let q = quizQuestions[currentQuestionIndex];
     
-    let quizBox = document.getElementById('quiz-box') || document.createElement('div');
-    quizBox.id = 'quiz-box';
-    document.getElementById('main-content').appendChild(quizBox);
+    let quizBox = document.getElementById('quiz-box');
+    if (!quizBox) {
+        quizBox = document.createElement('div');
+        quizBox.id = 'quiz-box';
+        document.body.appendChild(quizBox);
+    }
+    quizBox.className = "quiz-container"; // CSS ውስጥ ካለው ስም ጋር እንዲመሳሰል
     quizBox.style.display = 'block';
     
+    // ምርጫዎቹን (Choices) መዘበራረቅ
+    let shuffledOptions = shuffleArray([...q.options]);
+
     quizBox.innerHTML = `
-        <div id="timer-display" style="font-size:24px; color:red; font-weight:bold;">Time: 30s</div>
-        <h2>${q.cat}</h2>
-        <p style="font-size:1.3rem;">${currentQuestionIndex + 1}. ${q.q}</p>
+        <div id="timer-display" style="font-size:24px; color:red; font-weight:bold; text-align:center;">Time: 30s</div>
+        <h2 style="text-align:center;">${q.cat}</h2>
+        <p style="font-size:1.4rem; font-weight:bold; margin-bottom:20px;">${currentQuestionIndex + 1}. ${q.q}</p>
         <div id="options-container"></div>
     `;
 
-    q.options.forEach(opt => {
+    shuffledOptions.forEach(opt => {
         let btn = document.createElement('button');
         btn.innerText = opt;
-        btn.className = "quiz-answer-btn";
+        btn.className = "quiz-answer-btn"; // ትላልቅ እንዲሆኑ CSS ላይ የሰጠኸው ስም
         btn.onclick = () => checkAnswer(opt, q.a);
         document.getElementById('options-container').appendChild(btn);
     });
     startTimer();
 }
-// በ showQuestion ውስጥ ምርጫዎቹን ከመፍጠርህ በፊት
-let shuffledOptions = [...currentQuestion.options].sort(() => Math.random() - 0.5);
-
-// አሁን በ shuffledOptions ተጠቅመህ በተኖቹን ፍጠር
-shuffledOptions.forEach(option => {
-    // በተኖቹን የመፍጠር ኮድ እዚህ ይገባል...
-});
 
 function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer-display').innerText = `Time: ${timeLeft}s`;
+        const timerDisp = document.getElementById('timer-display');
+        if(timerDisp) timerDisp.innerText = `Time: ${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(timer);
             checkAnswer(null, quizQuestions[currentQuestionIndex].a);
@@ -575,11 +569,11 @@ function checkAnswer(selected, correct) {
     buttons.forEach(btn => {
         btn.disabled = true;
         if (btn.innerText === correct) {
-            btn.style.background = "#28a745"; // Green for Correct
+            btn.style.background = "#28a745"; 
             btn.style.color = "white";
         }
         if (btn.innerText === selected && selected !== correct) {
-            btn.style.background = "#dc3545"; // Red for Wrong
+            btn.style.background = "#dc3545"; 
             btn.style.color = "white";
         }
     });
@@ -598,112 +592,52 @@ function checkAnswer(selected, correct) {
         } else {
             showFinalResult();
         }
-    }, 2500); // 2.5 seconds to hear the voice
+    }, 2500);
 }
 
-function goHome() {
-   
-    document.getElementById('quiz-area-wrapper').style.display = 'none';
-    
-    
-    document.getElementById('main-content').style.display = 'block';
-    
-   
-    clearInterval(timerInterval); 
-}
 function showFinalResult() {
     let quizBox = document.getElementById('quiz-box');
-    let percent = (score / quizQuestions.length) * 100;
+    let percent = Math.round((score / quizQuestions.length) * 100);
     let message = percent >= 85 ? "Excellent job, Zakir! 🏆" : "Good effort! Keep practicing. 💪";
 
     quizBox.innerHTML = `
-        <h2 style="color: #007bff;">QUIZ COMPLETED</h2>
-        <div style="font-size: 60px; font-weight: bold; margin: 20px 0;">${score} / ${quizQuestions.length}</div>
-        <p style="font-size: 1.2rem; margin-bottom: 20px;">${message}</p>
-        
-        <button onclick="goHome()" style="padding: 15px 30px; background: #28a745; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">
-            SELECT ANOTHER SUBJECT
+        <h2 style="color: #007bff; text-align:center;">QUIZ COMPLETED</h2>
+        <div style="font-size: 50px; font-weight: bold; text-align:center; margin: 20px 0;">${score} / ${quizQuestions.length} (${percent}%)</div>
+        <p style="font-size: 1.3rem; text-align:center; margin-bottom: 25px;">${message}</p>
+        <button onclick="goHome()" style="width:100%; padding: 18px; background: #28a745; color: white; border: none; border-radius: 12px; cursor: pointer; font-size:18px; font-weight: bold;">
+            FINISH & GO HOME
         </button>
     `;
+    
+    let name = document.getElementById('userNameInput').value;
+    let subject = quizQuestions[0].cat;
+    saveScore(name, subject, percent);
 }
-q.options.forEach(opt => {
-    let btn = document.createElement('button');
-    btn.innerText = opt;
-    
-    // ይህ መስመር ከላይ ካለው CSS ጋር ያገናኘዋል (በጣም ወሳኝ ነው!)
-    btn.className = "quiz-answer-btn"; 
-    
-    btn.onclick = () => checkAnswer(opt, q.a);
-    optionsDiv.appendChild(btn);
-});
-// --- 1. DARK MODE ማብሪያ ---
+
+// --- DARK MODE ---
 function initDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const modeIcon = document.getElementById('mode-icon');
-
     if (darkModeToggle) {
         darkModeToggle.onclick = function() {
             document.body.classList.toggle('dark-theme');
-            
-            // ምልክቱን ለመቀየር (ጨረቃ ወይም ፀሐይ)
-            if (document.body.classList.contains('dark-theme')) {
-                if(modeIcon) modeIcon.textContent = '☀️';
-            } else {
-                if(modeIcon) modeIcon.textContent = '🌙';
-            }
+            if(modeIcon) modeIcon.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
         };
     }
 }
 
-// --- 2. LEADERBOARD (ውጤት መመዝገቢያ) ---
+// --- LEADERBOARD ---
 function saveScore(name, subject, scorePercent) {
     let leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
     leaderboard.push({ name: name, subject: subject, score: scorePercent });
-    leaderboard.sort((a, b) => b.score - a.score); // ከትልቅ ወደ ትንሽ
-    leaderboard = leaderboard.slice(0, 5); // ምርጥ 5 ብቻ
+    leaderboard.sort((a, b) => b.score - a.score);
+    leaderboard = leaderboard.slice(0, 5);
     localStorage.setItem('studyHubLeaderboard', JSON.stringify(leaderboard));
-    displayLeaderboard();
 }
 
-function displayLeaderboard() {
-    const leaderboardBody = document.getElementById('leaderboard-body');
-    if (!leaderboardBody) return;
-
-    const leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
-    leaderboardBody.innerHTML = ''; 
-    leaderboard.forEach((entry, index) => {
-        const row = `
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">${index + 1}</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">${entry.name}</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">${entry.subject}</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">${entry.score}%</td>
-            </tr>`;
-        leaderboardBody.innerHTML += row;
-    });
-}
-
-function clearLeaderboard() {
-    if(confirm("ውጤቶችን በሙሉ ማጥፋት ትፈልጋለህ?")) {
-        localStorage.removeItem('studyHubLeaderboard');
-        displayLeaderboard();
-    }
-}
-
-// --- 3. የፍተሻ መከላከያ (Disable Inspect) ---
-document.onkeydown = function(e) {
-    if(e.keyCode == 123) return false;
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-};
-document.addEventListener('contextmenu', event => event.preventDefault());
-
-// --- 4. ገጹ ሲከፈት ሁሉንም ፋንክሽኖች አንቃ ---
+// ገጹ ሲከፈት
 window.addEventListener('DOMContentLoaded', () => {
     initDarkMode();
-    displayLeaderboard();
 });
 
 
