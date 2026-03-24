@@ -174,3 +174,14 @@ body.dark-theme .subject-card {
 .nav-controls {
     left: 20px; /* በግራ በኩል */
 }
+/* ዳርክ ሞድ ሲበራ የጀርባው ቀለም */
+body.dark-theme {
+    background-color: #1a1a2e !important; /* ጠቆር ያለ ሰማያዊ */
+    color: white;
+}
+
+/* በጥያቄው ሰዓት ጀርባው ነጭ እንዳይሆን */
+body.dark-theme #main-content, 
+body.dark-theme #quiz-area-wrapper {
+    background-color: transparent;
+}
