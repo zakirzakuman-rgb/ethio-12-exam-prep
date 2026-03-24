@@ -156,6 +156,8 @@ body.dark-theme .subject-card {
 }
 /* ርዕሱ (Zakir's Hub) ገጹ እንደተከፈተ ከላይ እንዲሆን */
 #main-title {
+    position: absolute; /* ከሌላው ዳንስ ነፃ እንዲሆን */
+    top: 10px;
     margin-top: 20px;
     margin-bottom: 50px; /* ከጥያቄው ጋር እንዳይጋፋ ሰፊ ክፍተት */
     text-align: center;
