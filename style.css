@@ -155,3 +155,24 @@ body.dark-theme #leaderboard-table th {
 body.dark-theme #leaderboard-table td {
     border: 1px solid #444 !important;
 }
+/* ዋናውን ኮንቴይነር እንዲህ አስተካክለው */
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* ስክሪኑ ሲጠብ ወደ ታች እንዲወርድ ያደርጋል */
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* ሊደርቦርዱ በስልክ ላይ ሙሉ ስፋት እንዲኖረው */
+#leaderboard-section {
+    flex: 1;
+    min-width: 300px; /* ከዚህ ካነሰ ወደ ታች ይወርዳል */
+    max-width: 500px;
+}
+
+/* በስልክ ላይ ሰንጠረዡ ከስክሪን እንዳይወጣ */
+#leaderboard-table {
+    width: 100% !important;
+    font-size: 14px; /* በስልክ ላይ ጽሁፉን ትንሽ ያሳንሰዋል */
+}
