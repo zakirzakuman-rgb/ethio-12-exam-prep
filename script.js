@@ -631,3 +631,62 @@ darkModeToggle.addEventListener('click', () => {
         darkModeToggle.childNodes[1].nodeValue = ' Dark Mode';
     }
 });
+// 1. ውጤትን መመዝገብ (ይህንን በ showFinalResult() ውስጥ ጥራው)
+function saveScore(name, subject, scorePercent) {
+    let leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
+    function showFinalResult() {
+    let name = document.getElementById('userNameInput').value; // የተማሪው ስም
+    let subject = quizQuestions[0].cat; // የትምህርቱ አይነት
+    let percent = Math.round((score / quizQuestions.length) * 100);
+    
+    // ውጤቱን መዝግብ
+    saveScore(name, subject, percent);
+    
+    // የተቀረው የውጤት ማሳያ ኮድህ እዚህ ይቀጥላል...
+}
+    
+    // አዲስ ውጤት ጨምር
+    leaderboard.push({ name: name, subject: subject, score: scorePercent });
+    
+    // ውጤቶችን ከትልቅ ወደ ትንሽ አደራጅ (Sort)
+    leaderboard.sort((a, b) => b.score - a.score);
+    
+    // ምርጥ 5ቱን ብቻ አስቀር
+    leaderboard = leaderboard.slice(0, 5);
+    
+    localStorage.setItem('studyHubLeaderboard', JSON.stringify(leaderboard));
+    displayLeaderboard();
+}
+
+// 2. በሰንጠረዥ ማሳየት
+function displayLeaderboard() {
+    const leaderboardBody = document.getElementById('leaderboard-body');
+    const leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
+    
+    leaderboardBody.innerHTML = ''; // የቆየውን አጽዳ
+    
+    leaderboard.forEach((entry, index) => {
+        const row = `
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">${index + 1}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${entry.name}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${entry.subject}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${entry.score}%</td>
+            </tr>
+        `;
+        leaderboardBody.innerHTML += row;
+    });
+}
+
+// 3. ቦርዱን ለማጥፋት (ከተፈለገ)
+function clearLeaderboard() {
+    localStorage.removeItem('studyHubLeaderboard');
+    displayLeaderboard();
+}
+
+// ድረ-ገጹ ሲከፈት ሊደርቦርዱን እንዲያሳይ
+window.onload = displayLeaderboard;
+
+
+
+
