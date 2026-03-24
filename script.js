@@ -574,23 +574,16 @@ function checkAnswer(selected, correct) {
     }, 2500); // 2.5 seconds to hear the voice
 }
 
-
-// 1. ወደ መጀመሪያው የካርድ ምርጫ የሚመልስ (ገጹን ሳያድስ)
 function goHome() {
-    // የኩዊዝ ሳጥኑን ደብቅ
-    const quizBox = document.getElementById('quiz-box');
-    if (quizBox) quizBox.style.display = 'none';
-
-    // የትምህርት ካርዶቹን እና ታቦቹን መልሰህ አሳይ
-    const stream = document.getElementById('streamChoice').value;
-    switchStream(stream); // የትኛው ስትሪም እንደነበረ አይቶ ያሳያል
-    document.querySelector('.tabs').style.display = 'flex';
+   
+    document.getElementById('quiz-area-wrapper').style.display = 'none';
     
-    // ውጤት ካለ እንዲጠፋ
-    currentQuestionIndex = 0;
-    score = 0;
+    
+    document.getElementById('main-content').style.display = 'block';
+    
+   
+    clearInterval(timerInterval); 
 }
-
 function showFinalResult() {
     let quizBox = document.getElementById('quiz-box');
     let percent = (score / quizQuestions.length) * 100;
