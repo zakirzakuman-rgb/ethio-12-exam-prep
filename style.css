@@ -118,7 +118,38 @@ body.dark-theme .login-box input, body.dark-theme .login-box select {
 .subject-card:hover {
     transform: translateY(-10px);
 }
+/* የጥያቄ ምርጫዎች (Options/Choices) */
+.quiz-answer-btn {
+    display: block;
+    width: 50%;           /* ሙሉ ስፋቱን እንዲይዝ */
+    padding: 22px 20px;    /* ወደ ላይና ወደ ታች በጣም ሰፋ እንዲል (Padding ጨምሬያለሁ) */
+    margin: 18px 0;        /* በምርጫዎቹ መሃል ያለው ክፍተት እንዲሰፋ */
+    font-size: 20px;       /* ጽሁፉ በደንብ ትልቅ እንዲሆን */
+    font-weight: 600;      /* ጽሁፉ ደመቅ እንዲል */
+    color: #2d3436;
+    background-color: #ffffff; 
+    border: 2px solid #dfe6e9;
+    border-radius: 15px;   /* ዳርና ዳሩ ክብ እንዲሆን */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;      /* ጽሁፉ ከግራ እንዲጀምር */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* ትንሽ ጥላ እንዲኖረው */
+}
 
+/* ማውዝ ሲያርፍበት የሚፈጠረው ለውጥ */
+.quiz-answer-btn:hover {
+    background-color: #e1f5fe;
+    border-color: #0984e3;
+    transform: translateY(-3px); /* ወደ ላይ ከፍ እንዲል */
+    box-shadow: 0 8px 15px rgba(9, 132, 227, 0.2);
+}
+
+/* በ Dark Mode ጊዜ ምርጫዎቹ እንዲታዩ */
+body.dark-theme .quiz-answer-btn {
+    background-color: #2d2d3a;
+    color: #ffffff;
+    border-color: #444;
+}
 body.dark-theme .subject-card {
     background: #252525;
     color: white;
