@@ -1,178 +1,120 @@
-
+/* --- 1. መሠረታዊ ስታይል --- */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* ለዓይን የሚቀል Background */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: #333;
+    transition: background 0.3s ease;
 }
 
-/* Login Box Styling */
-.login-box {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 350px;
-}
-
-.login-box h2 {
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-}
-
-.start-btn {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.start-btn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-}
-
-
-
-}
-
-.subject-card {
-    background: white;
-    width: 200px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: 0.3s;
-    border-top: 5px solid #007bff; /* ከላይ ሰማያዊ መስመር */
-}
-
-.subject-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.subject-card .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-
-.quiz-answer-btn {
-    display: block;
-    width: 100%;             /* ሙሉ ስፋት እንዲኖረው */
-    max-width: 400px;        /* በጣም እንዳይሰፋ መቆጣጠሪያ */
-    margin: 15px auto;       /* በመሃል እንዲሆንና ክፍተት እንዲኖረው */
-    padding: 18px;           /* አዝራሩን ትልቅ የሚያደርገው ይሄ ነው */
-    font-size: 1.2rem;       /* የጽሁፉ መጠን */
-    font-weight: bold;
-    color: #333;
-    background-color: #ffffff;
-    border: 2px solid #007bff;
-    border-radius: 12px;     /* ጠርዙ እንዲታጠፍ */
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* ማውሱ ሲያርፍበት (Hover) */
-.quiz-answer-btn:hover {
-    background-color: #007bff;
-    color: white;
-    transform: scale(1.03);  /* ትንሽ አድጎ እንዲታይ */
-}
-/* ለሁሉም ስክሪን የሚሆን ዋናው መያዣ (Container) */
-.subject-container {
-    display: flex;             /* Flexbox መጠቀም */
-    flex-wrap: wrap;           /* ቦታ ሲጠብ ካርዶቹ ወደ ታች እንዲወርዱ */
-    justify-content: center;   /* ካርዶቹን መሃል ላይ ለማድረግ */
-    gap: 20px;                 /* በካርዶቹ መሃል እኩል ክፍተት እንዲኖር */
-    padding: 20px;
-    width: 90%;                /* ከዳርና ከዳር ክፍተት እንዲኖር */
-    margin: 0 auto;            /* ሙሉውን Container መሃል ላይ ለማድረግ */
-}
-
-/* የካርዶቹ ስታይል */
-.subject-card {
-    flex: 1 1 250px;           /* ትንሹ ስፋት 250px እንዲሆንና እንደ ስክሪኑ እንዲሰፋ */
-    max-width: 350px;          /* በጣም እንዳይሰፋ መቆጣጠሪያ */
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: 0.3s ease;
-}
-/* 1. የጀርባውን እና የጽሁፍ ከለር ለመቀየር */
+/* --- 2. DARK MODE (ይህ እንዲሰራ !important ተጨምሯል) --- */
 body.dark-theme {
-    background-color: #121212 !important;
+    background: #121212 !important;
     color: #ffffff !important;
 }
 
-/* 2. ሁሉንም ካርዶች (Eco, Maths, Geo... ሁሉንም) ለመቀየር */
-body.dark-theme .subject-card {
+body.dark-theme .login-box, 
+body.dark-theme .subject-card,
+body.dark-theme #leaderboard-table,
+body.dark-theme #leaderboard-section {
     background-color: #1e1e1e !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
-    border: 1px solid #333; /* ጥቁር ላይ እንዲታይ ትንሽ መስመር */
+    border: 1px solid #333 !important;
 }
 
-/* 3. በካርዶቹ ውስጥ ያሉ ጽሁፎችን ነጭ ለማድረግ */
 body.dark-theme .subject-card h3, 
 body.dark-theme .subject-card p,
 body.dark-theme .subject-card .icon {
     color: #ffffff !important;
 }
 
-/* 4. የሊደርቦርድ ሰንጠረዡንም ለመቀየር */
-body.dark-theme #leaderboard-table {
-    background-color: #1e1e1e !important;
-    color: #ffffff !important;
-}
-
-body.dark-theme #leaderboard-table th {
-    background-color: #333 !important;
-}
-
-body.dark-theme #leaderboard-table td {
-    border: 1px solid #444 !important;
-}
-/* ዋናውን ኮንቴይነር እንዲህ አስተካክለው */
-.main-wrapper {
+/* --- 3. ለስልክና ለኮምፒውተር እንዲስማማ (Responsive) --- */
+#main-content {
     display: flex;
-    flex-wrap: wrap; /* ስክሪኑ ሲጠብ ወደ ታች እንዲወርድ ያደርጋል */
+    flex-wrap: wrap; /* ስክሪኑ ሲጠብ ወደ ታች እንዲወርድ */
     justify-content: center;
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
+    width: 100%;
 }
 
-/* ሊደርቦርዱ በስልክ ላይ ሙሉ ስፋት እንዲኖረው */
+.subject-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    flex: 2; /* ከሊደርቦርዱ ሰፋ እንዲል */
+}
+
+/* --- 4. የካርዶቹ ስታይል --- */
+.subject-card {
+    background: white;
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s ease;
+    border-top: 5px solid #007bff;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+}
+
+/* --- 5. ሊደርቦርድ (Leaderboard) ስታይል --- */
 #leaderboard-section {
     flex: 1;
-    min-width: 300px; /* ከዚህ ካነሰ ወደ ታች ይወርዳል */
-    max-width: 500px;
+    min-width: 300px;
+    max-width: 450px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* በስልክ ላይ ሰንጠረዡ ከስክሪን እንዳይወጣ */
 #leaderboard-table {
     width: 100% !important;
-    font-size: 14px; /* በስልክ ላይ ጽሁፉን ትንሽ ያሳንሰዋል */
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* --- 6. የፈተና አዝራሮች (Buttons) --- */
+.quiz-answer-btn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-answer-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Login Box */
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 350px;
 }
