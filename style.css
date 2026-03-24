@@ -1,20 +1,20 @@
-/* 1. አጠቃላይ የድረ-ገጹ መዋቅር */
+
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f4f8; /* ለዓይን የሚመች ፈዘዝ ያለ ሰማያዊ */
+    background-color: #f0f4f8; 
     color: #2d3436;
     margin: 0;
     transition: all 0.4s ease;
     line-height: 1.6;
 }
 
-/* 2. Dark Mode ሲበራ የሚሆን ቀለም */
+
 body.dark-theme {
     background-color: #121212;
     color: #e0e0e0;
 }
 
-/* 3. የሰብጀክት ካርዶች (Subject Boxes) */
+
 .subject-container {
     display: flex;
     flex-wrap: wrap;
@@ -26,12 +26,12 @@ body.dark-theme {
 .subject-card {
     flex: 1 1 280px;
     max-width: 350px;
-    background: #ffffff; /* የሰብጀክት ቦክሶች ነጭ ናቸው */
+    background: #ffffff; 
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     text-align: center;
-    border-bottom: 5px solid #0984e3; /* ከስር ሰማያዊ መስመር አለው */
+    border-bottom: 5px solid #0984e3;
     transition: 0.3s;
 }
 
@@ -59,16 +59,16 @@ body.dark-theme .quiz-container {
     background: #252525;
 }
 
-/* 5. የጥያቄ ምርጫዎች (Options - ትላልቅ የተደረጉ) */
+
 .quiz-answer-btn {
     display: block;
     width: 100%;
-    padding: 20px; /* ተለቅ እንዲሉ padding ጨምሬያለሁ */
+    padding: 20px; 
     margin: 15px 0;
-    font-size: 18px; /* ጽሁፉ እንዲጎላ */
+    font-size: 18px;
     font-weight: 500;
     color: #2d3436;
-    background-color: #e1f5fe; /* ከሰብጀክት ቦክሶቹ የተለየ ቀለም (ፈዘዝ ያለ ሰማያዊ) */
+    background-color: #e1f5fe; 
     border: 2px solid #b3e5fc;
     border-radius: 15px;
     cursor: pointer;
@@ -79,11 +79,11 @@ body.dark-theme .quiz-container {
 .quiz-answer-btn:hover {
     background-color: #81d4fa;
     border-color: #03a9f4;
-    transform: scale(1.02); /* ሲነካ ትንሽ እንዲሰፋ */
+    transform: scale(1.02); 
 }
 
 body.dark-theme .quiz-answer-btn {
-    background-color: #334155; /* በዳርክ ሞድ ጊዜ የተለየ ቀለም */
+    background-color: #334155; 
     color: #ffffff;
     border-color: #475569;
 }
