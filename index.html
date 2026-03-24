@@ -21,18 +21,19 @@
                 <option value="natural">Natural Science</option>
                 <option value="social">Social Science</option>
             </select>
-            <button class="start-btn" onclick="startApp()">StartApp</button>
+            <button class="start-btn" onclick="startApp()">Start</button>
         </div>
     </div>
 
     <div id="main-content" style="display:none;">
-        <div class="top-nav">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 10px;">
             <button id="dark-mode-toggle" class="dark-mode-btn">
                 <span id="mode-icon">🌙</span> Dark Mode
             </button>
         </div>
 
-        <h1 id="main-title">Zakir's Study Hub</h1>
+        <h1 id="main-title">s Study Hub</h1>
 
         <div class="nav-controls">
             <button class="home-btn" onclick="goHome()">🏠 Home</button>
@@ -40,43 +41,43 @@
         </div>  
 
         <div class="tabs">
-            <button id="social-tab" class="tab-btn active" onclick="switchStream('social')">Social Science</button>
+            <button id="social-tab" class="tab-btn" onclick="switchStream('social')">Social Science</button>
             <button id="natural-tab" class="tab-btn" onclick="switchStream('natural')">Natural Science</button>
         </div>
 
         <div id="social-subjects" class="subject-container">
-            <div class="subject-card geo-card">
-                <div class="icon">🌍</div>
+            <div class="subject-card">
+                <div class="icon">Geo</div>
                 <h3>Geography</h3>
                 <p>Map & Population</p>
                 <button class="quiz-btn" onclick="startQuiz('Geography')">Start Quiz</button>
             </div>
-            <div class="subject-card hist-card">
-                <div class="icon">📜</div>
+            <div class="subject-card">
+                <div class="icon">Hist</div>
                 <h3>History</h3>
                 <p>World & Ethiopia</p>
                 <button class="quiz-btn" onclick="startQuiz('History')">Start Quiz</button>
             </div>
-            <div class="subject-card eng-card">
-                <div class="icon">🔤</div>
+            <div class="subject-card">
+                <div class="icon">Eng</div>
                 <h3>English</h3>
                 <p>Grammar & Vocab</p>
                 <button class="quiz-btn" onclick="startQuiz('English')">Start Quiz</button>
             </div>
-            <div class="subject-card math-card">
-                <div class="icon">🔢</div>
+            <div class="subject-card">
+                <div class="icon">Maths</div>
                 <h3>Mathematics</h3>
                 <p>Social Science Maths</p>
                 <button class="quiz-btn" onclick="startQuiz('Maths')">Start Quiz</button>
             </div>
-            <div class="subject-card eco-card">
-                <div class="icon">📊</div>
+            <div class="subject-card">
+                <div class="icon">Eco</div>
                 <h3>Economics</h3>
                 <p>Micro & Macro</p>
                 <button class="quiz-btn" onclick="startQuiz('Economics')">Start Quiz</button>
             </div>
-            <div class="subject-card apt-card">
-                <div class="icon">🧠</div>
+            <div class="subject-card">
+                <div class="icon">IQ</div>
                 <h3>Aptitude</h3>
                 <p>Logic & Math</p>
                 <button class="quiz-btn" onclick="startQuiz('Aptitude')">Start Quiz</button>
@@ -84,35 +85,24 @@
         </div>
 
         <div id="natural-subjects" class="subject-container" style="display:none;">
-            <div class="subject-card bio-card">
-                <div class="icon">🧬</div>
+            <div class="subject-card">
+                <div class="icon">Bio</div>
                 <h3>Biology</h3>
                 <p>Genetics & Ecology</p>
                 <button class="quiz-btn" onclick="startQuiz('Biology')">Start Quiz</button>
             </div>   
-            <div class="subject-card phy-card">
-                <div class="icon">⚛️</div>
+            <div class="subject-card">
+                <div class="icon">Phy</div>
                 <h3>Physics</h3>
                 <p>Mechanics & Optics</p>
                 <button class="quiz-btn" onclick="startQuiz('Physics')">Start Quiz</button>
             </div>
-            <div class="subject-card chem-card">
-                <div class="icon">🧪</div>
+            <div class="subject-card">
+                <div class="icon">Chem</div>
                 <h3>Chemistry</h3>
                 <p>Organic & Inorganic</p>
                 <button class="quiz-btn" onclick="startQuiz('Chemistry')">Start Quiz</button>
             </div>
         </div>
     </div>
-
-    <div id="quiz-area-wrapper" style="display:none;">
-        <div class="progress-container">
-            <div id="progress-bar"></div>
-        </div>
-        <div id="quiz-box">
-            </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
 </html>
