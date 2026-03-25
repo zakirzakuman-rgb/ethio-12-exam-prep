@@ -192,3 +192,14 @@ body.dark-theme #quiz-area-wrapper {
     text-align: center;
     z-index: 1;
 }
+.nav-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* ስልኩ ጠባብ ሲሆን ወደ ታች እንዲወርዱ */
+}
+.nav-back{
+    background-color:red;
+    padding-top:30px;
+}
