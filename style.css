@@ -215,3 +215,20 @@ body.dark-theme #quiz-area-wrapper {
     width: 90%; /* በስልክ ሲታይ ሙሉ እንዲሆን */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+.card {
+    background-color: white;
+    border-radius: 15px; /* ጠርዙን ይበልጥ ክብ ለማድረግ */
+    padding: 25px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* ለስላሳ ጥላ */
+    transition: transform 0.3s ease; /* ለውጡ ቀስ ብሎ እንዲታይ */
+    border: none; /* ቀጭኑን መስመር ለማጥፋት */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* አይጥ ሲያርፍበት ትንሽ ወደ ላይ እንዲል */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
