@@ -1,20 +1,23 @@
 /* 1. አጠቃላይ መዋቅር */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: 'Poppins', sans-serif; /* ዘመናዊ ፎንት */
-    background: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* አቀማመጡን ለማስተካከል */
     align-items: center;
     min-height: 100vh;
-    transition: 0.5s;
+    transition: background 0.5s ease;
 }
 
-/* 2. Login Overlay (First Page) */
+/* 2. Login Overlay */
 #login-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* የሚያምር ከለር */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,21 +31,12 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     text-align: center;
     width: 350px;
-    backdrop-filter: blur(10px); /* የመስታወት መልክ እንዲኖረው */
+    backdrop-filter: blur(10px);
 }
 
-.login-box h2 {
-    color: #4a4a4a;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+.login-box h2 { color: #4a4a4a; font-size: 28px; margin-bottom: 10px; }
+.login-box p { color: #777; margin-bottom: 25px; }
 
-.login-box p {
-    color: #777;
-    margin-bottom: 25px;
-}
-
-/* Input እና Select እንዲደረደሩ */
 .login-box input, .login-box select {
     width: 100%;
     padding: 12px 15px;
@@ -52,14 +46,12 @@ body {
     font-size: 16px;
     outline: none;
     transition: 0.3s;
-    box-sizing: border-box; /* ስፋቱ እንዳይበላሽ */
+    box-sizing: border-box;
 }
 
-.login-box input:focus, .login-box select:focus {
-    border-color: #667eea;
-}
+.login-box input:focus, .login-box select:focus { border-color: #667eea; }
 
-/* Start Button */
+/* Buttons */
 .start-btn {
     width: 100%;
     padding: 14px;
@@ -79,10 +71,114 @@ body {
     transform: translateY(-2px);
 }
 
-/* 3. Dark Mode (ለሊት ሲያጠኑ) */
-body.dark-theme #login-overlay {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+/* 3. Subject Cards (Home Page) */
+.subject-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 20px 40px 20px; /* ርዕሱ እንዳይሸፍነው ከላይ ከፈት ይበል */
+    width: 100%;
+    max-width: 1200px;
 }
+
+.subject-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    border: none;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* የካርዶቹ የላይኛው መስመር */
+.subject-card:nth-child(1) { border-top: 5px solid #2ecc71; } /* Geography */
+.subject-card:nth-child(2) { border-top: 5px solid #e67e22; } /* History */
+.subject-card:nth-child(3) { border-top: 5px solid #3498db; } /* English */
+
+/* 4. Quiz Answer Buttons */
+.quiz-answer-btn {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 25px;
+    margin: 12px auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3436;
+    background-color: #ffffff; 
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.quiz-answer-btn:hover {
+    background-color: #e1f5fe;
+    border-color: #0984e3;
+    transform: translateX(5px); /* ወደ ጎን ትንሽ ጠጋ እንዲል */
+}
+
+/* 5. Navigation & Title */
+#main-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.nav-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.back-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #cc0000;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* 6. Dark Mode Styles */
+body.dark-theme {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+body.dark-theme #main-title { color: white; }
 
 body.dark-theme .login-box {
     background: #1e1e2e;
@@ -90,145 +186,26 @@ body.dark-theme .login-box {
 }
 
 body.dark-theme .login-box h2 { color: white; }
-body.dark-theme .login-box input, body.dark-theme .login-box select {
+
+body.dark-theme .login-box input, 
+body.dark-theme .login-box select {
     background: #2e2e3e;
     border-color: #3e3e4e;
     color: white;
 }
 
-/* 4. Subject Cards (Home Page) */
-.subject-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+body.dark-theme .subject-card {
+    background: #252525;
+    color: white;
 }
 
-.subject-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.subject-card:hover {
-    transform: translateY(-10px);
-}
-/* የጥያቄ ምርጫዎች (Options/Choices) */
-.quiz-answer-btn {
-    display: block;
-    width: 50%;           /* ሙሉ ስፋቱን እንዲይዝ */
-    padding: 22px 20px;    /* ወደ ላይና ወደ ታች በጣም ሰፋ እንዲል (Padding ጨምሬያለሁ) */
-    margin: 18px 0;        /* በምርጫዎቹ መሃል ያለው ክፍተት እንዲሰፋ */
-    font-size: 20px;       /* ጽሁፉ በደንብ ትልቅ እንዲሆን */
-    font-weight: 600;      /* ጽሁፉ ደመቅ እንዲል */
-    color: #2d3436;
-    background-color: #ffffff; 
-    border: 2px solid #dfe6e9;
-    border-radius: 15px;   /* ዳርና ዳሩ ክብ እንዲሆን */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: left;      /* ጽሁፉ ከግራ እንዲጀምር */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* ትንሽ ጥላ እንዲኖረው */
-}
-
-/* ማውዝ ሲያርፍበት የሚፈጠረው ለውጥ */
-.quiz-answer-btn:hover {
-    background-color: #e1f5fe;
-    border-color: #0984e3;
-    transform: translateY(-3px); /* ወደ ላይ ከፍ እንዲል */
-    box-shadow: 0 8px 15px rgba(9, 132, 227, 0.2);
-}
-
-/* በ Dark Mode ጊዜ ምርጫዎቹ እንዲታዩ */
 body.dark-theme .quiz-answer-btn {
     background-color: #2d2d3a;
     color: #ffffff;
     border-color: #444;
 }
-body.dark-theme .subject-card {
-    background: #252525;
-    color: white;
-}
-/* ርዕሱ (Zakir's Hub) ገጹ እንደተከፈተ ከላይ እንዲሆን */
-#main-title {
-    position: absolute; /* ከሌላው ዳንስ ነፃ እንዲሆን */
-    top: 10px;
-    margin-top: 20px;
-    margin-bottom: 50px; /* ከጥያቄው ጋር እንዳይጋፋ ሰፊ ክፍተት */
-    text-align: center;
-}
 
-
-.nav-controls, #dark-mode-toggle {
-    position: absolute; /* ከጥያቄው ቦክስ ነፃ እንዲሆኑ */
-    top: 20px;
-}
-
-#dark-mode-toggle {
-    right: 20px; /* በቀኝ በኩል */
-}
-
-.nav-controls {
-    left: 20px; /* በግራ በኩል */
-}
-/* ዳርክ ሞድ ሲበራ የጀርባው ቀለም */
-body.dark-theme {
-    background-color: #1a1a2e !important; /* ጠቆር ያለ ሰማያዊ */
-    color: white;
-}
-
-/* በጥያቄው ሰዓት ጀርባው ነጭ እንዳይሆን */
-body.dark-theme #main-content, 
-body.dark-theme #quiz-area-wrapper {
-    background-color: transparent;
-}
-
-    margin-bottom: 40px;
-    text-align: center;
-    z-index: 1;
-}
-.nav-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* ስልኩ ጠባብ ሲሆን ወደ ታች እንዲወርዱ */
-}
-.back-btn{
-    background-color:red;
-    padding-top:30px;
-}
-.subject-card:nth-child(1) { border-top: 5px solid #2ecc71; } /* Geography - አረንጓዴ */
-.subject-card:nth-child(2) { border-top: 5px solid #e67e22; } /* History - ብርቱካን */
-.subject-card:nth-child(3) { border-top: 5px solid #3498db; } /* English - ሰማያዊ */
-
-.subject-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 15px auto;
-    width: 90%; /* በስልክ ሲታይ ሙሉ እንዲሆን */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.card {
-    background-color: white;
-    border-radius: 15px; /* ጠርዙን ይበልጥ ክብ ለማድረግ */
-    padding: 25px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* ለስላሳ ጥላ */
-    transition: transform 0.3s ease; /* ለውጡ ቀስ ብሎ እንዲታይ */
-    border: none; /* ቀጭኑን መስመር ለማጥፋት */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* አይጥ ሲያርፍበት ትንሽ ወደ ላይ እንዲል */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+body.dark-theme .quiz-answer-btn:hover {
+    background-color: #3d3d4d;
+    border-color: #667eea;
 }
