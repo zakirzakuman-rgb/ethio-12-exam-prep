@@ -581,14 +581,31 @@ function checkAnswer(selected, correct) {
             btn.style.color = "white";
         }
     });
-
-    if (selected === correct) {
-        score++;
+if (selected === correct) {
+    score++;
+    // ብሮውዘሩ ድምፅ የሚችል ከሆነ ይናገራል፣ ካልቻለ ዝም ብሎ ያልፋል
+    try {
         speak("Correct!");
-    } else {
-        speak("Incorrect. The correct answer is " + correct);
+    } catch(e) {
+        console.log("Speech failed, but moving on...");
     }
+} else {
+    try {
+        speak("Incorrect. The answer is " + correct);
+    } catch(e) {
+        console.log("Speech failed, but moving on...");
+    }
+}
 
+// ድምፁ ቢሰራም ባይሰራም ከ 2.5 ሰከንድ በኋላ ወደ ቀጣዩ ጥያቄ ይሄዳል
+setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizQuestions.length) {
+        showQuestion();
+    } else {
+        showFinalResult();
+    }
+}, 2500);
     setTimeout(() => {
         currentQuestionIndex++;
         if (currentQuestionIndex < quizQuestions.length) {
