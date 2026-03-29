@@ -379,28 +379,22 @@ social-tab{
 }
 
 
-/* ድረ-ገጹ በ Dark Mode ሲሆን የ Footer ቀለም እንዲቀየር */
+/* ይህንን በ CSS ፋይልህ መጨረሻ ላይ ጨምረው */
 body.dark-mode .footer {
-    background-color: #1a1a1a; /* ጥቁር አፈርማ ቀለም */
-    border-top: 1px solid #333;
-    color: #ffffff; /* ጽሁፉ ነጭ እንዲሆን */
+    background-color: #1a1a1a !important; /* ቀለሙ በግድ እንዲቀየር ያደርጋል */
+    color: #ffffff !important;
+    border-top: 1px solid #333 !important;
 }
 
 body.dark-mode .footer-section h3, 
-body.dark-mode .footer-section h4 {
-    color: #007bff; /* ርዕሶቹ ሰማያዊ እንዲሆኑ */
-}
-
-body.dark-mode .footer-section ul li a {
-    color: #bbb; /* የሊንኮቹ ቀለም መጠነኛ ግራጫ */
-}
-
-body.dark-mode .footer-section ul li a:hover {
-    color: #ffffff; /* ማውሱ ሲያርፍባቸው ነጭ እንዲሆኑ */
+body.dark-mode .footer-section h4,
+body.dark-mode .footer-section p,
+body.dark-mode .footer-section li a {
+    color: #ffffff !important; /* ሁሉንም ጽሁፎች ነጭ ያደርጋቸዋል */
 }
 
 body.dark-mode .footer-bottom {
-    border-top: 1px solid #333;
-    color: #888;
+    background-color: #111 !important;
+    color: #888 !important;
+    border-top: 1px solid #333 !important;
 }
-
