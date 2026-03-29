@@ -258,3 +258,41 @@ social-tab{
     padding: 12px;
   }
 }
+/* የታብ መያዣው (Container) */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  background-color: #f0f0f0; /* ከበስተጀርባ መጠነኛ ግራጫ */
+  padding: 10px;
+  border-radius: 50px; /* ክብ እንዲሆን */
+  width: fit-content;
+  margin: 20px auto;
+}
+
+/* የተለመደው የበተን ስታይል */
+.tab-btn {
+  padding: 10px 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease; /* ለውጡ ለስላሳ እንዲሆን */
+  border-radius: 30px;
+}
+
+/* ማውሱ ሲያርፍበት (Hover) */
+.tab-btn:hover {
+  color: #000;
+  background-color: #e0e0e0;
+}
+
+/* የተመረጠው ታብ (Active Tab) */
+.tab-btn.active {
+  background-color: #007bff; /* ሰማያዊ ቀለም */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
