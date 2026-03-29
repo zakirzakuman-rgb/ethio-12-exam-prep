@@ -264,7 +264,7 @@ social-tab{
   justify-content: center;
   gap: 10px;
   margin-bottom: 25px;
-  background-color: #f0f0f0; /* ከበስተጀርባ መጠነኛ ግራጫ */
+  background-color:pink; /* ከበስተጀርባ መጠነኛ ግራጫ */
   padding: 10px;
   border-radius: 50px; /* ክብ እንዲሆን */
   width: fit-content;
@@ -292,7 +292,7 @@ social-tab{
 
 /* የተመረጠው ታብ (Active Tab) */
 .tab-btn.active {
-  background-color: #983434; /* ሰማያዊ ቀለም */
+  background-color: #345454; /* ሰማያዊ ቀለም */
   color: white;
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
