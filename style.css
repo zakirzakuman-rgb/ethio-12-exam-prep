@@ -377,3 +377,30 @@ social-tab{
         text-align: center;
     }
 }
+
+
+/* ድረ-ገጹ በ Dark Mode ሲሆን የ Footer ቀለም እንዲቀየር */
+body.dark-mode .footer {
+    background-color: #1a1a1a; /* ጥቁር አፈርማ ቀለም */
+    border-top: 1px solid #333;
+    color: #ffffff; /* ጽሁፉ ነጭ እንዲሆን */
+}
+
+body.dark-mode .footer-section h3, 
+body.dark-mode .footer-section h4 {
+    color: #007bff; /* ርዕሶቹ ሰማያዊ እንዲሆኑ */
+}
+
+body.dark-mode .footer-section ul li a {
+    color: #bbb; /* የሊንኮቹ ቀለም መጠነኛ ግራጫ */
+}
+
+body.dark-mode .footer-section ul li a:hover {
+    color: #ffffff; /* ማውሱ ሲያርፍባቸው ነጭ እንዲሆኑ */
+}
+
+body.dark-mode .footer-bottom {
+    border-top: 1px solid #333;
+    color: #888;
+}
+
