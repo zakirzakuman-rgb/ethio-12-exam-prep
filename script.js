@@ -502,14 +502,14 @@ function switchStream(stream) {
     document.getElementById('natural-subjects').style.display = (stream === 'natural' ? 'flex' : 'none');
 }
 
-// --- GLOBAL VARIABLES ---
+// --- 1. GLOBAL VARIABLES (አንድ ጊዜ ብቻ መታወጅ አለባቸው) ---
 let currentQuestionIndex = 0;
 let score = 0;
 let quizQuestions = [];
 let timer;
 let timeLeft = 30;
 
-// --- 1. START QUIZ (ክፍሎችን የመደበቅ ስራ) ---
+// --- 2. START QUIZ (ክፍሎችን የመደበቅ ስራ) ---
 function startQuiz(subject) {
     if (typeof allQuestions === 'undefined') {
         alert("ጥያቄዎቹ አልተጫኑም! እባክህ allQuestions ዝርዝር መኖሩን አረጋግጥ።");
@@ -528,7 +528,6 @@ function startQuiz(subject) {
     score = 0;
 
     // ገጾችን የመደበቅ ስራ
-    // በ ምስልህ (Screenshot) ላይ እንዳየሁት ካርዶቹ ያሉት '.container' ውስጥ ነው
     const mainContent = document.querySelector('.container');
     if(mainContent) mainContent.style.display = 'none';
 
@@ -545,13 +544,11 @@ function startQuiz(subject) {
     showQuestion();
 }
 
-// --- 2. GO HOME (ክፍሎችን የመመለስ ስራ) ---
+// --- 3. GO HOME (ክፍሎችን የመመለስ ስራ) ---
 function goHome() {
-    // የጥያቄ ማሳያውን ደብቅ
     const quizArea = document.getElementById('quiz-area-wrapper');
     if(quizArea) quizArea.style.display = 'none';
 
-    // ዋናውን ይዘት፣ Footer እና Resources መልሰህ አሳይ
     const mainContent = document.querySelector('.container');
     const footer = document.querySelector('.footer');
     const resources = document.querySelector('.resources-section');
@@ -561,7 +558,7 @@ function goHome() {
     if(resources) resources.style.display = 'block';
 }
 
-// --- 3. SHOW QUESTION ---
+// --- 4. SHOW QUESTION & TIMER ---
 function showQuestion() {
     clearInterval(timer);
     timeLeft = 30;
@@ -586,7 +583,6 @@ function showQuestion() {
     startTimer();
 }
 
-// --- 4. TIMER ---
 function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
@@ -633,7 +629,6 @@ function checkAnswer(selected, correct) {
     }, 2500);
 }
 
-// --- 6. SPEECH FUNCTION ---
 function speak(text) {
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -642,7 +637,7 @@ function speak(text) {
     }
 }
 
-// --- 7. FINAL RESULT ---
+// --- 6. FINAL RESULT & LEADERBOARD ---
 function showFinalResult() {
     let quizBox = document.getElementById('quiz-box');
     let percent = Math.round((score / quizQuestions.length) * 100);
@@ -657,11 +652,10 @@ function showFinalResult() {
             FINISH & GO HOME
         </button>
     `;
-    
     saveScore(savedName, quizQuestions[0].cat, percent);
 }
 
-// --- 8. USER MANAGEMENT (LocalStorage) ---
+// --- 7. USER MANAGEMENT (LocalStorage) ---
 function saveUserName() {
     const nameInput = document.getElementById('userNameInput').value;
     const streamInput = document.getElementById('streamChoice').value;
@@ -675,13 +669,7 @@ function saveUserName() {
     }
 }
 
-function logout() {
-    localStorage.removeItem('studentName');
-    localStorage.removeItem('studentStream');
-    location.reload();
-}
-
-// --- 9. UTILITIES (Shuffle & Dark Mode) ---
+// --- 8. UTILITIES (Shuffle, Dark Mode, Save Score) ---
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -709,7 +697,7 @@ function saveScore(name, subject, scorePercent) {
     localStorage.setItem('studyHubLeaderboard', JSON.stringify(leaderboard));
 }
 
-// --- 10. PAGE LOAD ---
+// --- 9. PAGE LOAD ---
 window.onload = function() {
     initDarkMode();
     const savedName = localStorage.getItem('studentName');
