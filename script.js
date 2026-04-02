@@ -1,16 +1,13 @@
 // 1. ALL DATA (Social + Natural + Aptitude + Others)
 const allQuestions = [
     // --- GEOGRAPHY (50 Questions) ---
-    { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
+ { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
     { cat: "Geography", q: "Which lake is the source of the Blue Nile?", options: ["Ziway", "Abaya", "Tana", "Chamo"], a: "Tana" },
     { cat: "Geography", q: "V-shaped contour lines pointing uphill indicate a:", options: ["Valley", "Ridge", "Cliff", "Plain"], a: "Valley" },
-    { cat: "Geography", q: "Which is the highest mountain in Ethiopia?", options: ["Batu", "Ras Dashen", "Guge", "Chilalo"], a: "Ras Dashen" },
-    { cat: "Geography", q: "Which lake is the source of the Blue Nile?", options: ["Ziway", "Abaya", "Tana", "Chamo"], a: "Tana" },
     { cat: "Geography", q: "The ratio between map distance and ground distance is:", options: ["Legend", "Scale", "Grid", "Projection"], a: "Scale" },
     { cat: "Geography", q: "Geological era known as 'Age of Reptiles' is:", options: ["Cenozoic", "Mesozoic", "Paleozoic", "Precambrian"], a: "Mesozoic" },
     { cat: "Geography", q: "Traditional climate zone between 1500m and 2300m is:", options: ["Kolla", "Dega", "Woina Dega", "Bereha"], a: "Woina Dega" },
     { cat: "Geography", q: "Which river flows eastward into the Afar depression?", options: ["Abbay", "Awash", "Omo", "Genale"], a: "Awash" },
-    { cat: "Geography", q: "V-shaped contour lines pointing uphill indicate a:", options: ["Valley", "Ridge", "Cliff", "Plain"], a: "Valley" },
     { cat: "Geography", q: "Which map scale is the largest?", options: ["1:500,000", "1:250,000", "1:50,000", "1:1,000,000"], a: "1:50,000" },
     { cat: "Geography", q: "The largest physiographic region of Ethiopia is:", options: ["Rift Valley", "Southeastern Highlands", "Western Highlands", "Lowlands"], a: "Western Highlands" },
     { cat: "Geography", q: "Which soil is known as 'Black Cotton Soil'?", options: ["Nitosols", "Vertisols", "Fluvisols", "Lithosols"], a: "Vertisols" },
@@ -27,173 +24,390 @@ const allQuestions = [
     { cat: "Geography", q: "Ethiopia's standard time zone is:", options: ["GMT+1", "GMT+2", "GMT+3", "GMT+4"], a: "GMT+3" },
     { cat: "Geography", q: "Process of moving soil/rocks by wind or water:", options: ["Weathering", "Erosion", "Sedimentation", "Solidification"], a: "Erosion" },
     { cat: "Geography", q: "Which era saw the formation of the Rift Valley?", options: ["Pre-Cambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Cenozoic" },
-    { cat: "Geography", q: "Altitude for the 'Kolla' climate zone is:", options: ["Below 500m", "500m-1500m", "1500m-2300m", "Above 3300m"], a: "500m-1500m" },
-    { cat: "Geography", q: "Which river has the largest water discharge?", options: ["Abbay", "Baro-Akobo", "Omo-Gibe", "Wabe Shebelle"], a: "Abbay" },
-    { cat: "Geography", q: "Number of people per arable land is:", options: ["Crude density", "Agricultural density", "Physiological density", "Economic density"], a: "Physiological density" },
-    { cat: "Geography", q: "Lines connecting equal temperature points:", options: ["Isobar", "Isotherm", "Isohyet", "Isoneph"], a: "Isotherm" },
-    { cat: "Geography", q: "The main moisture source for Kiremt rain is:", options: ["Indian Ocean", "Atlantic Ocean", "Red Sea", "Mediterranean"], a: "Atlantic Ocean" },
-    { cat: "Geography", q: "Scale of 1:25,000 is considered:", options: ["Small", "Medium", "Large", "Wall"], a: "Large" },
-    { cat: "Geography", q: "Objective of 'Terracing' is to:", options: ["Increase acidity", "Prevent erosion", "Stop wind", "Cut trees"], a: "Prevent erosion" },
-    { cat: "Geography", q: "River shared with Somalia is:", options: ["Awash", "Wabe Shebelle", "Tekeze", "Baro"], a: "Wabe Shebelle" },
-    { cat: "Geography", q: "Major cause of global warming is:", options: ["Oxygen", "Nitrogen", "CO2", "Hydrogen"], a: "CO2" },
-    { cat: "Geography", q: "Dominant vegetation in the Lowlands:", options: ["Rainforest", "Savanna", "Desert Scrub", "Coniferous"], a: "Savanna" },
-    { cat: "Geography", q: "The 'Dega' zone is most suitable for:", options: ["Coffee", "Barley", "Sugarcane", "Cotton"], a: "Barley" },
-    { cat: "Geography", q: "Which point is directly above the earthquake focus?", options: ["Epicenter", "Focus", "Fault", "Core"], a: "Epicenter" },
-    { cat: "Geography", q: "The 'Age of Mammals' is the:", options: ["Pre-Cambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Cenozoic" },
-    { cat: "Geography", q: "Close contour lines indicate:", options: ["Flat plain", "Steep slope", "Deep lake", "Desert"], a: "Steep slope" },
-    { cat: "Geography", q: "Most common rural settlement in highlands:", options: ["Nucleated", "Dispersed", "Linear", "Urban"], a: "Dispersed" },
-    { cat: "Geography", q: "A perennial river is one that:", options: ["Dries up", "Flows year-round", "Is very short", "Is underground"], a: "Flows year-round" },
-    { cat: "Geography", q: "Instrument used for wind direction:", options: ["Anemometer", "Barometer", "Wind Vane", "Hygrometer"], a: "Wind Vane" },
-    { cat: "Geography", q: "The 'Roof of Northeast Africa' refers to:", options: ["Kenya", "Sudan", "Ethiopia", "Somalia"], a: "Ethiopia" },
-    { cat: "Geography", q: "Solar radiation reaching Earth is:", options: ["Insulation", "Insolation", "Conduction", "Convection"], a: "Insolation" },
-    { cat: "Geography", q: "Which lake is found in the Rift Valley?", options: ["Tana", "Langano", "Hayq", "Ashenge"], a: "Langano" },
-    { cat: "Geography", q: "3D Earth shown on 2D paper is a:", options: ["Projection", "Scale", "Legend", "Orientation"], a: "Projection" },
-    { cat: "Geography", q: "Main coffee export destination for Ethiopia:", options: ["China", "Germany", "Japan", "USA"], a: "Germany" },
-    { cat: "Geography", q: "A map with scale 1:1,000,000 is a:", options: ["Large scale", "Small scale", "Medium scale", "Cadastral"], a: "Small scale" },
-    { cat: "Geography", q: "Highest water-level month for Abbay river:", options: ["January", "April", "August", "October"], a: "August" },
-    { cat: "Geography", q: "The study of population is called:", options: ["Demography", "Cartography", "Geology", "Ecology"], a: "Demography" },
-    { cat: "Geography", q: "Western lowlands are characterized by:", options: ["Cold climate", "High rainfall", "Hot and dry", "Snow"], a: "Hot and dry" },
-    { cat: "Geography", q: "Process where one plate slides under another:", options: ["Folding", "Faulting", "Subduction", "Uplifting"], a: "Subduction" },
+    { cat: "Geography", q: "The most recent geological era is:", options: ["Cenozoic", "Mesozoic", "Paleozoic", "Precambrian"], a: "Cenozoic" },
+    { cat: "Geography", q: "Which river is the longest in Ethiopia?", options: ["Abbay", "Wabe Shebelle", "Awash", "Genale"], a: "Abbay" },
+    { cat: "Geography", q: "Which of the following is an endoreic lake?", options: ["Lake Tana", "Lake Abaya", "Lake Rudolf (Turkana)", "Lake Ziway"], a: "Lake Rudolf (Turkana)" },
+    { cat: "Geography", q: "The 'Basement Complex' rocks belong to which era?", options: ["Precambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Precambrian" },
+    { cat: "Geography", q: "A map showing detailed topography of a small area is:", options: ["Topographic map", "Atlas map", "Wall map", "Thematic map"], a: "Topographic map" },
+    { cat: "Geography", q: "Which drainage system is the largest in Ethiopia by area?", options: ["Western", "Southeastern", "Rift Valley", "Coastal"], a: "Western" },
+    { cat: "Geography", q: "The study of the shape and features of the earth's surface is:", options: ["Geology", "Geomorphology", "Meteorology", "Climatology"], a: "Geomorphology" },
+    { cat: "Geography", q: "Which part of Ethiopia has a desert climate?", options: ["Southwest", "Afar and Ogaden", "Central Highlands", "Western Highlands"], a: "Afar and Ogaden" },
+    { cat: "Geography", q: "Which scale is best for showing more detail?", options: ["1:10,000", "1:100,000", "1:1,000,000", "1:10,000,000"], a: "1:10,000" },
+    { cat: "Geography", q: "The 'Harenna Forest' is found in which mountains?", options: ["Semien", "Bale", "Arsi", "Choke"], a: "Bale" },
+    { cat: "Geography", q: "What is the common method of showing altitude on maps?", options: ["Hachures", "Color tinting", "Contour lines", "Hill shading"], a: "Contour lines" },
+    { cat: "Geography", q: "Which drainage system flows into the Indian Ocean?", options: ["Southeastern", "Western", "Inland", "Rift Valley"], a: "Southeastern" },
+    { cat: "Geography", q: "The density of population calculated as People/Total Area is:", options: ["Crude Density", "Agricultural Density", "Physiological Density", "Net Density"], a: "Crude Density" },
+    { cat: "Geography", q: "The largest lake in the Ethiopian Rift Valley is:", options: ["Abaya", "Chamo", "Ziway", "Langano"], a: "Abaya" },
+    { cat: "Geography", q: "Which era is known for the sinking of the Horn of Africa?", options: ["Precambrian", "Paleozoic", "Mesozoic", "Cenozoic"], a: "Mesozoic" },
+    { cat: "Geography", q: "Lines on a map connecting points of equal temperature:", options: ["Isobars", "Isohyets", "Isotherms", "Isohalines"], a: "Isotherms" },
+    { cat: "Geography", q: "Ethiopia is located between which latitudes?", options: ["3-15 deg N", "3-48 deg N", "10-20 deg N", "5-25 deg N"], a: "3-15 deg N" },
+    { cat: "Geography", q: "The main source of water for the Awash river is:", options: ["Central Highlands", "Western Lowlands", "Bale Mountains", "Arsi Mountains"], a: "Central Highlands" },
+    { cat: "Geography", q: "Which town is located at the center of the Rift Valley?", options: ["Addis Ababa", "Adama", "Mekelle", "Bahir Dar"], a: "Adama" },
+    { cat: "Geography", q: "Which sector provides the most employment in Ethiopia?", options: ["Industry", "Service", "Agriculture", "Mining"], a: "Agriculture" },
+    { cat: "Geography", q: "Which era was the time of the formation of Coal in Ethiopia?", options: ["Cenozoic", "Mesozoic", "Paleozoic", "Precambrian"], a: "Cenozoic" },
+    { cat: "Geography", q: "The steepness of a slope is shown by:", options: ["Contour interval", "Contour spacing", "Map title", "Compass direction"], a: "Contour spacing" },
+    { cat: "Geography", q: "Which of these is a major cause of global warming?", options: ["Planting trees", "Burning fossil fuels", "Using solar energy", "Recycling"], a: "Burning fossil fuels" },
+    { cat: "Geography", q: "Which crop is most resistant to drought?", options: ["Coffee", "Sugarcane", "Sorghum", "Banana"], a: "Sorghum" },
+    { cat: "Geography", q: "Which mountains are known as the 'Roof of East Africa'?", options: ["Bale Mountains", "Semien Mountains", "Choke Mountains", "Gughe Mountains"], a: "Semien Mountains" },
+    { cat: "Geography", q: "The study of population statistics is:", options: ["Demography", "Ethnography", "Geography", "Biography"], a: "Demography" },
+    { cat: "Geography", q: "Which of the following is a non-renewable resource?", options: ["Water", "Forest", "Gold", "Wind"], a: "Gold" },
+    { cat: "Geography", q: "The scale 1cm to 5km is which type of scale?", options: ["Representative Fraction", "Graphic", "Verbal", "Small Scale"], a: "Verbal" },
+    { cat: "Geography", q: "What type of map uses colors to show population density?", options: ["Choropleth map", "Isoline map", "Dot map", "Flow-line map"], a: "Choropleth map" },
+    { cat: "Geography", q: "Which lake is found at the highest altitude in Ethiopia?", options: ["Lake Tana", "Lake Ashenge", "Lake Wonchi", "Lake Hayq"], a: "Lake Wonchi" },
+    { cat: "Geography", q: "The 'Kure' (Crater) lakes are common in which region?", options: ["Afar", "Oromia (Bishoftu)", "Tigray", "Amhara"], a: "Oromia (Bishoftu)" },
+    { cat: "Geography", q: "Which river forms the border between Ethiopia and Eritrea?", options: ["Tekeze", "Mereb", "Angereb", "Gash"], a: "Mereb" },
+    { cat: "Geography", q: "The vertical distance between two successive contours is:", options: ["Horizontal equivalent", "Contour interval", "Gradient", "Slope"], a: "Contour interval" },
+    { cat: "Geography", q: "What is the name of the traditional terrace farming in Ethiopia?", options: ["Konso terracing", "Gamo terracing", "Gofa terracing", "Sidama terracing"], a: "Konso terracing" },
+    { cat: "Geography", q: "Which soil is best for growing Teff?", options: ["Sandy soil", "Nitosols", "Vertisols", "Silty soil"], a: "Vertisols" },
+    { cat: "Geography", q: "The 'Ogaden' region is mostly characterized by:", options: ["Highlands", "Plains and Lowlands", "Rugged mountains", "Deep valleys"], a: "Plains and Lowlands" },
+    { cat: "Geography", q: "The total land area of Ethiopia is approximately:", options: ["1.1 million sq km", "2.1 million sq km", "800,000 sq km", "1.5 million sq km"], a: "1.1 million sq km" },
+    { cat: "Geography", q: "Which instrument is used to measure wind speed?", options: ["Barometer", "Anemometer", "Hygrometer", "Thermometer"], a: "Anemometer" },
+    { cat: "Geography", q: "What is the main cause of the seasonal rainfall in Ethiopia?", options: ["ITCZ", "Latitude", "Altitude", "Ocean currents"], a: "ITCZ" },
+    { cat: "Geography", q: "Which era saw the uplift of the Ethiopian Arabo-plateau?", options: ["Cenozoic", "Mesozoic", "Paleozoic", "Precambrian"], a: "Cenozoic" },
+    { cat: "Geography", q: "A graphical representation of the age and sex of a population:", options: ["Scatter plot", "Bar graph", "Population pyramid", "Pie chart"], a: "Population pyramid" },
+    { cat: "Geography", q: "Which river is nicknamed 'The Father of Rivers'?", options: ["Awash", "Abbay", "Baro", "Omo"], a: "Abbay" },
+    { cat: "Geography", q: "The most common natural hazard in the Afar region is:", options: ["Flood", "Drought", "Earthquake", "Landslide"], a: "Drought" },
+    { cat: "Geography", q: "Which zone is known for the production of Wheat and Barley?", options: ["Kolla", "Woina Dega", "Dega", "Bereha"], a: "Dega" },
+    { cat: "Geography", q: "What is the longitudinal extent of Ethiopia?", options: ["33-48 deg E", "3-15 deg E", "10-20 deg E", "40-50 deg E"], a: "33-48 deg E" },
+    { cat: "Geography", q: "The drainage system that includes rivers like Baro and Akobo:", options: ["Western", "Southeastern", "Rift Valley", "Inland"], a: "Western" },
+    { cat: "Geography", q: "Which lake is shared between Ethiopia and Kenya?", options: ["Lake Turkana", "Lake Abaya", "Lake Chamo", "Lake Chew Bahir"], a: "Lake Turkana" },
+    { cat: "Geography", q: "The measurement of moisture in the air is:", options: ["Temperature", "Pressure", "Humidity", "Precipitation"], a: "Humidity" },
+    { cat: "Geography", q: "Which forest type is found in the wettest parts of SW Ethiopia?", options: ["Coniferous", "Broad-leaved rainforest", "Dry evergreen", "Savanna woodland"], a: "Broad-leaved rainforest" },
+    { cat: "Geography", q: "Which of these is a volcanic mountain?", options: ["Mount Ras Dashen", "Mount Fantale", "Mount Batu", "Mount Gughe"], a: "Mount Fantale" },
+    { cat: "Geography", q: "The number of children born per 1000 people per year is:", options: ["Death rate", "Birth rate", "Growth rate", "Fertility rate"], a: "Birth rate" },
+    { cat: "Geography", q: "Which city is the administrative capital of the African Union?", options: ["Nairobi", "Addis Ababa", "Cairo", "Johannesburg"], a: "Addis Ababa" },
+    { cat: "Geography", q: "The gap between two mountains used as a pass:", options: ["Saddle/Col", "Peak", "Ridge", "Spur"], a: "Saddle/Col" },
+    { cat: "Geography", q: "Which drainage system is entirely within Ethiopia?", options: ["Awash", "Abbay", "Baro", "Genale"], a: "Awash" },
+    { cat: "Geography", q: "Which type of rocks are formed from cooling lava?", options: ["Sedimentary", "Metamorphic", "Igneous", "Basement"], a: "Igneous" },
+    { cat: "Geography", q: "What is the largest island on Lake Tana?", options: ["Dek", "Dega Estifanos", "Tana Qirqos", "Kebran"], a: "Dek" },
+    { cat: "Geography", q: "The distance between two grid lines on a map is:", options: ["Grid interval", "Scale", "Legend", "Title"], a: "Grid interval" },
+    { cat: "Geography", q: "Which type of agriculture involves moving from place to place?", options: ["Settled farming", "Shifting cultivation", "Plantation", "Irrigation"], a: "Shifting cultivation" },
+    { cat: "Geography", q: "Which part of Ethiopia receives the highest annual rainfall?", options: ["Southwest", "Northeast", "Southeast", "East"], a: "Southwest" },
+    { cat: "Geography", q: "Which minerals are mostly found in the Adola area?", options: ["Coal", "Gold", "Iron", "Salt"], a: "Gold" },
+    { cat: "Geography", q: "The study of weather over a long period is:", options: ["Meteorology", "Climatology", "Geology", "Ecology"], a: "Climatology" },
+    { cat: "Geography", q: "Which river basin is the most developed for irrigation?", options: ["Abbay", "Awash", "Omo", "Tekeze"], a: "Awash" },
+    { cat: "Geography", q: "What is the name of the salt-rich depression in Afar?", options: ["Danakil", "Ogaden", "Rift Valley", "Borena"], a: "Danakil" },
+    { cat: "Geography", q: "Which rock type is formed from pressure and heat?", options: ["Sedimentary", "Metamorphic", "Igneous", "Volcanic"], a: "Metamorphic" },
+    { cat: "Geography", q: "The percentage of people living in cities is called:", options: ["Rural rate", "Urbanization rate", "Migration rate", "Density"], a: "Urbanization rate" },
+    { cat: "Geography", q: "Which scale represents 1:1,000,000?", options: ["Small Scale", "Medium Scale", "Large Scale", "Detailed Scale"], a: "Small Scale" },
+    { cat: "Geography", q: "The 'Great Flood' in Ethiopian history is related to which river?", options: ["Abbay", "Awash", "Omo", "Wabe Shebelle"], a: "Awash" },
+    { cat: "Geography", q: "Which era saw the extinction of Dinosaurs?", options: ["Mesozoic", "Cenozoic", "Paleozoic", "Precambrian"], a: "Mesozoic" },
+    { cat: "Geography", q: "Which mountain range separates Ethiopia and Kenya?", options: ["Semien", "Bale", "Moyale", "Choke"], a: "Moyale" },
+    { cat: "Geography", q: "The lines on a map that run North-South are:", options: ["Latitudes", "Longitudes", "Isohyets", "Isotherms"], a: "Longitudes" },
+    { cat: "Geography", q: "Which lake is famous for its birds and flamingoes?", options: ["Abijatta-Shalla", "Tana", "Hayq", "Ashenge"], a: "Abijatta-Shalla" },
+    { cat: "Geography", q: "The most common religion in the Ogaden region is:", options: ["Orthodox", "Islam", "Protestant", "Catholic"], a: "Islam" },
+    { cat: "Geography", q: "Which of these is a characteristic of a youthful river?", options: ["V-shaped valley", "Meanders", "Flood plains", "Delta"], a: "V-shaped valley" },
+    { cat: "Geography", q: "What is the primary export destination for Ethiopian coffee?", options: ["USA", "Germany", "China", "India"], a: "Germany" },
+    { cat: "Geography", q: "Which era is characterized by the formation of the Rift Valley?", options: ["Cenozoic", "Mesozoic", "Paleozoic", "Precambrian"], a: "Cenozoic" },
+    { cat: "Geography", q: "The average number of children a woman bears is:", options: ["CBR", "ASFR", "TFR", "CDR"], a: "TFR" },
+    { cat: "Geography", q: "Which sector is the biggest contributor to Ethiopia's GDP?", options: ["Agriculture", "Industry", "Service", "Tourism"], a: "Service" },
     
   // --- APTITUDE (30 Questions) ---
-{ cat: "Aptitude", q: "Complete the series: 5, 10, 20, 40, ...?", options: ["50", "60", "80", "100"], a: "80" },
-{ cat: "Aptitude", q: "What is 15% of 200?", options: ["20", "25", "30", "35"], a: "30" },
-{ cat: "Aptitude", q: "Complete the series: 2, 6, 12, 20, 30, ...?", options: ["36", "40", "42", "50"], a: "42" },
-{ cat: "Aptitude", q: "If 5 workers can build a wall in 10 days, how many days will it take 10 workers?", options: ["20", "5", "15", "8"], a: "5" },
-{ cat: "Aptitude", q: "Find the odd one out:", options: ["Square", "Triangle", "Rectangle", "Circle"], a: "Circle" },
-{ cat: "Aptitude", q: "Which number comes next: 1, 4, 9, 16, 25, ...?", options: ["30", "35", "36", "49"], a: "36" },
-{ cat: "Aptitude", q: "If 'BOOK' is coded as 26611, how is 'PEN' coded?", options: ["16514", "15413", "17615", "16614"], a: "16514" },
-{ cat: "Aptitude", q: "A father is 3 times as old as his son. If the sum of their ages is 48, how old is the son?", options: ["10", "12", "14", "16"], a: "12" },
-{ cat: "Aptitude", q: "Find the missing number: 100, 90, 70, 40, ...?", options: ["0", "10", "20", "30"], a: "0" },
-{ cat: "Aptitude", q: "Which word does NOT belong with the others?", options: ["Leopard", "Cougar", "Lion", "Wolf"], a: "Wolf" },
-{ cat: "Aptitude", q: "What is 20% of 25% of 400?", options: ["20", "40", "10", "25"], a: "20" },
-{ cat: "Aptitude", q: "If today is Monday, what day will it be after 61 days?", options: ["Wednesday", "Saturday", "Tuesday", "Thursday"], a: "Saturday" },
-{ cat: "Aptitude", q: "Point A is 10m North of B. C is 10m East of B. What is the direction of A from C?", options: ["North-East", "South-West", "North-West", "South-East"], a: "North-West" },
-{ cat: "Aptitude", q: "Complete the series: J, L, N, P, ...?", options: ["Q", "R", "S", "T"], a: "R" },
-{ cat: "Aptitude", q: "How many months have 28 days?", options: ["1", "6", "12", "None"], a: "12" },
-{ cat: "Aptitude", q: "A car travels 120km in 2 hours. What is its speed in m/s?", options: ["60", "30", "16.6", "20"], a: "16.6" },
-{ cat: "Aptitude", q: "If A is taller than B, and B is taller than C, who is the shortest?", options: ["A", "B", "C", "Cannot tell"], a: "C" },
-{ cat: "Aptitude", q: "What is the next prime number after 19?", options: ["21", "23", "25", "27"], a: "23" },
-{ cat: "Aptitude", q: "A clock shows 3:00. What is the angle between the hands?", options: ["45°", "60°", "90°", "120°"], a: "90°" },
-{ cat: "Aptitude", q: "Find the next number: 3, 6, 11, 18, 27, ...?", options: ["34", "36", "38", "40"], a: "38" },
-{ cat: "Aptitude", q: "If 1=5, 2=25, 3=125, then 5=?", options: ["625", "3125", "1", "5"], a: "1" },
-{ cat: "Aptitude", q: "Which number is divisible by 3?", options: ["124", "256", "312", "401"], a: "312" },
-{ cat: "Aptitude", q: "The average of 10, 20, and 30 is:", options: ["15", "20", "25", "30"], a: "20" },
-{ cat: "Aptitude", q: "If Water is called Food, and Food is called Tree, what do we drink?", options: ["Water", "Food", "Tree", "Drink"], a: "Food" },
-{ cat: "Aptitude", q: "What comes next: 81, 64, 49, 36, ...?", options: ["20", "25", "30", "16"], a: "25" },
-{ cat: "Aptitude", q: "A shop gives 10% discount on 500 ETB. What is the final price?", options: ["400", "450", "490", "510"], a: "450" },
-{ cat: "Aptitude", q: "Complete: Hand is to Glove as Head is to ...?", options: ["Hat", "Hair", "Neck", "Ear"], a: "Hat" },
-{ cat: "Aptitude", q: "How many triangles are in a square with both diagonals drawn?", options: ["4", "6", "8", "10"], a: "8" },
-{ cat: "Aptitude", q: "If 3x + 5 = 20, what is x?", options: ["3", "5", "7", "15"], a: "5" },
-{ cat: "Aptitude", q: "Which fraction is the largest?", options: ["1/2", "3/4", "2/3", "5/8"], a: "3/4" },
-{ cat: "Aptitude", q: "If 'NORTH' becomes 'SOUTH', what does 'WEST' become?", options: ["EAST", "NORTH", "SOUTH", "LEFT"], a: "EAST" },
-{ cat: "Aptitude", q: "Find the missing: 2, 3, 5, 7, 11, ...?", options: ["12", "13", "14", "15"], a: "13" },
+{ cat: "Aptitude", q: "Find the next number in the sequence: 2, 4, 8, 16, ___", options: ["24", "30", "32", "64"], a: "32" },
+    { cat: "Aptitude", q: "Choose the word that is most nearly the opposite of 'ENORMOUS':", options: ["Huge", "Tiny", "Large", "Wide"], a: "Tiny" },
+    { cat: "Aptitude", q: "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are definitely Lazzies.", options: ["True", "False", "Cannot say", "None"], a: "True" },
+    { cat: "Aptitude", q: "Complete the analogy: Finger is to Hand as Leaf is to ___", options: ["Tree", "Branch", "Flower", "Root"], a: "Branch" },
+    { cat: "Aptitude", q: "A person travels 5km North, then turns Right and travels 5km. Which direction is he facing?", options: ["North", "South", "East", "West"], a: "East" },
+    { cat: "Aptitude", q: "Find the odd one out:", options: ["Car", "Bicycle", "Truck", "Bus"], a: "Bicycle" },
+    { cat: "Aptitude", q: "If 5 machines take 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?", options: ["100 minutes", "50 minutes", "5 minutes", "10 minutes"], a: "5 minutes" },
+    { cat: "Aptitude", q: "Solve: (15 * 4) / 2 + 10 = ?", options: ["20", "30", "40", "50"], a: "40" },
+    { cat: "Aptitude", q: "Complete the series: J, L, N, P, ___", options: ["Q", "R", "S", "T"], a: "R" },
+    { cat: "Aptitude", q: "Which word does NOT belong with the others?", options: ["Tulip", "Rose", "Daisy", "Lettuce"], a: "Lettuce" },
+    { cat: "Aptitude", q: "A is the father of B, but B is not the son of A. What is B?", options: ["Nephew", "Daughter", "Grandson", "Cousin"], a: "Daughter" },
+    { cat: "Aptitude", q: "If 'WATER' is coded as 'XBUFS', how is 'SCHOOL' coded?", options: ["TDIPPM", "TDPPIM", "TDIPMP", "TDIPPN"], a: "TDIPPM" },
+    { cat: "Aptitude", q: "What is 20% of 150?", options: ["20", "25", "30", "35"], a: "30" },
+    { cat: "Aptitude", q: "Find the next number: 1, 4, 9, 16, 25, ___", options: ["30", "36", "40", "49"], a: "36" },
+    { cat: "Aptitude", q: "If today is Monday, what day will it be in 61 days?", options: ["Wednesday", "Saturday", "Tuesday", "Friday"], a: "Saturday" },
+    { cat: "Aptitude", q: "Which is the largest fraction?", options: ["1/2", "3/4", "2/3", "5/8"], a: "3/4" },
+    { cat: "Aptitude", q: "Rearrange 'R-A-T-O-M' to form a meaningful word:", options: ["AMORT", "ROAMT", "MOTOR", "ROTM"], a: "MOTOR" },
+    { cat: "Aptitude", q: "If 3x + 5 = 20, what is the value of x?", options: ["3", "4", "5", "6"], a: "5" },
+    { cat: "Aptitude", q: "Choose the odd one out:", options: ["Square", "Circle", "Rectangle", "Triangle"], a: "Circle" },
+    { cat: "Aptitude", q: "A clock shows 3:00. What is the angle between the hands?", options: ["45 degrees", "90 degrees", "180 degrees", "60 degrees"], a: "90 degrees" },
+    { cat: "Aptitude", q: "Find the next number: 100, 90, 81, 73, ___", options: ["65", "66", "64", "60"], a: "66" },
+    { cat: "Aptitude", q: "Which word means the same as 'GIGANTIC'?", options: ["Small", "Massive", "Thin", "Fast"], a: "Massive" },
+    { cat: "Aptitude", q: "In a group of 50 people, 30 like tea and 20 like coffee. 10 like both. How many like neither?", options: ["0", "10", "20", "5"], a: "10" },
+    { cat: "Aptitude", q: "Find the missing number: 3, 6, 12, 24, ___", options: ["36", "48", "30", "60"], a: "48" },
+    { cat: "Aptitude", q: "A train moves at 60 km/h. How far does it travel in 15 minutes?", options: ["10 km", "15 km", "20 km", "25 km"], a: "15 km" },
+    { cat: "Aptitude", q: "If 1=5, 2=25, 3=125, what does 4=?", options: ["625", "500", "250", "400"], a: "625" },
+    { cat: "Aptitude", q: "Which of the following is a prime number?", options: ["9", "15", "21", "23"], a: "23" },
+    { cat: "Aptitude", q: "Book is to Reading as Fork is to ___", options: ["Drinking", "Eating", "Cooking", "Cutting"], a: "Eating" },
+    { cat: "Aptitude", q: "Identify the pattern: 1, 1, 2, 3, 5, 8, ___", options: ["10", "11", "13", "15"], a: "13" },
+    { cat: "Aptitude", q: "If you flip a coin, what is the probability of getting heads?", options: ["0.25", "0.5", "1", "0"], a: "0.5" },
+    { cat: "Aptitude", q: "An airplane flies 400 miles in 2 hours. What is its speed?", options: ["200 mph", "100 mph", "800 mph", "400 mph"], a: "200 mph" },
+    { cat: "Aptitude", q: "Which number is divisible by 3?", options: ["124", "157", "189", "202"], a: "189" },
+    { cat: "Aptitude", q: "The word 'PEACE' is to 'WAR' as 'SMILE' is to ___", options: ["Laughter", "Frown", "Face", "Happy"], a: "Frown" },
+    { cat: "Aptitude", q: "How many months have 28 days?", options: ["1", "6", "12", "0"], a: "12" },
+    { cat: "Aptitude", q: "If X is older than Y, and Y is older than Z, who is the youngest?", options: ["X", "Y", "Z", "Cannot say"], a: "Z" },
+    { cat: "Aptitude", q: "What is the square root of 144?", options: ["10", "12", "14", "16"], a: "12" },
+    { cat: "Aptitude", q: "Complete the pattern: A1, B2, C3, ___", options: ["D3", "D4", "E5", "C4"], a: "D4" },
+    { cat: "Aptitude", q: "If you have 3 apples and you take away 2, how many apples do you have?", options: ["1", "2", "3", "5"], a: "2" },
+    { cat: "Aptitude", q: "Ocean is to Water as Glacier is to ___", options: ["Ice", "Mountain", "River", "Cold"], a: "Ice" },
+    { cat: "Aptitude", q: "If it takes 2 hours to dry 2 shirts in the sun, how long does it take to dry 10 shirts?", options: ["10 hours", "5 hours", "2 hours", "20 hours"], a: "2 hours" },
+    { cat: "Aptitude", q: "Which word does NOT belong?", options: ["Sofa", "Chair", "Bed", "Radio"], a: "Radio" },
+    { cat: "Aptitude", q: "Find the value of (10+10)*0 + 5", options: ["5", "25", "0", "15"], a: "5" },
+    { cat: "Aptitude", q: "What comes next: Sunday, Tuesday, Thursday, ___", options: ["Friday", "Saturday", "Monday", "Wednesday"], a: "Saturday" },
+    { cat: "Aptitude", q: "A cube has how many faces?", options: ["4", "6", "8", "12"], a: "6" },
+    { cat: "Aptitude", q: "If 10 men can build a wall in 10 days, how many days for 1 man?", options: ["1 day", "10 days", "100 days", "50 days"], a: "100 days" },
+    { cat: "Aptitude", q: "Complete: 7, 14, 21, 28, ___", options: ["30", "35", "40", "42"], a: "35" },
+    { cat: "Aptitude", q: "A rectangle has a length of 10 and width of 5. What is its area?", options: ["15", "30", "50", "25"], a: "50" },
+    { cat: "Aptitude", q: "If a=1, b=2, c=3, what is a+b+c?", options: ["4", "5", "6", "9"], a: "6" },
+    { cat: "Aptitude", q: "Which fraction is equivalent to 0.5?", options: ["1/4", "1/2", "2/3", "1/5"], a: "1/2" },
+    { cat: "Aptitude", q: "Doctor is to Hospital as Teacher is to ___", options: ["Office", "School", "Library", "Market"], a: "School" },
+    { cat: "Aptitude", q: "Find the next letter: Z, X, V, T, ___", options: ["S", "R", "U", "Q"], a: "R" },
+    { cat: "Aptitude", q: "What is the average of 10, 20, and 30?", options: ["15", "20", "25", "30"], a: "20" },
+    { cat: "Aptitude", q: "If a doctor gives you 3 pills and tells you to take one every half hour, how long will they last?", options: ["1 hour", "1.5 hours", "2 hours", "30 mins"], a: "1 hour" },
+    { cat: "Aptitude", q: "Which word is the synonym of 'BRAVE'?", options: ["Coward", "Fearless", "Weak", "Quiet"], a: "Fearless" },
+    { cat: "Aptitude", q: "A father is 4 times as old as his son. If the son is 10, how old is the father?", options: ["30", "40", "50", "60"], a: "40" },
+    { cat: "Aptitude", q: "Convert 0.75 to a percentage:", options: ["7.5%", "75%", "0.75%", "750%"], a: "75%" },
+    { cat: "Aptitude", q: "Find the odd one:", options: ["Monday", "Friday", "June", "Sunday"], a: "June" },
+    { cat: "Aptitude", q: "A man faces West and turns 180 degrees. Which direction is he facing?", options: ["North", "South", "East", "West"], a: "East" },
+    { cat: "Aptitude", q: "If 12 eggs cost 24 Birr, how much is one egg?", options: ["1 Birr", "2 Birr", "3 Birr", "4 Birr"], a: "2 Birr" },
+    { cat: "Aptitude", q: "Complete the series: 1, 8, 27, 64, ___", options: ["100", "121", "125", "144"], a: "125" },
+    { cat: "Aptitude", q: "Identify the word that is correctly spelled:", options: ["Receive", "Recieve", "Receve", "Resieve"], a: "Receive" },
+    { cat: "Aptitude", q: "Light is to Eye as Sound is to ___", options: ["Nose", "Ear", "Tongue", "Skin"], a: "Ear" },
+    { cat: "Aptitude", q: "If 'CAT' is 3120, what is 'DOG'?", options: ["4157", "4151", "4147", "5157"], a: "4157" },
+    { cat: "Aptitude", q: "Find the value of x: 2x = 50", options: ["20", "25", "30", "50"], a: "25" },
+    { cat: "Aptitude", q: "What is the sum of angles in a triangle?", options: ["90", "180", "360", "270"], a: "180" },
+    { cat: "Aptitude", q: "If you mix Red and Yellow, you get:", options: ["Green", "Purple", "Orange", "Pink"], a: "Orange" },
+    { cat: "Aptitude", q: "Find the missing number: 2, 5, 10, 17, ___", options: ["24", "25", "26", "27"], a: "26" },
+    { cat: "Aptitude", q: "Which is the smallest prime number?", options: ["0", "1", "2", "3"], a: "2" },
+    { cat: "Aptitude", q: "A shopkeeper gives 10% discount on 200 Birr. How much is the discount?", options: ["10 Birr", "20 Birr", "30 Birr", "40 Birr"], a: "20 Birr" },
+    { cat: "Aptitude", q: "How many sides does a pentagon have?", options: ["5", "6", "7", "8"], a: "5" },
+    { cat: "Aptitude", q: "Find the odd one out:", options: ["Apple", "Orange", "Potato", "Banana"], a: "Potato" },
+    { cat: "Aptitude", q: "If 'GREEN' is coded as 'HSSFO', what is 'BLUE'?", options: ["CMVF", "CMVF", "CMVF", "CMVF"], a: "CMVF" }, // Simple shift
+    { cat: "Aptitude", q: "A car travels 300km in 5 hours. What is its average speed?", options: ["50 km/h", "60 km/h", "70 km/h", "80 km/h"], a: "60 km/h" },
+    { cat: "Aptitude", q: "If 4x - 2 = 10, what is x?", options: ["2", "3", "4", "5"], a: "3" },
+    { cat: "Aptitude", q: "Which letter is 5th to the right of 'A'?", options: ["E", "F", "D", "G"], a: "F" },
+    { cat: "Aptitude", q: "What is 50% of 50% of 100?", options: ["50", "25", "10", "5"], a: "25" },
+    { cat: "Aptitude", q: "Complete: North, South, East, ___", options: ["West", "Up", "Down", "Left"], a: "West" },
+    { cat: "Aptitude", q: "How many seconds are in 5 minutes?", options: ["100", "200", "300", "500"], a: "300" },
+    { cat: "Aptitude", q: "Identify the next number: 1, 3, 6, 10, 15, ___", options: ["20", "21", "22", "25"], a: "21" },
+    { cat: "Aptitude", q: "If some A are B, and all B are C, then some A are definitely C.", options: ["True", "False", "Cannot say", "None"], a: "True" },
+    { cat: "Aptitude", q: "Choose the word most similar to 'ABANDON':", options: ["Keep", "Leave", "Find", "Hold"], a: "Leave" },
+    { cat: "Aptitude", q: "Find the value of 5 + 5 * 5", options: ["50", "25", "30", "15"], a: "30" },
+    { cat: "Aptitude", q: "If 1st January is Friday, what day is 8th January?", options: ["Friday", "Saturday", "Thursday", "Monday"], a: "Friday" },
+    { cat: "Aptitude", q: "Which number is the odd one: 2, 4, 6, 7, 8?", options: ["2", "4", "7", "8"], a: "7" },
+    { cat: "Aptitude", q: "A circle has a radius of 7. What is its diameter?", options: ["7", "14", "21", "49"], a: "14" },
+    { cat: "Aptitude", q: "If 'BOY' is 2-15-25, what is 'ACE'?", options: ["1-3-5", "1-2-3", "3-2-1", "1-4-5"], a: "1-3-5" },
+    { cat: "Aptitude", q: "Identify the next: 1/2, 1/4, 1/8, ___", options: ["1/10", "1/12", "1/16", "1/20"], a: "1/16" },
+    { cat: "Aptitude", q: "An equilateral triangle has all angles equal to:", options: ["45", "60", "90", "120"], a: "60" },
+    { cat: "Aptitude", q: "If you are in a race and you pass the person in second place, what place are you in?", options: ["1st", "2nd", "3rd", "Last"], a: "2nd" },
+    { cat: "Aptitude", q: "How many faces does a pyramid with a square base have?", options: ["4", "5", "6", "8"], a: "5" },
+    { cat: "Aptitude", q: "A shirt originally 100 Birr is on 20% sale. What is the new price?", options: ["20 Birr", "80 Birr", "120 Birr", "90 Birr"], a: "80 Birr" },
+    { cat: "Aptitude", q: "What is the next letter in the pattern: O, T, T, F, F, S, S, ___", options: ["E", "N", "T", "O"], a: "E" }, // One, Two, Three... Eight
+    { cat: "Aptitude", q: "If 2x + 10 = 2x + 10, x can be any number.", options: ["True", "False", "Only 0", "Only 1"], a: "True" },
+    { cat: "Aptitude", q: "Find the odd one: Lion, Tiger, Cow, Leopard", options: ["Lion", "Tiger", "Cow", "Leopard"], a: "Cow" },
+    { cat: "Aptitude", q: "What is 1000 divided by 0.5?", options: ["500", "2000", "1000", "250"], a: "2000" },
+    { cat: "Aptitude", q: "Identify the missing letter: M, A, T, R, I, ___", options: ["C", "K", "X", "S"], a: "C" }, // MATRIC
+    { cat: "Aptitude", q: "If a=5 and b=10, what is (a*b) - (a+b)?", options: ["35", "50", "15", "45"], a: "35" },
+    { cat: "Aptitude", q: "Which is the smallest fraction: 1/2, 1/3, 1/4, 1/5?", options: ["1/2", "1/3", "1/4", "1/5"], a: "1/5" },
+    { cat: "Aptitude", q: "A person is facing North. He turns 90 degrees Left. Now he faces:", options: ["East", "South", "West", "North"], a: "West" },
+    { cat: "Aptitude", q: "Complete the series: 0, 1, 1, 2, 3, 5, 8, 13, ___", options: ["15", "18", "21", "25"], a: "21" },
 
 // --- ECONOMICS (50 Questions) ---
-{ cat: "Economics", q: "The basic economic problem common to all societies is:", options: ["Inflation", "Unemployment", "Scarcity", "Poverty"], a: "Scarcity" },
-{ cat: "Economics", q: "What is the primary goal of a firm in a capitalist economy?", options: ["Social welfare", "Profit maximization", "Price stability", "Full employment"], a: "Profit maximization" },
-{ cat: "Economics", q: "A shift in the demand curve to the right indicates:", options: ["Decrease in demand", "Increase in demand", "Decrease in price", "Increase in price"], a: "Increase in demand" },
-{ cat: "Economics", q: "The 'Father of Modern Economics' is:", options: ["Karl Marx", "Adam Smith", "John Maynard Keynes", "David Ricardo"], a: "Adam Smith" },
-{ cat: "Economics", q: "Which of the following is a factor of production?", options: ["Money", "Labor", "Stocks", "Bonds"], a: "Labor" },
-{ cat: "Economics", q: "Microeconomics deals with:", options: ["National income", "Individual markets", "General price level", "Total employment"], a: "Individual markets" },
-{ cat: "Economics", q: "What happens to demand when the price of a substitute good increases?", options: ["Demand decreases", "Demand increases", "No change", "Supply decreases"], a: "Demand increases" },
-{ cat: "Economics", q: "The law of demand states that price and quantity demanded have:", options: ["Direct relationship", "Inverse relationship", "No relationship", "Positive relationship"], a: "Inverse relationship" },
-{ cat: "Economics", q: "GDP stands for:", options: ["General Domestic Product", "Gross Domestic Product", "Gross Deposit Profit", "Government Domestic Product"], a: "Gross Domestic Product" },
-{ cat: "Economics", q: "Market structure with only one seller is called:", options: ["Oligopoly", "Monopoly", "Perfect Competition", "Monopolistic Competition"], a: "Monopoly" },
-{ cat: "Economics", q: "The cost of the next best alternative foregone is:", options: ["Marginal cost", "Opportunity cost", "Fixed cost", "Variable cost"], a: "Opportunity cost" },
-{ cat: "Economics", q: "Which type of economy is based on customs and beliefs?", options: ["Command economy", "Market economy", "Traditional economy", "Mixed economy"], a: "Traditional economy" },
-{ cat: "Economics", q: "Inflation is defined as:", options: ["Decrease in prices", "Increase in unemployment", "Persistent rise in general price level", "Increase in GDP"], a: "Persistent rise in general price level" },
-{ cat: "Economics", q: "A budget deficit occurs when:", options: ["Revenue > Expenditure", "Expenditure > Revenue", "Exports > Imports", "Imports > Exports"], a: "Expenditure > Revenue" },
-{ cat: "Economics", q: "Money serves as a:", options: ["Medium of exchange", "Store of value", "Unit of account", "All of the above"], a: "All of the above" },
-{ cat: "Economics", q: "The curve that shows the combinations of two goods an economy can produce is:", options: ["Demand curve", "Supply curve", "Production Possibilities Frontier (PPF)", "Lorenz curve"], a: "Production Possibilities Frontier (PPF)" },
-{ cat: "Economics", q: "Equilibrium price is the price where:", options: ["Demand > Supply", "Supply > Demand", "Demand = Supply", "Price is highest"], a: "Demand = Supply" },
-{ cat: "Economics", q: "Fiscal policy is controlled by the:", options: ["Central Bank", "Government", "Commercial Banks", "Consumers"], a: "Government" },
-{ cat: "Economics", q: "Monetary policy is managed by the:", options: ["Ministry of Finance", "Central Bank", "Parliament", "Stock Market"], a: "Central Bank" },
-{ cat: "Economics", q: "When the price of bread increases, the demand for butter (a complement) will:", options: ["Increase", "Decrease", "Stay the same", "None"], a: "Decrease" },
-{ cat: "Economics", q: "Human-made goods used to produce other goods are called:", options: ["Land", "Labor", "Capital", "Entrepreneurship"], a: "Capital" },
-{ cat: "Economics", q: "The study of the economy as a whole is:", options: ["Microeconomics", "Macroeconomics", "Positive Economics", "Normative Economics"], a: "Macroeconomics" },
-{ cat: "Economics", q: "A tax that takes a higher percentage from higher incomes is:", options: ["Regressive tax", "Proportional tax", "Progressive tax", "Indirect tax"], a: "Progressive tax" },
-{ cat: "Economics", q: "The main cause of inflation is often:", options: ["Excess supply of goods", "Excess money supply", "High savings", "Low consumption"], a: "Excess money supply" },
-{ cat: "Economics", q: "Which market has many sellers selling identical products?", options: ["Monopoly", "Perfect Competition", "Oligopoly", "Monopolistic Competition"], a: "Perfect Competition" },
-{ cat: "Economics", q: "The circular flow model shows the flow of:", options: ["Goods and services", "Income and expenditure", "Resources", "All of the above"], a: "All of the above" },
-{ cat: "Economics", q: "Value of exports minus value of imports is:", options: ["Net Exports", "Gross Exports", "Trade Deficit", "GDP"], a: "Net Exports" },
-{ cat: "Economics", q: "In a command economy, economic decisions are made by:", options: ["Consumers", "Producers", "The Government", "Market forces"], a: "The Government" },
-{ cat: "Economics", q: "The responsiveness of quantity demanded to a change in price is:", options: ["Price Elasticity of Demand", "Law of Supply", "Marginal Utility", "Equilibrium"], a: "Price Elasticity of Demand" },
-{ cat: "Economics", q: "Utility refers to:", options: ["Price of a good", "Satisfaction from consumption", "Cost of production", "Supply of a good"], a: "Satisfaction from consumption" },
-{ cat: "Economics", q: "Law of diminishing marginal utility states that satisfaction:", options: ["Increases", "Decreases with each extra unit", "Remains constant", "Is always zero"], a: "Decreases with each extra unit" },
-{ cat: "Economics", q: "The unemployment caused by a mismatch of skills is:", options: ["Frictional", "Structural", "Cyclical", "Seasonal"], a: "Structural" },
-{ cat: "Economics", q: "Which of the following is an indirect tax?", options: ["Income tax", "VAT", "Property tax", "Corporate tax"], a: "VAT" },
-{ cat: "Economics", q: "The branch of economics based on facts and data is:", options: ["Normative", "Positive", "Subjective", "Political"], a: "Positive" },
-{ cat: "Economics", q: "If the price of a good is below equilibrium, there will be a:", options: ["Surplus", "Shortage", "Glut", "Steady state"], a: "Shortage" },
-{ cat: "Economics", q: "Expansionary fiscal policy involves:", options: ["Increasing taxes", "Decreasing government spending", "Decreasing taxes", "Reducing money supply"], a: "Decreasing taxes" },
-{ cat: "Economics", q: "The central bank of Ethiopia is:", options: ["Commercial Bank of Ethiopia", "National Bank of Ethiopia", "Dashen Bank", "Awash Bank"], a: "National Bank of Ethiopia" },
-{ cat: "Economics", q: "A characteristic of an Oligopoly market is:", options: ["Single seller", "Many small sellers", "Interdependence between few large firms", "Easy entry"], a: "Interdependence between few large firms" },
-{ cat: "Economics", q: "Real GDP is adjusted for:", options: ["Population", "Inflation", "Taxation", "Exports"], a: "Inflation" },
-{ cat: "Economics", q: "Total Fixed Cost + Total Variable Cost = ", options: ["Average Cost", "Marginal Cost", "Total Cost", "Unit Cost"], a: "Total Cost" },
-{ cat: "Economics", q: "Which era in Ethiopia followed a Command Economy?", options: ["Imperial", "Derg", "EPRDF", "Current"], a: "Derg" },
-{ cat: "Economics", q: "The main objective of the World Bank is:", options: ["Short term loans", "Price stability", "Long term development/poverty reduction", "Printing money"], a: "Long term development/poverty reduction" },
-{ cat: "Economics", q: "Short-run is a period where at least one factor is:", options: ["Variable", "Fixed", "Infinite", "Zero"], a: "Fixed" },
-{ cat: "Economics", q: "Which curve is U-shaped?", options: ["Demand curve", "Average Cost curve", "Production Frontier", "Supply curve"], a: "Average Cost curve" },
-{ cat: "Economics", q: "International trade is based on the principle of:", options: ["Absolute advantage", "Comparative advantage", "Self-sufficiency", "Protectionism"], a: "Comparative advantage" },
-{ cat: "Economics", q: "The 'Invisible Hand' theory was proposed by:", options: ["Keynes", "Adam Smith", "Malthus", "Say"], a: "Adam Smith" },
-{ cat: "Economics", q: "If Income increases and demand for a good decreases, the good is:", options: ["Normal good", "Inferior good", "Luxury good", "Necessity"], a: "Inferior good" },
-{ cat: "Economics", q: "The slope of the demand curve is usually:", options: ["Positive", "Negative", "Zero", "Vertical"], a: "Negative" },
-{ cat: "Economics", q: "Devaluation of a currency makes exports:", options: ["Cheaper", "More expensive", "Unchanged", "Zero"], a: "Cheaper" },
-{ cat: "Economics", q: "Who manages the budget in Ethiopia?", options: ["National Bank", "Ministry of Finance", "Central Statistics Agency", "Trade Bureau"], a: "Ministry of Finance" },
+{ cat: "Economics", q: "The problem of scarcity exists because:", options: ["Resources are limited", "Wants are unlimited", "Resources have alternative uses", "All of the above"], a: "All of the above" },
+    { cat: "Economics", q: "The branch of economics that studies the behavior of individual households and firms is:", options: ["Macroeconomics", "Microeconomics", "Positive economics", "Normative economics"], a: "Microeconomics" },
+    { cat: "Economics", q: "In a command economy, the 'What to produce' decision is made by:", options: ["The government", "Private consumers", "Market forces", "Foreign investors"], a: "The government" },
+    { cat: "Economics", q: "The Law of Demand states that as price increases, quantity demanded:", options: ["Increases", "Decreases", "Stays the same", "Becomes zero"], a: "Decreases" },
+    { cat: "Economics", q: "A shift in the demand curve to the right indicates:", options: ["Decrease in demand", "Increase in demand", "Decrease in price", "Increase in price"], a: "Increase in demand" },
+    { cat: "Economics", q: "Which of the following is a factor of production?", options: ["Money", "Labor", "Stocks", "Government bonds"], a: "Labor" },
+    { cat: "Economics", q: "The extra satisfaction gained from consuming one additional unit of a good is:", options: ["Total utility", "Average utility", "Marginal utility", "Ordinal utility"], a: "Marginal utility" },
+    { cat: "Economics", q: "The point where quantity demanded equals quantity supplied is called:", options: ["Shortage", "Surplus", "Equilibrium", "Elasticity"], a: "Equilibrium" },
+    { cat: "Economics", q: "GDP stands for:", options: ["Gross Domestic Product", "General Domestic Price", "Gross Deposit Profit", "Government Development Plan"], a: "Gross Domestic Product" },
+    { cat: "Economics", q: "Inflation is defined as a persistent increase in:", options: ["Individual prices", "The general price level", "Household income", "Stock market values"], a: "The general price level" },
+    { cat: "Economics", q: "The cost of the next best alternative forgone is:", options: ["Fixed cost", "Variable cost", "Opportunity cost", "Marginal cost"], a: "Opportunity cost" },
+    { cat: "Economics", q: "When income increases, the demand for 'Normal Goods':", options: ["Decreases", "Increases", "Remains constant", "Becomes perfectly inelastic"], a: "Increases" },
+    { cat: "Economics", q: "If the price elasticity of demand is greater than 1, the demand is:", options: ["Inelastic", "Elastic", "Unitary", "Perfectly inelastic"], a: "Elastic" },
+    { cat: "Economics", q: "Which market structure has only one seller?", options: ["Perfect competition", "Monopoly", "Oligopoly", "Monopolistic competition"], a: "Monopoly" },
+    { cat: "Economics", q: "The 'Father of Modern Economics' is:", options: ["Karl Marx", "Adam Smith", "John Maynard Keynes", "David Ricardo"], a: "Adam Smith" },
+    { cat: "Economics", q: "A government's plan for its revenue and expenditure is called:", options: ["Monetary policy", "Fiscal policy", "Trade policy", "Industrial policy"], a: "Fiscal policy" },
+    { cat: "Economics", q: "Unemployment that occurs during a recession is called:", options: ["Frictional", "Structural", "Cyclical", "Seasonal"], a: "Cyclical" },
+    { cat: "Economics", q: "The Production Possibilities Curve (PPC) is usually:", options: ["Straight line", "Concave to the origin", "Convex to the origin", "Vertical"], a: "Concave to the origin" },
+    { cat: "Economics", q: "Which of the following is NOT a characteristic of a perfectly competitive market?", options: ["Many buyers and sellers", "Homogeneous products", "High barriers to entry", "Perfect information"], a: "High barriers to entry" },
+    { cat: "Economics", q: "The Law of Diminishing Marginal Returns applies to the:", options: ["Short run", "Long run", "Very long run", "Market period"], a: "Short run" },
+    { cat: "Economics", q: "Money serves as a:", options: ["Medium of exchange", "Store of value", "Unit of account", "All of the above"], a: "All of the above" },
+    { cat: "Economics", q: "The central bank of Ethiopia is:", options: ["Commercial Bank of Ethiopia", "National Bank of Ethiopia", "Development Bank of Ethiopia", "Dashen Bank"], a: "National Bank of Ethiopia" },
+    { cat: "Economics", q: "A tax that takes a higher percentage from high-income earners is:", options: ["Proportional tax", "Regressive tax", "Progressive tax", "Excise tax"], a: "Progressive tax" },
+    { cat: "Economics", q: "The sum of all final goods and services produced within a country's borders in a year is:", options: ["GNP", "GDP", "NNP", "Per capita income"], a: "GDP" },
+    { cat: "Economics", q: "Which type of unemployment is considered 'natural'?", options: ["Cyclical", "Frictional and Structural", "Seasonal only", "None of the above"], a: "Frictional and Structural" },
+    { cat: "Economics", q: "When the price of coffee rises, the demand for tea (a substitute) will:", options: ["Increase", "Decrease", "Stay the same", "Fall to zero"], a: "Increase" },
+    { cat: "Economics", q: "Marginal Cost (MC) is the change in total cost resulting from:", options: ["Price change", "One extra unit of output", "Change in fixed cost", "Change in labor"], a: "One extra unit of output" },
+    { cat: "Economics", q: "Total Revenue is calculated as:", options: ["Price + Quantity", "Price / Quantity", "Price × Quantity", "Price - Quantity"], a: "Price × Quantity" },
+    { cat: "Economics", q: "The reward for Entrepreneurship is:", options: ["Wage", "Interest", "Rent", "Profit"], a: "Profit" },
+    { cat: "Economics", q: "In which system does the price mechanism allocate resources?", options: ["Socialist economy", "Market economy", "Traditional economy", "Planned economy"], a: "Market economy" },
+    { cat: "Economics", q: "The value of the next best alternative is known as:", options: ["Implicit cost", "Explicit cost", "Opportunity cost", "Social cost"], a: "Opportunity cost" },
+    { cat: "Economics", q: "An increase in the price of inputs will cause the supply curve to:", options: ["Shift to the right", "Shift to the left", "Stay the same", "Become horizontal"], a: "Shift to the left" },
+    { cat: "Economics", q: "Which of the following is a macroeconomics topic?", options: ["Price of shoes", "Inflation rate", "A firm's profit", "Consumer choice"], a: "Inflation rate" },
+    { cat: "Economics", q: "Complementary goods are goods that are:", options: ["Used instead of each other", "Used together", "Not related", "Free goods"], a: "Used together" },
+    { cat: "Economics", q: "The law of supply states that as price increases, quantity supplied:", options: ["Increases", "Decreases", "Remains constant", "Fluctuates"], a: "Increases" },
+    { cat: "Economics", q: "Average Fixed Cost (AFC) always:", options: ["Increases with output", "Decreases with output", "Stays constant", "Is U-shaped"], a: "Decreases with output" },
+    { cat: "Economics", q: "A floor price is a price set:", options: ["Below equilibrium", "Above equilibrium", "At equilibrium", "By consumers"], a: "Above equilibrium" },
+    { cat: "Economics", q: "Monopoly power means the firm is a:", options: ["Price taker", "Price maker", "Price follower", "Market seeker"], a: "Price maker" },
+    { cat: "Economics", q: "Export minus Import equals:", options: ["Budget balance", "Net exports", "Trade deficit", "Gross profit"], a: "Net exports" },
+    { cat: "Economics", q: "The main objective of a rational firm is to:", options: ["Maximize sales", "Maximize profit", "Minimize labor", "Maximize price"], a: "Maximize profit" },
+    { cat: "Economics", q: "Real GDP is adjusted for:", options: ["Population", "Inflation", "Taxation", "Exports"], a: "Inflation" },
+    { cat: "Economics", q: "A situation where quantity supplied exceeds quantity demanded is a:", options: ["Shortage", "Equilibrium", "Surplus", "Elasticity"], a: "Surplus" },
+    { cat: "Economics", q: "Factors of production include Land, Labor, Capital and:", options: ["Money", "Technology", "Entrepreneurship", "Government"], a: "Entrepreneurship" },
+    { cat: "Economics", q: "Elasticity of demand for a necessity good is usually:", options: ["Elastic", "Inelastic", "Perfectly elastic", "Unitary"], a: "Inelastic" },
+    { cat: "Economics", q: "The Long Run is a period where:", options: ["All inputs are fixed", "All inputs are variable", "One input is variable", "Technology is fixed"], a: "All inputs are variable" },
+    { cat: "Economics", q: "Which curve is NOT U-shaped?", options: ["AVC", "ATC", "MC", "AFC"], a: "AFC" },
+    { cat: "Economics", q: "The circular flow model shows the flow of:", options: ["Goods and services", "Factors of production", "Money", "All of the above"], a: "All of the above" },
+    { cat: "Economics", q: "Demand for labor is a:", options: ["Primary demand", "Derived demand", "Independent demand", "Joint demand"], a: "Derived demand" },
+    { cat: "Economics", q: "Who wrote 'The Wealth of Nations'?", options: ["Karl Marx", "Adam Smith", "J.S. Mill", "Alfred Marshall"], a: "Adam Smith" },
+    { cat: "Economics", q: "National income divided by population is:", options: ["Real GDP", "Per capita income", "Disposable income", "Personal income"], a: "Per capita income" },
+    { cat: "Economics", q: "An oligopoly market is characterized by:", options: ["One seller", "Few sellers", "Many sellers", "Infinite sellers"], a: "Few sellers" },
+    { cat: "Economics", q: "The Phillips curve shows the relationship between:", options: ["Price and Quantity", "Inflation and Unemployment", "Tax and Revenue", "Income and Demand"], a: "Inflation and Unemployment" },
+    { cat: "Economics", q: "Which of the following is a direct tax?", options: ["VAT", "Customs duty", "Personal income tax", "Excise tax"], a: "Personal income tax" },
+    { cat: "Economics", q: "Expansionary monetary policy involves:", options: ["Increasing interest rates", "Reducing money supply", "Lowering interest rates", "Increasing taxes"], a: "Lowering interest rates" },
+    { cat: "Economics", q: "The fundamental economic problem is:", options: ["Unemployment", "Poverty", "Scarcity", "Inflation"], a: "Scarcity" },
+    { cat: "Economics", q: "If the cross-price elasticity is positive, the goods are:", options: ["Complements", "Substitutes", "Inferior", "Luxury"], a: "Substitutes" },
+    { cat: "Economics", q: "Diminishing marginal utility means that as consumption increases:", options: ["Total utility falls", "Extra satisfaction falls", "Price rises", "Demand rises"], a: "Extra satisfaction falls" },
+    { cat: "Economics", q: "Fixed costs are costs that:", options: ["Change with output", "Do not change with output", "Are always zero", "Are paid by consumers"], a: "Do not change with output" },
+    { cat: "Economics", q: "The slope of the demand curve is usually:", options: ["Positive", "Negative", "Zero", "Undefined"], a: "Negative" },
+    { cat: "Economics", q: "Which of the following is an inferior good?", options: ["Car", "iPhone", "Used clothes", "Steak"], a: "Used clothes" },
+    { cat: "Economics", q: "A budget deficit occurs when:", options: ["Revenue > Expenditure", "Expenditure > Revenue", "Revenue = Expenditure", "Tax = 0"], a: "Expenditure > Revenue" },
+    { cat: "Economics", q: "The 'Command Economy' is also known as:", options: ["Laissez-faire", "Socialism/Planned", "Mixed", "Traditional"], a: "Socialism/Planned" },
+    { cat: "Economics", q: "The reward for Land is:", options: ["Wage", "Profit", "Rent", "Interest"], a: "Rent" },
+    { cat: "Economics", q: "Price Elasticity of Supply measures the responsiveness of:", options: ["Demand to price", "Supply to price", "Supply to income", "Price to supply"], a: "Supply to price" },
+    { cat: "Economics", q: "Total Product divided by the number of workers is:", options: ["Marginal Product", "Average Product", "Variable Product", "Net Product"], a: "Average Product" },
+    { cat: "Economics", q: "Advertising is most important in:", options: ["Perfect competition", "Monopoly", "Monopolistic competition", "Agriculture"], a: "Monopolistic competition" },
+    { cat: "Economics", q: "A 'Recession' is a period of:", options: ["Economic growth", "Negative GDP growth", "High employment", "Low inflation"], a: "Negative GDP growth" },
+    { cat: "Economics", q: "Public goods are:", options: ["Excludable", "Non-excludable", "Sold in markets", "Used by one person only"], a: "Non-excludable" },
+    { cat: "Economics", q: "Comparative advantage was proposed by:", options: ["Adam Smith", "David Ricardo", "Malthus", "Keynes"], a: "David Ricardo" },
+    { cat: "Economics", q: "The equilibrium price is also known as:", options: ["Market clearing price", "Floor price", "Ceiling price", "Fixed price"], a: "Market clearing price" },
+    { cat: "Economics", q: "Which of the following causes a movement along the demand curve?", options: ["Change in income", "Change in taste", "Change in price of the good", "Change in population"], a: "Change in price of the good" },
+    { cat: "Economics", q: "What is the main source of government revenue in Ethiopia?", options: ["Foreign aid", "Taxes", "Mining", "Exports"], a: "Taxes" },
+    { cat: "Economics", q: "In economics, 'Capital' refers to:", options: ["Money in bank", "Man-made tools and machines", "Social status", "Natural resources"], a: "Man-made tools and machines" },
+    { cat: "Economics", q: "Perfectly inelastic demand has a curve that is:", options: ["Horizontal", "Vertical", "Downward sloping", "Upward sloping"], a: "Vertical" },
+    { cat: "Economics", q: "Which phase of the business cycle follows a 'Peak'?", options: ["Expansion", "Recovery", "Recession/Contraction", "Trough"], a: "Recession/Contraction" },
+    { cat: "Economics", q: "The 'Substitution Effect' explains why:", options: ["PPC shifts", "Demand curve slopes down", "Supply curve slopes up", "Inflation occurs"], a: "Demand curve slopes down" },
+    { cat: "Economics", q: "Which of these is a function of the National Bank of Ethiopia?", options: ["Giving loans to individuals", "Printing money", "Selling clothes", "Farming"], a: "Printing money" },
+    { cat: "Economics", q: "Macroeconomics was popularized by:", options: ["Adam Smith", "John Maynard Keynes", "Milton Friedman", "Alfred Marshall"], a: "John Maynard Keynes" },
+    { cat: "Economics", q: "If the price of Bread increases, the demand for Butter will:", options: ["Increase", "Decrease", "Remain constant", "Shift right"], a: "Decrease" },
+    { cat: "Economics", q: "Economic growth is shown by a:", options: ["Movement along PPC", "Shift of PPC to the right", "Shift of PPC to the left", "Point inside PPC"], a: "Shift of PPC to the right" },
+    { cat: "Economics", q: "Veblen goods are goods for which demand:", options: ["Falls as price rises", "Rises as price rises", "Is zero", "Is always constant"], a: "Rises as price rises" },
+    { cat: "Economics", q: "Normative economics deals with:", options: ["Facts", "What ought to be (opinions)", "Statistics", "Historical data"], a: "What ought to be (opinions)" },
+    { cat: "Economics", q: "The most liquid asset is:", options: ["Gold", "Real Estate", "Money", "Stocks"], a: "Money" },
+    { cat: "Economics", q: "A firm in perfect competition is a:", options: ["Price maker", "Price taker", "Monopolist", "Oligopolist"], a: "Price taker" },
+    { cat: "Economics", q: "VAT stands for:", options: ["Value Added Tax", "Variable Asset Tax", "Volume Added Tax", "Value Account Tax"], a: "Value Added Tax" },
+    { cat: "Economics", q: "The main cause of inflation according to Monetarists is:", options: ["Low taxes", "Excessive money supply", "High wages", "Government regulations"], a: "Excessive money supply" },
+    { cat: "Economics", q: "Which of these is a trade barrier?", options: ["Free trade", "Quotas", "Subsidies for consumers", "Deregulation"], a: "Quotas" },
+    { cat: "Economics", q: "Human capital refers to:", options: ["Number of people", "Skills and knowledge of workers", "Machines", "Factories"], a: "Skills and knowledge of workers" },
+    { cat: "Economics", q: "The supply of land is generally:", options: ["Perfectly elastic", "Perfectly inelastic", "Unitary", "Very elastic"], a: "Perfectly inelastic" },
+    { cat: "Economics", q: "Market failure occurs when:", options: ["Price is too high", "Resources are not allocated efficiently", "Firms make profit", "Government taxes the rich"], a: "Resources are not allocated efficiently" },
+    { cat: "Economics", q: "Disposable income is:", options: ["Income before tax", "Income after tax", "Savings", "Total wealth"], a: "Income after tax" },
+    { cat: "Economics", q: "The 'Invisible Hand' theory was by:", options: ["Ricardo", "Adam Smith", "Marx", "Malthus"], a: "Adam Smith" },
+    { cat: "Economics", q: "Which good is likely to have perfectly elastic demand?", options: ["Salt", "Medicine", "Wheat in a perfect market", "Electricity"], a: "Wheat in a perfect market" },
+    { cat: "Economics", q: "The 'Trough' in a business cycle is the:", options: ["Highest point", "Lowest point", "Middle point", "Starting point"], a: "Lowest point" },
+    { cat: "Economics", q: "Balance of Trade is:", options: ["Export - Import", "Tax - Spend", "GDP - GNP", "Birth - Death"], a: "Export - Import" },
+    { cat: "Economics", q: "Economic resources are also called:", options: ["Outputs", "Factors of production", "Consumer goods", "Free goods"], a: "Factors of production" },
+    { cat: "Economics", q: "Opportunity cost of a student is:", options: ["Books and fees", "Earnings from a job they gave up", "Food and rent", "Entertainment"], a: "Earnings from a job they gave up" },
+    { cat: "Economics", q: "Which of the following is a stock variable?", options: ["Income", "Wealth", "Investment", "GDP"], a: "Wealth" },
+    { cat: "Economics", q: "If demand is perfectly elastic, the coefficient is:", options: ["0", "1", "Infinity", "Less than 1"], a: "Infinity" },
+    { cat: "Economics", q: "The basic motive of a consumer is to:", options: ["Save money", "Maximize utility", "Minimize spending", "Work hard"], a: "Maximize utility" },
 
 
 // --- HISTORY (50 Questions) ---
-{ cat: "History", q: "The process of 'Hominization' refers to:", options: ["Development of tools", "Evolution of humans", "Discovery of fire", "Beginning of farming"], a: "Evolution of humans" },
-{ cat: "History", q: "The earliest known stone tool technology is:", options: ["Acheulean", "Oldowan", "Sangoan", "Neolithic"], a: "Oldowan" },
-{ cat: "History", q: "Which Aksumite king converted to Christianity in the 4th century?", options: ["Kaleb", "Ezana", "Armah", "Zoskales"], a: "Ezana" },
-{ cat: "History", q: "The Zagwe Dynasty reached its peak during the reign of:", options: ["Yekuno Amlak", "Lalibela", "Harbe", "Imrahane Kristos"], a: "Lalibela" },
-{ cat: "History", q: "The battle of Adwa took place in:", options: ["1889", "1896", "1935", "1872"], a: "1896" },
-{ cat: "History", q: "The first Prophet of Islam was:", options: ["Ibrahim", "Muhammad", "Musa", "Issa"], a: "Muhammad" },
-{ cat: "History", q: "The Solomonic Dynasty was 'restored' by:", options: ["Amde Tsion", "Yekuno Amlak", "Zara Yaqob", "Tewodros II"], a: "Yekuno Amlak" },
-{ cat: "History", q: "The 'Zemene Mesafint' began after the death of:", options: ["Iyoas", "Bakaffa", "Iyasu I", "Tewoflos"], a: "Iyoas" },
-{ cat: "History", q: "Which European power colonized Libya?", options: ["France", "Britain", "Italy", "Germany"], a: "Italy" },
-{ cat: "History", q: "The leader of the 1789 French Revolution was:", options: ["Napoleon", "Robespierre", "Louis XVI", "Voltaire"], a: "Robespierre" },
-{ cat: "History", q: "The industrial revolution started in:", options: ["USA", "Germany", "Great Britain", "France"], a: "Great Britain" },
-{ cat: "History", q: "The first World War (WWI) started in:", options: ["1912", "1914", "1939", "1918"], a: "1914" },
-{ cat: "History", q: "The Council of Berlin (1884-85) was held to:", options: ["End slavery", "Partition Africa", "Stop WWI", "Promote trade"], a: "Partition Africa" },
-{ cat: "History", q: "The last Emperor of Ethiopia was:", options: ["Menelik II", "Iyasu", "Haile Selassie I", "Tewodros II"], a: "Haile Selassie I" },
-{ cat: "History", q: "The main cause of the Cold War was the rivalry between:", options: ["UK and France", "USA and USSR", "Germany and Italy", "China and Japan"], a: "USA and USSR" },
-{ cat: "History", q: "The ancient civilization known for Pyramids is:", options: ["Mesopotamia", "Greece", "Egypt", "Rome"], a: "Egypt" },
-{ cat: "History", q: "Which Ethiopian leader committed suicide at Meqdela?", options: ["Yohannes IV", "Tewodros II", "Menelik II", "Tekle Giyorgis"], a: "Tewodros II" },
-{ cat: "History", q: "The 'Glorious Revolution' took place in:", options: ["France", "England", "Russia", "USA"], a: "England" },
-{ cat: "History", q: "The first president of the USA was:", options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], a: "George Washington" },
-{ cat: "History", q: "The 'Derg' regime came to power in:", options: ["1960", "1974", "1991", "1984"], a: "1974" },
-{ cat: "History", q: "Who was the leader of the Nazi Party in Germany?", options: ["Mussolini", "Hitler", "Stalin", "Churchill"], a: "Hitler" },
-{ cat: "History", q: "The Great Depression started in:", options: ["1914", "1929", "1939", "1945"], a: "1929" },
-{ cat: "History", q: "The Oromo population movement took place in the:", options: ["14th Century", "16th Century", "18th Century", "12th Century"], a: "16th Century" },
-{ cat: "History", q: "The founder of the Kingdom of Kaffa was:", options: ["Minjo", "Tato", "Gaki Sherocho", "Dil Nead"], a: "Minjo" },
-{ cat: "History", q: "Apartheid was a system of racial segregation in:", options: ["Kenya", "South Africa", "Zimbabwe", "Angola"], a: "South Africa" },
-{ cat: "History", q: "The League of Nations was replaced by:", options: ["AU", "UN", "NATO", "EU"], a: "UN" },
-{ cat: "History", q: "The Gragn Ahmed-Lebne Dengel war was fought in the:", options: ["15th Century", "16th Century", "17th Century", "18th Century"], a: "16th Century" },
-{ cat: "History", q: "Which country was NOT colonized by Europeans in Africa?", options: ["Nigeria", "Ethiopia", "Ghana", "Algeria"], a: "Ethiopia" },
-{ cat: "History", q: "The writing system of Ancient Egypt was:", options: ["Cuneiform", "Hieroglyphics", "Ge'ez", "Latin"], a: "Hieroglyphics" },
-{ cat: "History", q: "The Renaissance began in:", options: ["Germany", "Italy", "Spain", "Greece"], a: "Italy" },
-{ cat: "History", q: "The 'Wuchale Treaty' was signed between Ethiopia and:", options: ["France", "Italy", "Britain", "Egypt"], a: "Italy" },
-{ cat: "History", q: "The capital of the Gondarine period was:", options: ["Aksum", "Gondar", "Lalibela", "Debre Berhan"], a: "Gondar" },
-{ cat: "History", q: "The Bolshevik Revolution (1917) happened in:", options: ["Germany", "Russia", "China", "France"], a: "Russia" },
-{ cat: "History", q: "The architect of the 'Unification of Germany' was:", options: ["Napoleon", "Bismarck", "Hitler", "Kaiser Wilhelm"], a: "Bismarck" },
-{ cat: "History", q: "The 'Wayane Rebellion' of 1943 happened in:", options: ["Gojjam", "Tigray", "Bale", "Wollo"], a: "Tigray" },
-{ cat: "History", q: "The Atlantic Slave Trade is also known as:", options: ["The Long Walk", "The Middle Passage", "The Great Trek", "The Silk Road"], a: "The Middle Passage" },
-{ cat: "History", q: "The religion founded by Siddhartha Gautama is:", options: ["Hinduism", "Buddhism", "Jainism", "Sikhism"], a: "Buddhism" },
-{ cat: "History", q: "Which treaty ended WWI?", options: ["Treaty of Westphalia", "Treaty of Versailles", "Treaty of Wuchale", "Treaty of Paris"], a: "Treaty of Versailles" },
-{ cat: "History", q: "The first African country to gain independence (after 1945) was:", options: ["Nigeria", "Ghana", "Kenya", "Sudan"], a: "Ghana" },
-{ cat: "History", q: "The 'White Man's Burden' was a justification for:", options: ["Democracy", "Imperialism", "Equality", "Trade"], a: "Imperialism" },
-{ cat: "History", q: "The Gadaa system is a traditional social-political system of:", options: ["Amhara", "Oromo", "Somali", "Tigray"], a: "Oromo" },
-{ cat: "History", q: "The main source of the Blue Nile (Abbay) is:", options: ["Lake Victoria", "Lake Tana", "Lake Abaya", "Lake Ziway"], a: "Lake Tana" },
-{ cat: "History", q: "The 'Iron Curtain' speech was given by:", options: ["Stalin", "Churchill", "Roosevelt", "Kennedy"], a: "Churchill" },
-{ cat: "History", q: "The primary cause of WWII was:", options: ["Assassination of Archduke", "German invasion of Poland", "Pearl Harbor", "The Cold War"], a: "German invasion of Poland" },
-{ cat: "History", q: "The 'Great Walls' were built by which civilization?", options: ["Roman", "Chinese", "Persian", "Inca"], a: "Chinese" },
-{ cat: "History", q: "Which king unified the southern and northern parts of Egypt?", options: ["Khufu", "Menes", "Tutankhamun", "Ramses"], a: "Menes" },
-{ cat: "History", q: "The Battle of Gundet (1875) was fought against:", options: ["Italy", "Egypt", "Mahdists", "Britain"], a: "Egypt" },
-{ cat: "History", q: "The first human to travel to space was:", options: ["Neil Armstrong", "Yuri Gagarin", "Buzz Aldrin", "John Glenn"], a: "Yuri Gagarin" },
-{ cat: "History", q: "The 'Black Death' in Europe was a:", options: ["War", "Plague/Disease", "Famine", "Volcano"], a: "Plague/Disease" },
-{ cat: "History", q: "The African Union (AU) headquarters is in:", options: ["Nairobi", "Cairo", "Addis Ababa", "Lagos"], a: "Addis Ababa" },
-
+{ cat: "History", q: "The period of 'Renaissance' first started in which country?", options: ["France", "Germany", "Italy", "England"], a: "Italy" },
+    { cat: "History", q: "Who was the leader of the Protestant Reformation?", options: ["John Calvin", "Martin Luther", "Ignatius Loyola", "King Henry VIII"], a: "Martin Luther" },
+    { cat: "History", q: "The American War of Independence was fought against:", options: ["France", "Spain", "Great Britain", "Germany"], a: "Great Britain" },
+    { cat: "History", q: "The French Revolution began in the year:", options: ["1776", "1789", "1815", "1799"], a: "1789" },
+    { cat: "History", q: "Who was the architect of the unification of Germany?", options: ["Napoleon", "Otto von Bismarck", "Garibaldi", "Wilhelm I"], a: "Otto von Bismarck" },
+    { cat: "History", q: "The Industrial Revolution first began in:", options: ["USA", "France", "Great Britain", "Japan"], a: "Great Britain" },
+    { cat: "History", q: "The immediate cause of World War I was the assassination of:", options: ["Archduke Franz Ferdinand", "Adolf Hitler", "Tsar Nicholas II", "Kaiser Wilhelm"], a: "Archduke Franz Ferdinand" },
+    { cat: "History", q: "The Bolshevik Revolution of 1917 took place in:", options: ["Germany", "Russia", "China", "France"], a: "Russia" },
+    { cat: "History", q: "The League of Nations was established after which war?", options: ["Napoleonic Wars", "World War I", "World War II", "Crimean War"], a: "World War I" },
+    { cat: "History", q: "Who was the leader of Nazi Germany during World War II?", options: ["Benito Mussolini", "Adolf Hitler", "Joseph Stalin", "Winston Churchill"], a: "Adolf Hitler" },
+    { cat: "History", q: "The United Nations (UN) was founded in:", options: ["1918", "1945", "1950", "1963"], a: "1945" },
+    { cat: "History", q: "Which conference led to the 'Scramble for Africa'?", options: ["Berlin Conference", "Vienna Conference", "Paris Conference", "London Conference"], a: "Berlin Conference" },
+    { cat: "History", q: "The Cold War was a state of tension between:", options: ["Britain and France", "USA and USSR", "Germany and Russia", "China and Japan"], a: "USA and USSR" },
+    { cat: "History", q: "Apartheid was a system of racial segregation in:", options: ["Kenya", "Zimbabwe", "South Africa", "Nigeria"], a: "South Africa" },
+    { cat: "History", q: "The first president of independent Kenya was:", options: ["Kwame Nkrumah", "Jomo Kenyatta", "Nelson Mandela", "Julius Nyerere"], a: "Jomo Kenyatta" },
+    { cat: "History", q: "The Zagwe Dynasty was overthrown by Yekuno Amlak in:", options: ["1150", "1270", "1527", "1632"], a: "1270" },
+    { cat: "History", q: "Which Ethiopian King moved the capital to Gondar in 1636?", options: ["Emperor Susenyos", "Emperor Fasiladas", "Emperor Yohannes I", "Emperor Bakaffa"], a: "Emperor Fasiladas" },
+    { cat: "History", q: "The period known as 'Zemene Mesafint' began after the death of:", options: ["Iyoas I", "Iyasu I", "Bakaffa", "Tewodros II"], a: "Iyoas I" },
+    { cat: "History", q: "Who is considered the unifier of modern Ethiopia?", options: ["Emperor Yohannes IV", "Emperor Menelik II", "Emperor Tewodros II", "Emperor Haile Selassie"], a: "Emperor Tewodros II" },
+    { cat: "History", q: "At which battle did Emperor Tewodros II commit suicide?", options: ["Battle of Adwa", "Battle of Magdala", "Battle of Gundet", "Battle of Debre Tabor"], a: "Battle of Magdala" },
+    { cat: "History", q: "The Battle of Dogali was fought between Ethiopia and:", options: ["Egypt", "Italy", "Sudan (Mahdists)", "Britain"], a: "Italy" },
+    { cat: "History", q: "The Treaty of Wuchale was signed in 1889 between Menelik II and:", options: ["Britain", "France", "Italy", "Russia"], a: "Italy" },
+    { cat: "History", q: "The historic victory of Adwa occurred on:", options: ["March 1, 1896", "March 1, 1889", "May 5, 1941", "January 7, 1896"], a: "March 1, 1896" },
+    { cat: "History", q: "Who was the first female head of state in modern Ethiopia?", options: ["Empress Taitu", "Empress Zewditu", "Empress Mentewab", "Empress Eleni"], a: "Empress Zewditu" },
+    { cat: "History", q: "Italy invaded Ethiopia for the second time in:", options: ["1896", "1935", "1941", "1974"], a: "1935" },
+    { cat: "History", q: "The Organization of African Unity (OAU) was founded in Addis Ababa in:", options: ["1950", "1963", "1974", "2002"], a: "1963" },
+    { cat: "History", q: "The 1974 Ethiopian Revolution led to the downfall of:", options: ["The Derg", "Emperor Menelik II", "Emperor Haile Selassie", "Emperor Yohannes IV"], a: "Emperor Haile Selassie" },
+    { cat: "History", q: "The military committee that ruled Ethiopia after 1974 was called:", options: ["EPRDF", "The Derg", "AESM", "COPWE"], a: "The Derg" },
+    { cat: "History", q: "Who was the leader of the Derg regime?", options: ["Meles Zenawi", "Mengistu Haile Mariam", "Aman Andom", "Teferi Banti"], a: "Mengistu Haile Mariam" },
+    { cat: "History", q: "The EPRDF came to power in Ethiopia in the year:", options: ["1974", "1987", "1991", "2000"], a: "1991" },
+    { cat: "History", q: "The ancient civilization of Aksum was famous for its:", options: ["Pyramids", "Stelae (Obelisks)", "Great Wall", "Hanging Gardens"], a: "Stelae (Obelisks)" },
+    { cat: "History", q: "Christianity became the official religion of Aksum during the reign of:", options: ["King Kaleb", "King Ezana", "King Armah", "King Bazen"], a: "King Ezana" },
+    { cat: "History", q: "The famous rock-hewn churches of Lalibela were built during the:", options: ["Solomonic Dynasty", "Zagwe Dynasty", "Aksumite Period", "Gondarine Period"], a: "Zagwe Dynasty" },
+    { cat: "History", q: "The war between the Christian Kingdom and the Adal Sultanate (16th century) was led by:", options: ["Ahmad Gragn", "Emperor Lebna Dengel", "Emperor Galawdewos", "All of the above"], a: "All of the above" },
+    { cat: "History", q: "The Jesuits were expelled from Ethiopia by Emperor Fasiladas because of:", options: ["Trade disputes", "Religious conflicts (Catholicism)", "Land issues", "Taxation"], a: "Religious conflicts (Catholicism)" },
+    { cat: "History", q: "The 'Closed Door Policy' in Ethiopia was practiced during which period?", options: ["Aksumite", "Gondarine", "Zemene Mesafint", "Modern"], a: "Gondarine" },
+    { cat: "History", q: "The Council of Boru Meda (1878) focused on:", options: ["Trade", "Military alliance", "Religious unification", "Border issues"], a: "Religious unification" },
+    { cat: "History", q: "At which battle did Emperor Yohannes IV die fighting the Mahdists?", options: ["Battle of Metemma", "Battle of Gura", "Battle of Gundet", "Battle of Adwa"], a: "Battle of Metemma" },
+    { cat: "History", q: "Who was the chief architect of the victory at Adwa alongside Menelik II?", options: ["Ras Alula", "Empress Taitu", "Ras Makonnen", "All of the above"], a: "All of the above" },
+    { cat: "History", q: "The city of Harar was occupied by Menelik II after the Battle of:", options: ["Chelenqo", "Embabo", "Sagale", "Anchem"], a: "Chelenqo" },
+    { cat: "History", q: "The Japanese invasion of Manchuria (1931) showed the weakness of:", options: ["The UN", "The League of Nations", "The NATO", "The SEATO"], a: "The League of Nations" },
+    { cat: "History", q: "The Marshall Plan was designed to rebuild:", options: ["Asia", "Europe", "Africa", "South America"], a: "Europe" },
+    { cat: "History", q: "Which event is considered the end of the Cold War?", options: ["Vietnam War", "Fall of the Berlin Wall", "Korean War", "Cuban Missile Crisis"], a: "Fall of the Berlin Wall" },
+    { cat: "History", q: "The policy of 'Perestroika' and 'Glasnost' was introduced by:", options: ["Stalin", "Mikhail Gorbachev", "Vladimir Putin", "Boris Yeltsin"], a: "Mikhail Gorbachev" },
+    { cat: "History", q: "Who was the leader of the independence movement in India?", options: ["Subhash Chandra Bose", "Mahatma Gandhi", "Jawaharlal Nehru", "Indira Gandhi"], a: "Mahatma Gandhi" },
+    { cat: "History", q: "The first African country to gain independence from colonial rule was:", options: ["Ethiopia", "Ghana", "Nigeria", "Kenya"], a: "Ghana" },
+    { cat: "History", q: "The term 'Third World' refers to countries that were:", options: ["Communist", "Capitalist", "Non-aligned", "Colonies of Japan"], a: "Non-aligned" },
+    { cat: "History", q: "The main goal of the Pan-African movement was:", options: ["Colonization", "African unity and independence", "Trade with Europe", "Religious spread"], a: "African unity and independence" },
+    { cat: "History", q: "Which Egyptian leader nationalized the Suez Canal in 1956?", options: ["Anwar Sadat", "Gamal Abdel Nasser", "Hosni Mubarak", "King Farouk"], a: "Gamal Abdel Nasser" },
+    { cat: "History", q: "The 'Great Depression' started in which year?", options: ["1914", "1929", "1939", "1945"], a: "1929" },
+    { cat: "History", q: "The First World War ended with the signing of the Treaty of:", options: ["Westphalia", "Versailles", "Vienna", "Berlin"], a: "Versailles" },
+    { cat: "History", q: "The atomic bombs were dropped on Hiroshima and Nagasaki in:", options: ["1941", "1944", "1945", "1946"], a: "1945" },
+    { cat: "History", q: "The 'Apartheid' system ended in South Africa in:", options: ["1990", "1994", "1960", "2000"], a: "1994" },
+    { cat: "History", q: "The first man to walk on the moon was:", options: ["Yuri Gagarin", "Neil Armstrong", "Buzz Aldrin", "John Glenn"], a: "Neil Armstrong" },
+    { cat: "History", q: "The Protestant Reformation led to the rise of which church?", options: ["Catholic", "Anglican/Lutheran", "Orthodox", "Coptic"], a: "Anglican/Lutheran" },
+    { cat: "History", q: "Who discovered the law of universal gravitation during the Scientific Revolution?", options: ["Galileo", "Isaac Newton", "Copernicus", "Kepler"], a: "Isaac Newton" },
+    { cat: "History", q: "The 'Reign of Terror' is associated with which revolution?", options: ["American", "French", "Russian", "Chinese"], a: "French" },
+    { cat: "History", q: "Napoleon Bonaparte was finally defeated at the Battle of:", options: ["Waterloo", "Leipzig", "Austerlitz", "Jena"], a: "Waterloo" },
+    { cat: "History", q: "The Opium Wars were fought between China and:", options: ["Japan", "Great Britain", "France", "USA"], a: "Great Britain" },
+    { cat: "History", q: "The Meiji Restoration took place in which country?", options: ["China", "Korea", "Japan", "Vietnam"], a: "Japan" },
+    { cat: "History", q: "The primary cause of the US Civil War was:", options: ["Taxes", "Slavery", "Religion", "Gold"], a: "Slavery" },
+    { cat: "History", q: "The 'New Deal' was a program introduced by:", options: ["Theodore Roosevelt", "Franklin D. Roosevelt", "Woodrow Wilson", "Herbert Hoover"], a: "Franklin D. Roosevelt" },
+    { cat: "History", q: "The Holocaust was the genocide of which group during WWII?", options: ["Roma", "Jews", "Slavs", "Armenians"], a: "Jews" },
+    { cat: "History", q: "The 'Iron Curtain' speech was given by:", options: ["Harry Truman", "Winston Churchill", "Dwight Eisenhower", "John F. Kennedy"], a: "Winston Churchill" },
+    { cat: "History", q: "The Vietnam War was a conflict between North Vietnam and:", options: ["South Vietnam and USA", "China", "Russia", "France"], a: "South Vietnam and USA" },
+    { cat: "History", q: "The Cuban Missile Crisis occurred in:", options: ["1959", "1961", "1962", "1963"], a: "1962" },
+    { cat: "History", q: "The first Secretary-General of the UN was:", options: ["Kofi Annan", "Trygve Lie", "Dag Hammarskjöld", "U Thant"], a: "Trygve Lie" },
+    { cat: "History", q: "Which ideology advocates for a classless society and state ownership?", options: ["Capitalism", "Communism", "Fascism", "Liberalism"], a: "Communism" },
+    { cat: "History", q: "The 'Great Leap Forward' was a policy in China under:", options: ["Sun Yat-sen", "Mao Zedong", "Deng Xiaoping", "Chiang Kai-shek"], a: "Mao Zedong" },
+    { cat: "History", q: "The Bandung Conference (1955) was the foundation of:", options: ["NATO", "Non-Aligned Movement", "Warsaw Pact", "AU"], a: "Non-Aligned Movement" },
+    { cat: "History", q: "The 'Year of Africa' was:", options: ["1957", "1960", "1963", "1970"], a: "1960" },
+    { cat: "History", q: "The first African country to host the FIFA World Cup was:", options: ["Nigeria", "South Africa", "Egypt", "Morocco"], a: "South Africa" },
+    { cat: "History", q: "The Rosetta Stone was key to deciphering:", options: ["Cuneiform", "Egyptian Hieroglyphics", "Greek", "Latin"], a: "Egyptian Hieroglyphics" },
+    { cat: "History", q: "The ancient Silk Road connected China with:", options: ["Africa", "Europe", "America", "Australia"], a: "Europe" },
+    { cat: "History", q: "The Magna Carta (1215) limited the power of the King in:", options: ["France", "England", "Spain", "Germany"], a: "England" },
+    { cat: "History", q: "Christopher Columbus reached the Americas in:", options: ["1453", "1492", "1498", "1500"], a: "1492" },
+    { cat: "History", q: "The 'Enlightenment' was an intellectual movement focused on:", options: ["Faith", "Reason and Science", "War", "Tradition"], a: "Reason and Science" },
+    { cat: "History", q: "The 1848 Revolutions are often called the:", options: ["Spring of Nations", "Winter of War", "Summer of Peace", "Fall of Kings"], a: "Spring of Nations" },
+    { cat: "History", q: "The Triple Entente of WWI included Britain, France, and:", options: ["Germany", "Italy", "Russia", "Austria"], a: "Russia" },
+    { cat: "History", q: "The 'D-Day' invasion occurred on the beaches of:", options: ["Sicily", "Normandy", "Okinawa", "Gallipoli"], a: "Normandy" },
+    { cat: "History", q: "The African Union (AU) replaced the OAU in:", options: ["1991", "2002", "2010", "1994"], a: "2002" },
+    { cat: "History", q: "The first black president of South Africa was:", options: ["Thabo Mbeki", "Nelson Mandela", "Jacob Zuma", "Cyril Ramaphosa"], a: "Nelson Mandela" },
+    { cat: "History", q: "The 'White Highlands' was a term used for settler land in:", options: ["Ethiopia", "Kenya", "Nigeria", "Sudan"], a: "Kenya" },
+    { cat: "History", q: "The Rwandan Genocide occurred in:", options: ["1990", "1994", "1998", "2000"], a: "1994" },
+    { cat: "History", q: "The 'Scramble for Africa' refers to:", options: ["African migration", "European colonization of Africa", "Trade within Africa", "African exploration of Europe"], a: "European colonization of Africa" },
+    { cat: "History", q: "The main reason for the failure of the League of Nations was:", options: ["Lack of money", "Lack of a military force and US absence", "Too many members", "Language barriers"], a: "Lack of a military force and US absence" },
+    { cat: "History", q: "The 'Fashoda Incident' was a standoff between:", options: ["Britain and France", "Germany and France", "Italy and Ethiopia", "Britain and Egypt"], a: "Britain and France" },
+    { cat: "History", q: "The legendary founder of the Solomonic Dynasty in 1270 was:", options: ["Lalibela", "Yekuno Amlak", "Amda Seyon", "Zara Yaqob"], a: "Yekuno Amlak" },
+    { cat: "History", q: "The battle of Embabo (1882) was between Menelik II and:", options: ["Ras Alula", "King Tekle Haymanot", "Emperor Yohannes IV", "Ras Mengesha"], a: "King Tekle Haymanot" },
+    { cat: "History", q: "The first railway in Ethiopia connected Addis Ababa with:", options: ["Massawa", "Djibouti", "Assab", "Mombasa"], a: "Djibouti" },
+    { cat: "History", q: "Who was the Prime Minister of Ethiopia during the early Haile Selassie era?", options: ["Aklilu Habtewold", "Ras Makonnen", "Ras Imru", "Ras Tafari"], a: "Aklilu Habtewold" },
+    { cat: "History", q: "The 'Black Lion' organization was a resistance group against:", options: ["The Derg", "Italian Occupation", "The British", "The Mahdists"], a: "Italian Occupation" },
+    { cat: "History", q: "The 1960 attempted coup in Ethiopia was led by:", options: ["Mengistu Neway", "Mengistu Haile Mariam", "Aman Andom", "Atnafu Abate"], a: "Mengistu Neway" },
+    { cat: "History", q: "Which Ethiopian leader was known for the 'Red Terror'?", options: ["Haile Selassie", "Mengistu Haile Mariam", "Meles Zenawi", "Teferi Banti"], a: "Mengistu Haile Mariam" },
+    { cat: "History", q: "The main slogan of the 1974 Ethiopian student movement was:", options: ["Peace for All", "Land to the Tiller", "Justice for Ethiopia", "Freedom of Press"], a: "Land to the Tiller" },
+    { cat: "History", q: "The current Federal Democratic Republic of Ethiopia was established in:", options: ["1974", "1991", "1995", "2000"], a: "1995" },
+    { cat: "History", q: "The ancient Ethiopian calendar is based on the:", options: ["Gregorian", "Julian", "Islamic", "Coptic"], a: "Coptic" },
+    { cat: "History", q: "The famous 'Victory Day' in Ethiopia (Meyazia 27) commemorates:", options: ["Adwa", "Liberation from Italy (1941)", "Downfall of Derg", "Ethiopian New Year"], a: "Liberation from Italy (1941)" },
+    { cat: "History", q: "The first modern school in Ethiopia was:", options: ["Menelik II School", "Haile Selassie I School", "Tefari Makonnen School", "General Wingate School"], a: "Menelik II School" },
+    { cat: "History", q: "Ethiopia joined the League of Nations in:", options: ["1923", "1935", "1945", "1963"], a: "1923" },
 // --- ENGLISH (50 Questions) ---
 { cat: "English", q: "If I _______ enough money, I would buy a new laptop.", options: ["have", "had", "will have", "has"], a: "had" },
 { cat: "English", q: "I ________ my homework when the electricity went off.", options: ["was doing", "did", "have done", "am doing"], a: "was doing" },
@@ -492,10 +706,11 @@ const allQuestions = [
 let currentQuestionIndex = 0;
 let score = 0;
 let quizQuestions = [];
+let userAnswers = []; // ለ Review Mode የተማሪውን መልስ ለመያዝ
 let timer;
 let timeLeft = 30;
 
-// --- 2. VOICE ASSISTANT ---
+// --- 1. VOICE & SOUNDS ---
 function speak(text) {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
@@ -506,7 +721,14 @@ function speak(text) {
     }
 }
 
-// --- 3. START APP (HTML ላይ ካለው startApp() ጋር የተገናኘ) ---
+function playSound(type) {
+    const successTone = "https://actions.google.com/google_assistant/ambience/misc/clink.ogg";
+    const failTone = "https://actions.google.com/google_assistant/ambience/misc/wrong_buzzer.ogg";
+    let audio = new Audio(type === 'success' ? successTone : failTone);
+    audio.play().catch(e => console.log("Sound play blocked"));
+}
+
+// --- 2. START APP ---
 function startApp() {
     const nameInput = document.getElementById('userNameInput').value;
     const streamInput = document.getElementById('streamChoice').value;
@@ -514,52 +736,41 @@ function startApp() {
     if (nameInput && streamInput) {
         localStorage.setItem('studentName', nameInput);
         localStorage.setItem('studentStream', streamInput);
-        
         document.getElementById('login-overlay').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
-        
-        // በታይትሉ ላይ የተማሪውን ስም መጨመር
         const mainTitle = document.getElementById('main-title');
         if(mainTitle) mainTitle.innerText = nameInput + "'s Study Hub";
-        
         switchStream(streamInput);
     } else {
         alert("እባክህ ስምህንና ዘርፍህን ምረጥ!");
     }
 }
 
-// --- 4. SWITCH STREAM ---
 function switchStream(stream) {
     const socialDiv = document.getElementById('social-subjects');
     const naturalDiv = document.getElementById('natural-subjects');
-    
     if(socialDiv) socialDiv.style.display = (stream === 'social' ? 'grid' : 'none');
     if(naturalDiv) naturalDiv.style.display = (stream === 'natural' ? 'grid' : 'none');
 }
 
-// --- 5. START QUIZ ---
+// --- 3. START QUIZ ---
 function startQuiz(subject, numToQuiz) {
     if (typeof allQuestions === 'undefined') {
         alert("ጥያቄዎቹ አልተጫኑም!");
         return;
     }
 
-    // በዚያ ሰብጀክት ያሉትን ጥያቄዎች ብቻ ለይ
     let filtered = allQuestions.filter(q => q.cat === subject);
-    
     if (filtered.length === 0) {
         alert(subject + " በሚለው ሰብጀክት ጥያቄ አልተገኘም!");
         return;
     }
 
-    // ጥያቄዎቹን አቀላቅልና ተማሪው የፈለገውን ያህል ብቻ ቁረጥ
-    // numToQuiz ከጠቅላላው በላይ ከሆነ (ለምሳሌ 100 ብሎ ግን ያለው 60 ከሆነ) ያለውን ሁሉ ይወስዳል
     quizQuestions = shuffleArray([...filtered]).slice(0, numToQuiz);
-    
     currentQuestionIndex = 0;
     score = 0;
+    userAnswers = []; // አዲስ ኩዊዝ ሲጀመር ሪቪው ባዶ ይሁን
 
-    // ገጾችን ደብቅ
     document.getElementById('main-content').style.display = 'none';
     if(document.querySelector('.footer')) document.querySelector('.footer').style.display = 'none';
     if(document.querySelector('.resources-section')) document.querySelector('.resources-section').style.display = 'none';
@@ -568,7 +779,7 @@ function startQuiz(subject, numToQuiz) {
     showQuestion();
 }
 
-// --- 6. SHOW QUESTION ---
+// --- 4. SHOW QUESTION & PROGRESS BAR ---
 function showQuestion() {
     clearInterval(timer);
     timeLeft = 30;
@@ -576,10 +787,16 @@ function showQuestion() {
     let quizBox = document.getElementById('quiz-box');
     let shuffledOptions = shuffleArray([...q.options]);
 
+    // Progress Bar Calculation
+    let progressPercent = ((currentQuestionIndex) / quizQuestions.length) * 100;
+
     quizBox.innerHTML = `
-        <div id="timer-display" style="font-size:24px; color:red; font-weight:bold; text-align:center; margin-bottom:10px;">Time: 30s</div>
-        <h2 style="text-align:center; color:#007bff;">${q.cat}</h2>
-        <p style="font-size:1.3rem; font-weight:bold; margin:20px 0;">${currentQuestionIndex + 1}. ${q.q}</p>
+        <div class="progress-container" style="width:100%; background:#eee; border-radius:10px; margin-bottom:15px;">
+            <div class="progress-bar" style="width:${progressPercent}%; height:10px; background:#28a745; border-radius:10px; transition:0.3s;"></div>
+        </div>
+        <div id="timer-display" style="font-size:20px; color:red; font-weight:bold; text-align:center;">Time: 30s</div>
+        <h2 style="text-align:center; color:#007bff; margin-top:10px;">${q.cat}</h2>
+        <p style="font-size:1.2rem; font-weight:bold; margin:15px 0;">${currentQuestionIndex + 1}. ${q.q}</p>
         <div id="options-container"></div>
     `;
 
@@ -593,7 +810,6 @@ function showQuestion() {
     startTimer();
 }
 
-// --- 7. TIMER ---
 function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
@@ -606,11 +822,19 @@ function startTimer() {
     }, 1000);
 }
 
-// --- 8. CHECK ANSWER ---
+// --- 5. CHECK ANSWER & REVIEW LOGIC ---
 function checkAnswer(selected, correct) {
     clearInterval(timer);
-    const buttons = document.querySelectorAll('.quiz-answer-btn');
     
+    // ለሪቪው ሞድ መመዝገብ
+    userAnswers.push({
+        question: quizQuestions[currentQuestionIndex].q,
+        selected: selected || "Time Out",
+        correct: correct,
+        isCorrect: selected === correct
+    });
+
+    const buttons = document.querySelectorAll('.quiz-answer-btn');
     buttons.forEach(btn => {
         btn.disabled = true;
         if (btn.innerText === correct) {
@@ -625,12 +849,13 @@ function checkAnswer(selected, correct) {
 
     if (selected === correct) {
         score++;
+        playSound('success');
         speak("Correct!");
     } else {
-        speak("Incorrect. The answer is " + correct);
+        playSound('fail');
+        speak("Wrong!");
     }
 
-    // ከ 2.5 ሰከንድ በኋላ ወደ ቀጣዩ ጥያቄ ይሄዳል
     setTimeout(() => {
         currentQuestionIndex++;
         if (currentQuestionIndex < quizQuestions.length) {
@@ -638,78 +863,90 @@ function checkAnswer(selected, correct) {
         } else {
             showFinalResult();
         }
-    }, 2500);
+    }, 1500); // ፍጥነት ለመጨመር ወደ 1.5 ሰከንድ ቀንሼዋለሁ
 }
 
-// --- 9. FINAL RESULT ---
+// --- 6. FINAL RESULT & CONFETTI ---
 function showFinalResult() {
     let quizBox = document.getElementById('quiz-box');
     let percent = Math.round((score / quizQuestions.length) * 100);
     let name = localStorage.getItem('studentName') || "Student";
+    
+    if(percent >= 70) {
+        triggerConfetti(); // 70% በላይ ከሆነ ኮንፌቲ ይረጫል
+        speak("Congratulations " + name);
+    }
+
     let message = percent >= 80 ? `Excellent job, ${name}! 🏆` : `Good effort, ${name}! Keep practicing. 💪`;
+    saveScore(name, quizQuestions[0].cat, percent);
 
-    // 1. ውጤቱን ሴቭ አድርግ
-    let subject = quizQuestions[0].cat;
-    saveScore(name, subject, percent);
-
-    // 2. የደረጃ ሰንጠረዡን (Leaderboard) ከማህደረ ትውስታ አምጣ
-    let leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
-    let leaderboardHTML = leaderboard.map((item, index) => `
-        <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 10px;">${index + 1}</td>
-            <td style="padding: 10px;">${item.name}</td>
-            <td style="padding: 10px;">${item.subject}</td>
-            <td style="padding: 10px; font-weight: bold; color: #28a745;">${item.score}%</td>
-        </tr>
+    let reviewHTML = userAnswers.map((item, idx) => `
+        <div style="text-align:left; padding:10px; border-bottom:1px solid #ddd; background:${item.isCorrect ? '#e8f5e9' : '#ffebee'}">
+            <p><strong>${idx+1}. ${item.question}</strong></p>
+            <p>Your Answer: ${item.selected} ${item.isCorrect ? '✅' : '❌'}</p>
+            ${!item.isCorrect ? `<p style="color:green">Correct: ${item.correct}</p>` : ''}
+        </div>
     `).join('');
 
-    // 3. ሙሉውን ውጤት በ HTML አሳይ
     quizBox.innerHTML = `
         <h2 style="color: #007bff; text-align:center;">QUIZ COMPLETED</h2>
-        <div style="font-size: 50px; font-weight: bold; text-align:center; margin: 10px 0;">${score} / ${quizQuestions.length}</div>
-        <p style="font-size: 1.2rem; text-align:center; margin-bottom: 20px;">${message} (${percent}%)</p>
+        <div style="font-size: 40px; font-weight: bold; text-align:center;">${score} / ${quizQuestions.length} (${percent}%)</div>
+        <p style="text-align:center;">${message}</p>
         
-        <h3 style="text-align:center; margin-top: 10px;">🏆 Top 5 Scores</h3>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <thead style="background: #007bff; color: white;">
-                <tr>
-                    <th style="padding: 10px; text-align: left;">#</th>
-                    <th style="padding: 10px; text-align: left;">Name</th>
-                    <th style="padding: 10px; text-align: left;">Subject</th>
-                    <th style="padding: 10px; text-align: left;">Score</th>
-                </tr>
-            </thead>
-            <tbody style="color: #333;">
-                ${leaderboardHTML}
-            </tbody>
-        </table>
+        <div id="review-section" style="margin-top:20px; max-height:300px; overflow-y:auto; border:1px solid #ccc; border-radius:8px;">
+            <h3 style="padding:10px; background:#f4f4f4; margin:0;">Review Answers</h3>
+            ${reviewHTML}
+        </div>
 
-        <button onclick="goHome()" style="width:100%; padding: 18px; background: #28a745; color: white; border: none; border-radius: 12px; cursor: pointer; font-size:18px; font-weight: bold;">
+        <button onclick="goHome()" style="width:100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 12px; cursor: pointer; font-size:18px; font-weight: bold; margin-top:15px;">
             FINISH & GO HOME
         </button>
     `;
 }
-// --- 10. UTILITIES (Home, Dark Mode, Shuffle, Leaderboard) ---
+
+// --- 7. CONFETTI EFFECT ---
+function triggerConfetti() {
+    const duration = 3 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#28a745', '#007bff']
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#dc3545', '#ffc107']
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
+}
+
+// --- UTILITIES ---
 function goHome() {
     clearInterval(timer);
     document.getElementById('quiz-area-wrapper').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
-    
     if(document.querySelector('.footer')) document.querySelector('.footer').style.display = 'block';
     if(document.querySelector('.resources-section')) document.querySelector('.resources-section').style.display = 'block';
-
-    let stream = localStorage.getItem('studentStream') || 'social';
-    switchStream(stream);
-    window.scrollTo(0, 0);
+    switchStream(localStorage.getItem('studentStream'));
 }
 
 function initDarkMode() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    if (darkModeToggle) {
-        darkModeToggle.onclick = function() {
+    const btn = document.getElementById('dark-mode-toggle');
+    if(btn) {
+        btn.onclick = () => {
             document.body.classList.toggle('dark-theme');
-            const modeIcon = document.getElementById('mode-icon');
-            if(modeIcon) modeIcon.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+            document.getElementById('mode-icon').textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
         };
     }
 }
@@ -726,29 +963,17 @@ function saveScore(name, subject, scorePercent) {
     let leaderboard = JSON.parse(localStorage.getItem('studyHubLeaderboard')) || [];
     leaderboard.push({ name: name, subject: subject, score: scorePercent });
     leaderboard.sort((a, b) => b.score - a.score);
-    leaderboard = leaderboard.slice(0, 5);
-    localStorage.setItem('studyHubLeaderboard', JSON.stringify(leaderboard));
+    localStorage.setItem('studyHubLeaderboard', JSON.stringify(leaderboard.slice(0, 5)));
 }
 
-function logout() {
-    localStorage.removeItem('studentName');
-    localStorage.removeItem('studentStream');
-    location.reload();
-}
-
-// --- 11. PAGE LOAD LOGIC ---
 window.onload = function() {
     initDarkMode();
     const savedName = localStorage.getItem('studentName');
     const savedStream = localStorage.getItem('studentStream');
-
     if (savedName && savedStream) {
         document.getElementById('login-overlay').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
         document.getElementById('main-title').innerText = savedName + "'s Hub";
         switchStream(savedStream);
-    } else {
-        document.getElementById('login-overlay').style.display = 'flex';
-        document.getElementById('main-content').style.display = 'none';
     }
 };
