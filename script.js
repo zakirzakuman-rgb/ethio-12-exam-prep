@@ -538,12 +538,13 @@ function switchStream(stream) {
 }
 
 // --- 5. START QUIZ ---
-function startQuiz(subject) {
+function startQuiz(subject, numToQuiz) {
     if (typeof allQuestions === 'undefined') {
-        alert("ጥያቄዎቹ አልተጫኑም! እባክህ allQuestions ዝርዝር መኖሩን አረጋግጥ።");
+        alert("ጥያቄዎቹ አልተጫኑም!");
         return;
     }
 
+    // በዚያ ሰብጀክት ያሉትን ጥያቄዎች ብቻ ለይ
     let filtered = allQuestions.filter(q => q.cat === subject);
     
     if (filtered.length === 0) {
@@ -551,21 +552,18 @@ function startQuiz(subject) {
         return;
     }
 
-    quizQuestions = shuffleArray([...filtered]);
+    // ጥያቄዎቹን አቀላቅልና ተማሪው የፈለገውን ያህል ብቻ ቁረጥ
+    // numToQuiz ከጠቅላላው በላይ ከሆነ (ለምሳሌ 100 ብሎ ግን ያለው 60 ከሆነ) ያለውን ሁሉ ይወስዳል
+    quizQuestions = shuffleArray([...filtered]).slice(0, numToQuiz);
+    
     currentQuestionIndex = 0;
     score = 0;
 
     // ገጾችን ደብቅ
     document.getElementById('main-content').style.display = 'none';
+    if(document.querySelector('.footer')) document.querySelector('.footer').style.display = 'none';
+    if(document.querySelector('.resources-section')) document.querySelector('.resources-section').style.display = 'none';
     
-    if(document.querySelector('.footer')) {
-        document.querySelector('.footer').style.display = 'none';
-    }
-    if(document.querySelector('.resources-section')) {
-        document.querySelector('.resources-section').style.display = 'none';
-    }
-
-    // የጥያቄ ማሳያውን አሳይ
     document.getElementById('quiz-area-wrapper').style.display = 'block';
     showQuestion();
 }
